@@ -1,0 +1,16 @@
+C:\Users\Umutl\Belgeler\GitHub\MesajX\Backend\Services\ChatService\MesajX.ChatService.DataAccessLayer\bin\Debug\net8.0\MesajX.ChatService.DataAccessLayer.deps.json
+C:\Users\Umutl\Belgeler\GitHub\MesajX\Backend\Services\ChatService\MesajX.ChatService.DataAccessLayer\bin\Debug\net8.0\MesajX.ChatService.DataAccessLayer.dll
+C:\Users\Umutl\Belgeler\GitHub\MesajX\Backend\Services\ChatService\MesajX.ChatService.DataAccessLayer\bin\Debug\net8.0\MesajX.ChatService.DataAccessLayer.pdb
+C:\Users\Umutl\Belgeler\GitHub\MesajX\Backend\Services\ChatService\MesajX.ChatService.DataAccessLayer\bin\Debug\net8.0\MesajX.ChatService.EntityLayer.dll
+C:\Users\Umutl\Belgeler\GitHub\MesajX\Backend\Services\ChatService\MesajX.ChatService.DataAccessLayer\bin\Debug\net8.0\MesajX.ChatService.EntityLayer.pdb
+C:\Users\Umutl\Belgeler\GitHub\MesajX\Backend\Services\ChatService\MesajX.ChatService.DataAccessLayer\obj\Debug\net8.0\MesajX.ChatService.DataAccessLayer.csproj.AssemblyReference.cache
+C:\Users\Umutl\Belgeler\GitHub\MesajX\Backend\Services\ChatService\MesajX.ChatService.DataAccessLayer\obj\Debug\net8.0\MesajX.ChatService.DataAccessLayer.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Umutl\Belgeler\GitHub\MesajX\Backend\Services\ChatService\MesajX.ChatService.DataAccessLayer\obj\Debug\net8.0\MesajX.ChatService.DataAccessLayer.AssemblyInfoInputs.cache
+C:\Users\Umutl\Belgeler\GitHub\MesajX\Backend\Services\ChatService\MesajX.ChatService.DataAccessLayer\obj\Debug\net8.0\MesajX.ChatService.DataAccessLayer.AssemblyInfo.cs
+C:\Users\Umutl\Belgeler\GitHub\MesajX\Backend\Services\ChatService\MesajX.ChatService.DataAccessLayer\obj\Debug\net8.0\MesajX.ChatService.DataAccessLayer.csproj.CoreCompileInputs.cache
+C:\Users\Umutl\Belgeler\GitHub\MesajX\Backend\Services\ChatService\MesajX.ChatService.DataAccessLayer\obj\Debug\net8.0\MesajX.ChatService.DataAccessLayer.sourcelink.json
+C:\Users\Umutl\Belgeler\GitHub\MesajX\Backend\Services\ChatService\MesajX.ChatService.DataAccessLayer\obj\Debug\net8.0\MesajX.C.64530F85.Up2Date
+C:\Users\Umutl\Belgeler\GitHub\MesajX\Backend\Services\ChatService\MesajX.ChatService.DataAccessLayer\obj\Debug\net8.0\MesajX.ChatService.DataAccessLayer.dll
+C:\Users\Umutl\Belgeler\GitHub\MesajX\Backend\Services\ChatService\MesajX.ChatService.DataAccessLayer\obj\Debug\net8.0\refint\MesajX.ChatService.DataAccessLayer.dll
+C:\Users\Umutl\Belgeler\GitHub\MesajX\Backend\Services\ChatService\MesajX.ChatService.DataAccessLayer\obj\Debug\net8.0\MesajX.ChatService.DataAccessLayer.pdb
+C:\Users\Umutl\Belgeler\GitHub\MesajX\Backend\Services\ChatService\MesajX.ChatService.DataAccessLayer\obj\Debug\net8.0\ref\MesajX.ChatService.DataAccessLayer.dll

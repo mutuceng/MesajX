@@ -1,0 +1,12 @@
+{
+  "Version": 1,
+  "Hash": "TKAmYrIyLZtMPGn5WjwA2WBe862aD9jMZvDz5ORkQ2s=",
+  "Source": "MesajX.ChatService",
+  "BasePath": "_content/MesajX.ChatService",
+  "Mode": "Default",
+  "ManifestType": "Build",
+  "ReferencedProjectsConfiguration": [],
+  "DiscoveryPatterns": [],
+  "Assets": [],
+  "Endpoints": []
+}

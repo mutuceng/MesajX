@@ -1,0 +1,6 @@
+@MesajX.ChatService_HostAddress = http://localhost:5279
+
+GET {{MesajX.ChatService_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###

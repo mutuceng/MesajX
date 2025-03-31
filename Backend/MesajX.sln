@@ -1,0 +1,86 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.0.31903.59
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "IdentityServer", "IdentityServer", "{F718AE25-6871-4792-8199-DED196B063C6}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "SignalRRealTimeAPI", "SignalRRealTimeAPI", "{3D1ED076-F8CE-47DF-9B72-A74F04A0B06E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SignalRRealTimeAPI", "SignalRRealTimeAPI\SignalRRealTimeAPI\SignalRRealTimeAPI.csproj", "{EA141247-D382-4B85-B400-1F05CF6EB527}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Services", "Services", "{8E2F8070-A467-4919-B3A8-F8D0FE11F5E4}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "ChatService", "ChatService", "{1952A6D4-D8DA-4343-94E3-BBEF19B42C1D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MesajX.ChatService", "Services\ChatService\MesajX.ChatService\MesajX.ChatService.csproj", "{B4121D1B-36C9-4ED4-9AEA-C09963AD93C9}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "NotificationService", "NotificationService", "{56E3B930-6911-43EA-A071-2C6CC1F618C7}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MesajX.NotificationService", "Services\NotificationService\MesajX.NotificationService\MesajX.NotificationService.csproj", "{59F373FB-CD50-4A87-BE64-9CEA10336FBD}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MesajX.ChatService.DtoLayer", "Services\ChatService\MesajX.ChatService.DtoLayer\MesajX.ChatService.DtoLayer.csproj", "{67092910-6A31-4F25-B544-FCEE5CB17522}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MesajX.ChatService.DataAccessLayer", "Services\ChatService\MesajX.ChatService.DataAccessLayer\MesajX.ChatService.DataAccessLayer.csproj", "{56F3003B-C3B1-425E-A867-93DB28D28686}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MesajX.ChatService.BusinessLayer", "Services\ChatService\MesajX.ChatService.BusinessLayer\MesajX.ChatService.BusinessLayer.csproj", "{D4819073-8F76-4257-AEE2-79978081BEA3}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MesajX.ChatService.EntityLayer", "Services\ChatService\MesajX.ChatService.EntityLayer\MesajX.ChatService.EntityLayer.csproj", "{92246825-B926-469E-BF66-1CECDF324623}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Mesajx.IdentityServer", "IdentityServer\Mesajx.IdentityServer\Mesajx.IdentityServer.csproj", "{40E2462A-4A14-4672-B45B-473943DA15A1}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{EA141247-D382-4B85-B400-1F05CF6EB527}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EA141247-D382-4B85-B400-1F05CF6EB527}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EA141247-D382-4B85-B400-1F05CF6EB527}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EA141247-D382-4B85-B400-1F05CF6EB527}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B4121D1B-36C9-4ED4-9AEA-C09963AD93C9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B4121D1B-36C9-4ED4-9AEA-C09963AD93C9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B4121D1B-36C9-4ED4-9AEA-C09963AD93C9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B4121D1B-36C9-4ED4-9AEA-C09963AD93C9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{59F373FB-CD50-4A87-BE64-9CEA10336FBD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{59F373FB-CD50-4A87-BE64-9CEA10336FBD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{59F373FB-CD50-4A87-BE64-9CEA10336FBD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{59F373FB-CD50-4A87-BE64-9CEA10336FBD}.Release|Any CPU.Build.0 = Release|Any CPU
+		{67092910-6A31-4F25-B544-FCEE5CB17522}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{67092910-6A31-4F25-B544-FCEE5CB17522}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{67092910-6A31-4F25-B544-FCEE5CB17522}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{67092910-6A31-4F25-B544-FCEE5CB17522}.Release|Any CPU.Build.0 = Release|Any CPU
+		{56F3003B-C3B1-425E-A867-93DB28D28686}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{56F3003B-C3B1-425E-A867-93DB28D28686}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{56F3003B-C3B1-425E-A867-93DB28D28686}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{56F3003B-C3B1-425E-A867-93DB28D28686}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D4819073-8F76-4257-AEE2-79978081BEA3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D4819073-8F76-4257-AEE2-79978081BEA3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D4819073-8F76-4257-AEE2-79978081BEA3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D4819073-8F76-4257-AEE2-79978081BEA3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{92246825-B926-469E-BF66-1CECDF324623}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{92246825-B926-469E-BF66-1CECDF324623}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{92246825-B926-469E-BF66-1CECDF324623}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{92246825-B926-469E-BF66-1CECDF324623}.Release|Any CPU.Build.0 = Release|Any CPU
+		{40E2462A-4A14-4672-B45B-473943DA15A1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{40E2462A-4A14-4672-B45B-473943DA15A1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{40E2462A-4A14-4672-B45B-473943DA15A1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{40E2462A-4A14-4672-B45B-473943DA15A1}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{EA141247-D382-4B85-B400-1F05CF6EB527} = {3D1ED076-F8CE-47DF-9B72-A74F04A0B06E}
+		{1952A6D4-D8DA-4343-94E3-BBEF19B42C1D} = {8E2F8070-A467-4919-B3A8-F8D0FE11F5E4}
+		{B4121D1B-36C9-4ED4-9AEA-C09963AD93C9} = {1952A6D4-D8DA-4343-94E3-BBEF19B42C1D}
+		{56E3B930-6911-43EA-A071-2C6CC1F618C7} = {8E2F8070-A467-4919-B3A8-F8D0FE11F5E4}
+		{59F373FB-CD50-4A87-BE64-9CEA10336FBD} = {56E3B930-6911-43EA-A071-2C6CC1F618C7}
+		{67092910-6A31-4F25-B544-FCEE5CB17522} = {1952A6D4-D8DA-4343-94E3-BBEF19B42C1D}
+		{56F3003B-C3B1-425E-A867-93DB28D28686} = {1952A6D4-D8DA-4343-94E3-BBEF19B42C1D}
+		{D4819073-8F76-4257-AEE2-79978081BEA3} = {1952A6D4-D8DA-4343-94E3-BBEF19B42C1D}
+		{92246825-B926-469E-BF66-1CECDF324623} = {1952A6D4-D8DA-4343-94E3-BBEF19B42C1D}
+		{40E2462A-4A14-4672-B45B-473943DA15A1} = {F718AE25-6871-4792-8199-DED196B063C6}
+	EndGlobalSection
+EndGlobal

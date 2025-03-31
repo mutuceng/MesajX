@@ -1,0 +1,70 @@
+version: '3.8'
+
+services:
+  mesajx.userdb:
+    image: postgres:latest
+    container_name: mesajx.userdb
+    
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: admin123D!
+      POSTGRES_DB: mesajx.userdb
+    ports:
+      - "5460:5432"
+    volumes:
+      - mesajx.userdb_data:/var/lib/postgresql/data
+    networks:
+      - db-network
+  
+  mesajx.chatdbpg:
+    image: postgres:latest
+    container_name: mesajx.chatdbpg
+    environment:
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=admin123D!
+      - POSTGRES_DB=mesajx.chatdbpg
+    ports:
+      - "5461:5432"
+    volumes:
+      - mesajx.chatdbpg_data:/var/lib/postgresql/data
+    networks:
+      - db-network
+  
+  mesajx.notificationdb:
+    image: postgres:latest
+    container_name: mesajx.notificationdb
+    environment:
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=admin123D!
+      - POSTGRES_DB=mesajx.notificationdb
+    ports:
+      - "5462:5432"
+    volumes:
+      - mesajx.notificationdb_data:/var/lib/postgresql/data
+    networks:
+      - db-network
+
+  mesajx.chatdbredis:
+    image: redis:latest
+    container_name: mesajx.chatdbredis
+    ports:
+      - "6380:6379"
+    volumes:
+      - mesajx.chatdbredis_data:/data
+    command: redis-server --appendonly yes
+    networks:
+      - db-network
+  
+networks:
+  db-network:
+    driver: bridge
+
+volumes:
+  mesajx.userdb_data:
+    driver: local
+  mesajx.chatdbpg_data:
+    driver: local
+  mesajx.notificationdb_data:
+    driver: local
+  mesajx.chatdbredis_data:
+    driver: local

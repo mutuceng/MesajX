@@ -1,0 +1,12 @@
+C:\Users\Umutl\Belgeler\GitHub\MesajX\Backend\Services\ChatService\MesajX.ChatService.DtoLayer\bin\Debug\net8.0\MesajX.ChatService.DtoLayer.deps.json
+C:\Users\Umutl\Belgeler\GitHub\MesajX\Backend\Services\ChatService\MesajX.ChatService.DtoLayer\bin\Debug\net8.0\MesajX.ChatService.DtoLayer.dll
+C:\Users\Umutl\Belgeler\GitHub\MesajX\Backend\Services\ChatService\MesajX.ChatService.DtoLayer\bin\Debug\net8.0\MesajX.ChatService.DtoLayer.pdb
+C:\Users\Umutl\Belgeler\GitHub\MesajX\Backend\Services\ChatService\MesajX.ChatService.DtoLayer\obj\Debug\net8.0\MesajX.ChatService.DtoLayer.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Umutl\Belgeler\GitHub\MesajX\Backend\Services\ChatService\MesajX.ChatService.DtoLayer\obj\Debug\net8.0\MesajX.ChatService.DtoLayer.AssemblyInfoInputs.cache
+C:\Users\Umutl\Belgeler\GitHub\MesajX\Backend\Services\ChatService\MesajX.ChatService.DtoLayer\obj\Debug\net8.0\MesajX.ChatService.DtoLayer.AssemblyInfo.cs
+C:\Users\Umutl\Belgeler\GitHub\MesajX\Backend\Services\ChatService\MesajX.ChatService.DtoLayer\obj\Debug\net8.0\MesajX.ChatService.DtoLayer.csproj.CoreCompileInputs.cache
+C:\Users\Umutl\Belgeler\GitHub\MesajX\Backend\Services\ChatService\MesajX.ChatService.DtoLayer\obj\Debug\net8.0\MesajX.ChatService.DtoLayer.sourcelink.json
+C:\Users\Umutl\Belgeler\GitHub\MesajX\Backend\Services\ChatService\MesajX.ChatService.DtoLayer\obj\Debug\net8.0\MesajX.ChatService.DtoLayer.dll
+C:\Users\Umutl\Belgeler\GitHub\MesajX\Backend\Services\ChatService\MesajX.ChatService.DtoLayer\obj\Debug\net8.0\refint\MesajX.ChatService.DtoLayer.dll
+C:\Users\Umutl\Belgeler\GitHub\MesajX\Backend\Services\ChatService\MesajX.ChatService.DtoLayer\obj\Debug\net8.0\MesajX.ChatService.DtoLayer.pdb
+C:\Users\Umutl\Belgeler\GitHub\MesajX\Backend\Services\ChatService\MesajX.ChatService.DtoLayer\obj\Debug\net8.0\ref\MesajX.ChatService.DtoLayer.dll

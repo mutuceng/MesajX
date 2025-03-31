@@ -1,0 +1,347 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\Umutl\\Belgeler\\GitHub\\MesajX\\Backend\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\Umutl\\Belgeler\\GitHub\\MesajX\\Backend\\Services\\ChatService\\MesajX.ChatService.DataAccessLayer\\Migrations\\20250331111044_mig1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Services\\ChatService\\MesajX.ChatService.DataAccessLayer\\Migrations\\20250331111044_mig1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B4121D1B-36C9-4ED4-9AEA-C09963AD93C9}|Services\\ChatService\\MesajX.ChatService\\MesajX.ChatService.csproj|c:\\users\\umutl\\belgeler\\github\\mesajx\\backend\\services\\chatservice\\mesajx.chatservice\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{B4121D1B-36C9-4ED4-9AEA-C09963AD93C9}|Services\\ChatService\\MesajX.ChatService\\MesajX.ChatService.csproj|solutionrelative:services\\chatservice\\mesajx.chatservice\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{56F3003B-C3B1-425E-A867-93DB28D28686}|Services\\ChatService\\MesajX.ChatService.DataAccessLayer\\MesajX.ChatService.DataAccessLayer.csproj|c:\\users\\umutl\\belgeler\\github\\mesajx\\backend\\services\\chatservice\\mesajx.chatservice.dataaccesslayer\\concrete\\chatcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{56F3003B-C3B1-425E-A867-93DB28D28686}|Services\\ChatService\\MesajX.ChatService.DataAccessLayer\\MesajX.ChatService.DataAccessLayer.csproj|solutionrelative:services\\chatservice\\mesajx.chatservice.dataaccesslayer\\concrete\\chatcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B4121D1B-36C9-4ED4-9AEA-C09963AD93C9}|Services\\ChatService\\MesajX.ChatService\\MesajX.ChatService.csproj|c:\\users\\umutl\\belgeler\\github\\mesajx\\backend\\services\\chatservice\\mesajx.chatservice\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B4121D1B-36C9-4ED4-9AEA-C09963AD93C9}|Services\\ChatService\\MesajX.ChatService\\MesajX.ChatService.csproj|solutionrelative:services\\chatservice\\mesajx.chatservice\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D4819073-8F76-4257-AEE2-79978081BEA3}|Services\\ChatService\\MesajX.ChatService.BusinessLayer\\MesajX.ChatService.BusinessLayer.csproj|c:\\users\\umutl\\belgeler\\github\\mesajx\\backend\\services\\chatservice\\mesajx.chatservice.businesslayer\\concrete\\rediscacheservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{D4819073-8F76-4257-AEE2-79978081BEA3}|Services\\ChatService\\MesajX.ChatService.BusinessLayer\\MesajX.ChatService.BusinessLayer.csproj|solutionrelative:services\\chatservice\\mesajx.chatservice.businesslayer\\concrete\\rediscacheservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D4819073-8F76-4257-AEE2-79978081BEA3}|Services\\ChatService\\MesajX.ChatService.BusinessLayer\\MesajX.ChatService.BusinessLayer.csproj|c:\\users\\umutl\\belgeler\\github\\mesajx\\backend\\services\\chatservice\\mesajx.chatservice.businesslayer\\abstract\\irediscacheservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{D4819073-8F76-4257-AEE2-79978081BEA3}|Services\\ChatService\\MesajX.ChatService.BusinessLayer\\MesajX.ChatService.BusinessLayer.csproj|solutionrelative:services\\chatservice\\mesajx.chatservice.businesslayer\\abstract\\irediscacheservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B4121D1B-36C9-4ED4-9AEA-C09963AD93C9}|Services\\ChatService\\MesajX.ChatService\\MesajX.ChatService.csproj|c:\\users\\umutl\\belgeler\\github\\mesajx\\backend\\services\\chatservice\\mesajx.chatservice\\controllers\\groupscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B4121D1B-36C9-4ED4-9AEA-C09963AD93C9}|Services\\ChatService\\MesajX.ChatService\\MesajX.ChatService.csproj|solutionrelative:services\\chatservice\\mesajx.chatservice\\controllers\\groupscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B4121D1B-36C9-4ED4-9AEA-C09963AD93C9}|Services\\ChatService\\MesajX.ChatService\\MesajX.ChatService.csproj|c:\\users\\umutl\\belgeler\\github\\mesajx\\backend\\services\\chatservice\\mesajx.chatservice\\controllers\\messagescontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B4121D1B-36C9-4ED4-9AEA-C09963AD93C9}|Services\\ChatService\\MesajX.ChatService\\MesajX.ChatService.csproj|solutionrelative:services\\chatservice\\mesajx.chatservice\\controllers\\messagescontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{56F3003B-C3B1-425E-A867-93DB28D28686}|Services\\ChatService\\MesajX.ChatService.DataAccessLayer\\MesajX.ChatService.DataAccessLayer.csproj|c:\\users\\umutl\\belgeler\\github\\mesajx\\backend\\services\\chatservice\\mesajx.chatservice.dataaccesslayer\\concrete\\redisconnectionfactory.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{56F3003B-C3B1-425E-A867-93DB28D28686}|Services\\ChatService\\MesajX.ChatService.DataAccessLayer\\MesajX.ChatService.DataAccessLayer.csproj|solutionrelative:services\\chatservice\\mesajx.chatservice.dataaccesslayer\\concrete\\redisconnectionfactory.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D4819073-8F76-4257-AEE2-79978081BEA3}|Services\\ChatService\\MesajX.ChatService.BusinessLayer\\MesajX.ChatService.BusinessLayer.csproj|c:\\users\\umutl\\belgeler\\github\\mesajx\\backend\\services\\chatservice\\mesajx.chatservice.businesslayer\\mapping\\generalmapping.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{D4819073-8F76-4257-AEE2-79978081BEA3}|Services\\ChatService\\MesajX.ChatService.BusinessLayer\\MesajX.ChatService.BusinessLayer.csproj|solutionrelative:services\\chatservice\\mesajx.chatservice.businesslayer\\mapping\\generalmapping.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{56F3003B-C3B1-425E-A867-93DB28D28686}|Services\\ChatService\\MesajX.ChatService.DataAccessLayer\\MesajX.ChatService.DataAccessLayer.csproj|c:\\users\\umutl\\belgeler\\github\\mesajx\\backend\\services\\chatservice\\mesajx.chatservice.dataaccesslayer\\abstract\\iredisconnectionfactory.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{56F3003B-C3B1-425E-A867-93DB28D28686}|Services\\ChatService\\MesajX.ChatService.DataAccessLayer\\MesajX.ChatService.DataAccessLayer.csproj|solutionrelative:services\\chatservice\\mesajx.chatservice.dataaccesslayer\\abstract\\iredisconnectionfactory.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{92246825-B926-469E-BF66-1CECDF324623}|Services\\ChatService\\MesajX.ChatService.EntityLayer\\MesajX.ChatService.EntityLayer.csproj|c:\\users\\umutl\\belgeler\\github\\mesajx\\backend\\services\\chatservice\\mesajx.chatservice.entitylayer\\entities\\message.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{92246825-B926-469E-BF66-1CECDF324623}|Services\\ChatService\\MesajX.ChatService.EntityLayer\\MesajX.ChatService.EntityLayer.csproj|solutionrelative:services\\chatservice\\mesajx.chatservice.entitylayer\\entities\\message.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{92246825-B926-469E-BF66-1CECDF324623}|Services\\ChatService\\MesajX.ChatService.EntityLayer\\MesajX.ChatService.EntityLayer.csproj|c:\\users\\umutl\\belgeler\\github\\mesajx\\backend\\services\\chatservice\\mesajx.chatservice.entitylayer\\entities\\abstract\\group.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{92246825-B926-469E-BF66-1CECDF324623}|Services\\ChatService\\MesajX.ChatService.EntityLayer\\MesajX.ChatService.EntityLayer.csproj|solutionrelative:services\\chatservice\\mesajx.chatservice.entitylayer\\entities\\abstract\\group.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{92246825-B926-469E-BF66-1CECDF324623}|Services\\ChatService\\MesajX.ChatService.EntityLayer\\MesajX.ChatService.EntityLayer.csproj|c:\\users\\umutl\\belgeler\\github\\mesajx\\backend\\services\\chatservice\\mesajx.chatservice.entitylayer\\entities\\teamgroup.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{92246825-B926-469E-BF66-1CECDF324623}|Services\\ChatService\\MesajX.ChatService.EntityLayer\\MesajX.ChatService.EntityLayer.csproj|solutionrelative:services\\chatservice\\mesajx.chatservice.entitylayer\\entities\\teamgroup.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{67092910-6A31-4F25-B544-FCEE5CB17522}|Services\\ChatService\\MesajX.ChatService.DtoLayer\\MesajX.ChatService.DtoLayer.csproj|c:\\users\\umutl\\belgeler\\github\\mesajx\\backend\\services\\chatservice\\mesajx.chatservice.dtolayer\\dtos\\messagedtos\\getmessagesdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{67092910-6A31-4F25-B544-FCEE5CB17522}|Services\\ChatService\\MesajX.ChatService.DtoLayer\\MesajX.ChatService.DtoLayer.csproj|solutionrelative:services\\chatservice\\mesajx.chatservice.dtolayer\\dtos\\messagedtos\\getmessagesdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{67092910-6A31-4F25-B544-FCEE5CB17522}|Services\\ChatService\\MesajX.ChatService.DtoLayer\\MesajX.ChatService.DtoLayer.csproj|c:\\users\\umutl\\belgeler\\github\\mesajx\\backend\\services\\chatservice\\mesajx.chatservice.dtolayer\\dtos\\messagedtos\\sendmessagedto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{67092910-6A31-4F25-B544-FCEE5CB17522}|Services\\ChatService\\MesajX.ChatService.DtoLayer\\MesajX.ChatService.DtoLayer.csproj|solutionrelative:services\\chatservice\\mesajx.chatservice.dtolayer\\dtos\\messagedtos\\sendmessagedto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{92246825-B926-469E-BF66-1CECDF324623}|Services\\ChatService\\MesajX.ChatService.EntityLayer\\MesajX.ChatService.EntityLayer.csproj|c:\\users\\umutl\\belgeler\\github\\mesajx\\backend\\services\\chatservice\\mesajx.chatservice.entitylayer\\entities\\groupmember.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{92246825-B926-469E-BF66-1CECDF324623}|Services\\ChatService\\MesajX.ChatService.EntityLayer\\MesajX.ChatService.EntityLayer.csproj|solutionrelative:services\\chatservice\\mesajx.chatservice.entitylayer\\entities\\groupmember.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{92246825-B926-469E-BF66-1CECDF324623}|Services\\ChatService\\MesajX.ChatService.EntityLayer\\MesajX.ChatService.EntityLayer.csproj|c:\\users\\umutl\\belgeler\\github\\mesajx\\backend\\services\\chatservice\\mesajx.chatservice.entitylayer\\entities\\dmgroup.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{92246825-B926-469E-BF66-1CECDF324623}|Services\\ChatService\\MesajX.ChatService.EntityLayer\\MesajX.ChatService.EntityLayer.csproj|solutionrelative:services\\chatservice\\mesajx.chatservice.entitylayer\\entities\\dmgroup.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{40E2462A-4A14-4672-B45B-473943DA15A1}|IdentityServer\\Mesajx.IdentityServer\\Mesajx.IdentityServer.csproj|c:\\users\\umutl\\belgeler\\github\\mesajx\\backend\\identityserver\\mesajx.identityserver\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{40E2462A-4A14-4672-B45B-473943DA15A1}|IdentityServer\\Mesajx.IdentityServer\\Mesajx.IdentityServer.csproj|solutionrelative:identityserver\\mesajx.identityserver\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 354,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 1,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:128:0:{116d2292-e37d-41cd-a077-ebacac4c8cc4}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "20250331111044_mig1.cs",
+              "DocumentMoniker": "C:\\Users\\Umutl\\Belgeler\\GitHub\\MesajX\\Backend\\Services\\ChatService\\MesajX.ChatService.DataAccessLayer\\Migrations\\20250331111044_mig1.cs",
+              "RelativeDocumentMoniker": "Services\\ChatService\\MesajX.ChatService.DataAccessLayer\\Migrations\\20250331111044_mig1.cs",
+              "ToolTip": "C:\\Users\\Umutl\\Belgeler\\GitHub\\MesajX\\Backend\\Services\\ChatService\\MesajX.ChatService.DataAccessLayer\\Migrations\\20250331111044_mig1.cs",
+              "RelativeToolTip": "Services\\ChatService\\MesajX.ChatService.DataAccessLayer\\Migrations\\20250331111044_mig1.cs",
+              "ViewState": "AgIAAEYAAAAAAAAAAAAgwAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-31T11:10:44.31Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "RedisCacheService.cs",
+              "DocumentMoniker": "C:\\Users\\Umutl\\Belgeler\\GitHub\\MesajX\\Backend\\Services\\ChatService\\MesajX.ChatService.BusinessLayer\\Concrete\\RedisCacheService.cs",
+              "RelativeDocumentMoniker": "Services\\ChatService\\MesajX.ChatService.BusinessLayer\\Concrete\\RedisCacheService.cs",
+              "ToolTip": "C:\\Users\\Umutl\\Belgeler\\GitHub\\MesajX\\Backend\\Services\\ChatService\\MesajX.ChatService.BusinessLayer\\Concrete\\RedisCacheService.cs",
+              "RelativeToolTip": "Services\\ChatService\\MesajX.ChatService.BusinessLayer\\Concrete\\RedisCacheService.cs",
+              "ViewState": "AgIAAAYAAAAAAAAAAAAAABIAAAAJAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-31T10:34:51.046Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "GeneralMapping.cs",
+              "DocumentMoniker": "C:\\Users\\Umutl\\Belgeler\\GitHub\\MesajX\\Backend\\Services\\ChatService\\MesajX.ChatService.BusinessLayer\\Mapping\\GeneralMapping.cs",
+              "RelativeDocumentMoniker": "Services\\ChatService\\MesajX.ChatService.BusinessLayer\\Mapping\\GeneralMapping.cs",
+              "ToolTip": "C:\\Users\\Umutl\\Belgeler\\GitHub\\MesajX\\Backend\\Services\\ChatService\\MesajX.ChatService.BusinessLayer\\Mapping\\GeneralMapping.cs",
+              "RelativeToolTip": "Services\\ChatService\\MesajX.ChatService.BusinessLayer\\Mapping\\GeneralMapping.cs",
+              "ViewState": "AgIAAAYAAAAAAAAAAAAAABEAAAAJAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-31T10:24:42.077Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 14,
+              "Title": "GetMessagesDto.cs",
+              "DocumentMoniker": "C:\\Users\\Umutl\\Belgeler\\GitHub\\MesajX\\Backend\\Services\\ChatService\\MesajX.ChatService.DtoLayer\\Dtos\\MessageDtos\\GetMessagesDto.cs",
+              "RelativeDocumentMoniker": "Services\\ChatService\\MesajX.ChatService.DtoLayer\\Dtos\\MessageDtos\\GetMessagesDto.cs",
+              "ToolTip": "C:\\Users\\Umutl\\Belgeler\\GitHub\\MesajX\\Backend\\Services\\ChatService\\MesajX.ChatService.DtoLayer\\Dtos\\MessageDtos\\GetMessagesDto.cs",
+              "RelativeToolTip": "Services\\ChatService\\MesajX.ChatService.DtoLayer\\Dtos\\MessageDtos\\GetMessagesDto.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAAfAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-31T06:45:47.482Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 15,
+              "Title": "SendMessageDto.cs",
+              "DocumentMoniker": "C:\\Users\\Umutl\\Belgeler\\GitHub\\MesajX\\Backend\\Services\\ChatService\\MesajX.ChatService.DtoLayer\\Dtos\\MessageDtos\\SendMessageDto.cs",
+              "RelativeDocumentMoniker": "Services\\ChatService\\MesajX.ChatService.DtoLayer\\Dtos\\MessageDtos\\SendMessageDto.cs",
+              "ToolTip": "C:\\Users\\Umutl\\Belgeler\\GitHub\\MesajX\\Backend\\Services\\ChatService\\MesajX.ChatService.DtoLayer\\Dtos\\MessageDtos\\SendMessageDto.cs",
+              "RelativeToolTip": "Services\\ChatService\\MesajX.ChatService.DtoLayer\\Dtos\\MessageDtos\\SendMessageDto.cs",
+              "ViewState": "AgIAAAYAAAAAAAAAAAAAAAkAAAAFAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-31T06:44:03.363Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "IRedisCacheService.cs",
+              "DocumentMoniker": "C:\\Users\\Umutl\\Belgeler\\GitHub\\MesajX\\Backend\\Services\\ChatService\\MesajX.ChatService.BusinessLayer\\Abstract\\IRedisCacheService.cs",
+              "RelativeDocumentMoniker": "Services\\ChatService\\MesajX.ChatService.BusinessLayer\\Abstract\\IRedisCacheService.cs",
+              "ToolTip": "C:\\Users\\Umutl\\Belgeler\\GitHub\\MesajX\\Backend\\Services\\ChatService\\MesajX.ChatService.BusinessLayer\\Abstract\\IRedisCacheService.cs",
+              "RelativeToolTip": "Services\\ChatService\\MesajX.ChatService.BusinessLayer\\Abstract\\IRedisCacheService.cs",
+              "ViewState": "AgIAAAMAAAAAAAAAAAAAAA0AAABJAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-31T06:31:17.635Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "RedisConnectionFactory.cs",
+              "DocumentMoniker": "C:\\Users\\Umutl\\Belgeler\\GitHub\\MesajX\\Backend\\Services\\ChatService\\MesajX.ChatService.DataAccessLayer\\Concrete\\RedisConnectionFactory.cs",
+              "RelativeDocumentMoniker": "Services\\ChatService\\MesajX.ChatService.DataAccessLayer\\Concrete\\RedisConnectionFactory.cs",
+              "ToolTip": "C:\\Users\\Umutl\\Belgeler\\GitHub\\MesajX\\Backend\\Services\\ChatService\\MesajX.ChatService.DataAccessLayer\\Concrete\\RedisConnectionFactory.cs",
+              "RelativeToolTip": "Services\\ChatService\\MesajX.ChatService.DataAccessLayer\\Concrete\\RedisConnectionFactory.cs",
+              "ViewState": "AgIAAAcAAAAAAAAAAAAiwCQAAAAJAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-31T06:14:21.188Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "IRedisConnectionFactory.cs",
+              "DocumentMoniker": "C:\\Users\\Umutl\\Belgeler\\GitHub\\MesajX\\Backend\\Services\\ChatService\\MesajX.ChatService.DataAccessLayer\\Abstract\\IRedisConnectionFactory.cs",
+              "RelativeDocumentMoniker": "Services\\ChatService\\MesajX.ChatService.DataAccessLayer\\Abstract\\IRedisConnectionFactory.cs",
+              "ToolTip": "C:\\Users\\Umutl\\Belgeler\\GitHub\\MesajX\\Backend\\Services\\ChatService\\MesajX.ChatService.DataAccessLayer\\Abstract\\IRedisConnectionFactory.cs",
+              "RelativeToolTip": "Services\\ChatService\\MesajX.ChatService.DataAccessLayer\\Abstract\\IRedisConnectionFactory.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAAvAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-31T06:03:32.648Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 12,
+              "Title": "Group.cs",
+              "DocumentMoniker": "C:\\Users\\Umutl\\Belgeler\\GitHub\\MesajX\\Backend\\Services\\ChatService\\MesajX.ChatService.EntityLayer\\Entities\\Abstract\\Group.cs",
+              "RelativeDocumentMoniker": "Services\\ChatService\\MesajX.ChatService.EntityLayer\\Entities\\Abstract\\Group.cs",
+              "ToolTip": "C:\\Users\\Umutl\\Belgeler\\GitHub\\MesajX\\Backend\\Services\\ChatService\\MesajX.ChatService.EntityLayer\\Entities\\Abstract\\Group.cs",
+              "RelativeToolTip": "Services\\ChatService\\MesajX.ChatService.EntityLayer\\Entities\\Abstract\\Group.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-30T17:50:22.846Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 13,
+              "Title": "TeamGroup.cs",
+              "DocumentMoniker": "C:\\Users\\Umutl\\Belgeler\\GitHub\\MesajX\\Backend\\Services\\ChatService\\MesajX.ChatService.EntityLayer\\Entities\\TeamGroup.cs",
+              "RelativeDocumentMoniker": "Services\\ChatService\\MesajX.ChatService.EntityLayer\\Entities\\TeamGroup.cs",
+              "ToolTip": "C:\\Users\\Umutl\\Belgeler\\GitHub\\MesajX\\Backend\\Services\\ChatService\\MesajX.ChatService.EntityLayer\\Entities\\TeamGroup.cs",
+              "RelativeToolTip": "Services\\ChatService\\MesajX.ChatService.EntityLayer\\Entities\\TeamGroup.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA8AAAAJAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-30T14:52:18.284Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 17,
+              "Title": "DMGroup.cs",
+              "DocumentMoniker": "C:\\Users\\Umutl\\Belgeler\\GitHub\\MesajX\\Backend\\Services\\ChatService\\MesajX.ChatService.EntityLayer\\Entities\\DMGroup.cs",
+              "RelativeDocumentMoniker": "Services\\ChatService\\MesajX.ChatService.EntityLayer\\Entities\\DMGroup.cs",
+              "ToolTip": "C:\\Users\\Umutl\\Belgeler\\GitHub\\MesajX\\Backend\\Services\\ChatService\\MesajX.ChatService.EntityLayer\\Entities\\DMGroup.cs",
+              "RelativeToolTip": "Services\\ChatService\\MesajX.ChatService.EntityLayer\\Entities\\DMGroup.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-30T17:49:30.309Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
+              "Title": "Message.cs",
+              "DocumentMoniker": "C:\\Users\\Umutl\\Belgeler\\GitHub\\MesajX\\Backend\\Services\\ChatService\\MesajX.ChatService.EntityLayer\\Entities\\Message.cs",
+              "RelativeDocumentMoniker": "Services\\ChatService\\MesajX.ChatService.EntityLayer\\Entities\\Message.cs",
+              "ToolTip": "C:\\Users\\Umutl\\Belgeler\\GitHub\\MesajX\\Backend\\Services\\ChatService\\MesajX.ChatService.EntityLayer\\Entities\\Message.cs",
+              "RelativeToolTip": "Services\\ChatService\\MesajX.ChatService.EntityLayer\\Entities\\Message.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-30T14:52:17.658Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 16,
+              "Title": "GroupMember.cs",
+              "DocumentMoniker": "C:\\Users\\Umutl\\Belgeler\\GitHub\\MesajX\\Backend\\Services\\ChatService\\MesajX.ChatService.EntityLayer\\Entities\\GroupMember.cs",
+              "RelativeDocumentMoniker": "Services\\ChatService\\MesajX.ChatService.EntityLayer\\Entities\\GroupMember.cs",
+              "ToolTip": "C:\\Users\\Umutl\\Belgeler\\GitHub\\MesajX\\Backend\\Services\\ChatService\\MesajX.ChatService.EntityLayer\\Entities\\GroupMember.cs",
+              "RelativeToolTip": "Services\\ChatService\\MesajX.ChatService.EntityLayer\\Entities\\GroupMember.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-30T14:52:16.74Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Users\\Umutl\\Belgeler\\GitHub\\MesajX\\Backend\\Services\\ChatService\\MesajX.ChatService\\Program.cs",
+              "RelativeDocumentMoniker": "Services\\ChatService\\MesajX.ChatService\\Program.cs",
+              "ToolTip": "C:\\Users\\Umutl\\Belgeler\\GitHub\\MesajX\\Backend\\Services\\ChatService\\MesajX.ChatService\\Program.cs",
+              "RelativeToolTip": "Services\\ChatService\\MesajX.ChatService\\Program.cs",
+              "ViewState": "AgIAAAcAAAAAAAAAAAAAAA0AAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-30T14:44:15.226Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "GroupsController.cs",
+              "DocumentMoniker": "C:\\Users\\Umutl\\Belgeler\\GitHub\\MesajX\\Backend\\Services\\ChatService\\MesajX.ChatService\\Controllers\\GroupsController.cs",
+              "RelativeDocumentMoniker": "Services\\ChatService\\MesajX.ChatService\\Controllers\\GroupsController.cs",
+              "ToolTip": "C:\\Users\\Umutl\\Belgeler\\GitHub\\MesajX\\Backend\\Services\\ChatService\\MesajX.ChatService\\Controllers\\GroupsController.cs",
+              "RelativeToolTip": "Services\\ChatService\\MesajX.ChatService\\Controllers\\GroupsController.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-30T14:38:25.094Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "MessagesController.cs",
+              "DocumentMoniker": "C:\\Users\\Umutl\\Belgeler\\GitHub\\MesajX\\Backend\\Services\\ChatService\\MesajX.ChatService\\Controllers\\MessagesController.cs",
+              "RelativeDocumentMoniker": "Services\\ChatService\\MesajX.ChatService\\Controllers\\MessagesController.cs",
+              "ToolTip": "C:\\Users\\Umutl\\Belgeler\\GitHub\\MesajX\\Backend\\Services\\ChatService\\MesajX.ChatService\\Controllers\\MessagesController.cs",
+              "RelativeToolTip": "Services\\ChatService\\MesajX.ChatService\\Controllers\\MessagesController.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-30T14:38:09.302Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "ChatContext.cs",
+              "DocumentMoniker": "C:\\Users\\Umutl\\Belgeler\\GitHub\\MesajX\\Backend\\Services\\ChatService\\MesajX.ChatService.DataAccessLayer\\Concrete\\ChatContext.cs",
+              "RelativeDocumentMoniker": "Services\\ChatService\\MesajX.ChatService.DataAccessLayer\\Concrete\\ChatContext.cs",
+              "ToolTip": "C:\\Users\\Umutl\\Belgeler\\GitHub\\MesajX\\Backend\\Services\\ChatService\\MesajX.ChatService.DataAccessLayer\\Concrete\\ChatContext.cs",
+              "RelativeToolTip": "Services\\ChatService\\MesajX.ChatService.DataAccessLayer\\Concrete\\ChatContext.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-30T14:33:03.133Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "appsettings.json",
+              "DocumentMoniker": "C:\\Users\\Umutl\\Belgeler\\GitHub\\MesajX\\Backend\\Services\\ChatService\\MesajX.ChatService\\appsettings.json",
+              "RelativeDocumentMoniker": "Services\\ChatService\\MesajX.ChatService\\appsettings.json",
+              "ToolTip": "C:\\Users\\Umutl\\Belgeler\\GitHub\\MesajX\\Backend\\Services\\ChatService\\MesajX.ChatService\\appsettings.json",
+              "RelativeToolTip": "Services\\ChatService\\MesajX.ChatService\\appsettings.json",
+              "ViewState": "AgIAAAMAAAAAAAAAAAAAAAIAAAAeAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2025-03-30T14:27:42.909Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 18,
+              "Title": "appsettings.json",
+              "DocumentMoniker": "C:\\Users\\Umutl\\Belgeler\\GitHub\\MesajX\\Backend\\IdentityServer\\Mesajx.IdentityServer\\appsettings.json",
+              "RelativeDocumentMoniker": "IdentityServer\\Mesajx.IdentityServer\\appsettings.json",
+              "ToolTip": "C:\\Users\\Umutl\\Belgeler\\GitHub\\MesajX\\Backend\\IdentityServer\\Mesajx.IdentityServer\\appsettings.json",
+              "RelativeToolTip": "IdentityServer\\Mesajx.IdentityServer\\appsettings.json",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2025-03-30T14:27:34.681Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

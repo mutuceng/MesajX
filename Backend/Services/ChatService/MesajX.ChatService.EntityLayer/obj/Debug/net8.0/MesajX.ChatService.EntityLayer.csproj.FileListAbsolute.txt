@@ -1,0 +1,12 @@
+C:\Users\Umutl\Belgeler\GitHub\MesajX\Backend\Services\ChatService\MesajX.ChatService.EntityLayer\bin\Debug\net8.0\MesajX.ChatService.EntityLayer.deps.json
+C:\Users\Umutl\Belgeler\GitHub\MesajX\Backend\Services\ChatService\MesajX.ChatService.EntityLayer\bin\Debug\net8.0\MesajX.ChatService.EntityLayer.dll
+C:\Users\Umutl\Belgeler\GitHub\MesajX\Backend\Services\ChatService\MesajX.ChatService.EntityLayer\bin\Debug\net8.0\MesajX.ChatService.EntityLayer.pdb
+C:\Users\Umutl\Belgeler\GitHub\MesajX\Backend\Services\ChatService\MesajX.ChatService.EntityLayer\obj\Debug\net8.0\MesajX.ChatService.EntityLayer.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Umutl\Belgeler\GitHub\MesajX\Backend\Services\ChatService\MesajX.ChatService.EntityLayer\obj\Debug\net8.0\MesajX.ChatService.EntityLayer.AssemblyInfoInputs.cache
+C:\Users\Umutl\Belgeler\GitHub\MesajX\Backend\Services\ChatService\MesajX.ChatService.EntityLayer\obj\Debug\net8.0\MesajX.ChatService.EntityLayer.AssemblyInfo.cs
+C:\Users\Umutl\Belgeler\GitHub\MesajX\Backend\Services\ChatService\MesajX.ChatService.EntityLayer\obj\Debug\net8.0\MesajX.ChatService.EntityLayer.csproj.CoreCompileInputs.cache
+C:\Users\Umutl\Belgeler\GitHub\MesajX\Backend\Services\ChatService\MesajX.ChatService.EntityLayer\obj\Debug\net8.0\MesajX.ChatService.EntityLayer.sourcelink.json
+C:\Users\Umutl\Belgeler\GitHub\MesajX\Backend\Services\ChatService\MesajX.ChatService.EntityLayer\obj\Debug\net8.0\MesajX.ChatService.EntityLayer.dll
+C:\Users\Umutl\Belgeler\GitHub\MesajX\Backend\Services\ChatService\MesajX.ChatService.EntityLayer\obj\Debug\net8.0\refint\MesajX.ChatService.EntityLayer.dll
+C:\Users\Umutl\Belgeler\GitHub\MesajX\Backend\Services\ChatService\MesajX.ChatService.EntityLayer\obj\Debug\net8.0\MesajX.ChatService.EntityLayer.pdb
+C:\Users\Umutl\Belgeler\GitHub\MesajX\Backend\Services\ChatService\MesajX.ChatService.EntityLayer\obj\Debug\net8.0\ref\MesajX.ChatService.EntityLayer.dll
