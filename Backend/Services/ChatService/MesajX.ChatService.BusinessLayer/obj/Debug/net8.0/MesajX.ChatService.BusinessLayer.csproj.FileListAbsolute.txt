@@ -16,3 +16,5 @@ C:\Users\Umutl\Belgeler\GitHub\MesajX\Backend\Services\ChatService\MesajX.ChatSe
 C:\Users\Umutl\Belgeler\GitHub\MesajX\Backend\Services\ChatService\MesajX.ChatService.BusinessLayer\bin\Debug\net8.0\MesajX.ChatService.DtoLayer.pdb
 C:\Users\Umutl\Belgeler\GitHub\MesajX\Backend\Services\ChatService\MesajX.ChatService.BusinessLayer\bin\Debug\net8.0\MesajX.ChatService.EntityLayer.pdb
 C:\Users\Umutl\Belgeler\GitHub\MesajX\Backend\Services\ChatService\MesajX.ChatService.BusinessLayer\obj\Debug\net8.0\MesajX.C.C8C256C5.Up2Date
+C:\Users\Umutl\Belgeler\GitHub\MesajX\Backend\Services\ChatService\MesajX.ChatService.BusinessLayer\bin\Debug\net8.0\MesajX.ChatService.DataAccessLayer.dll
+C:\Users\Umutl\Belgeler\GitHub\MesajX\Backend\Services\ChatService\MesajX.ChatService.BusinessLayer\bin\Debug\net8.0\MesajX.ChatService.DataAccessLayer.pdb

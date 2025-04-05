@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("MesajX.ChatService.DtoLayer")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+1daa8000b79a04642b6c8ae3ad24c0e244960787")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+ff53a4af3fc7d79aa911564afe34a6b158e49a1d")]
 [assembly: System.Reflection.AssemblyProductAttribute("MesajX.ChatService.DtoLayer")]
 [assembly: System.Reflection.AssemblyTitleAttribute("MesajX.ChatService.DtoLayer")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

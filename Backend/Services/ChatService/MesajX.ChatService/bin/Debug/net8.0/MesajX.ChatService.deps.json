@@ -589,6 +589,14 @@
           }
         }
       },
+      "ServiceStack.Interfaces/8.6.0": {
+        "runtime": {
+          "lib/net8.0/ServiceStack.Interfaces.dll": {
+            "assemblyVersion": "6.0.0.0",
+            "fileVersion": "8.6.0.0"
+          }
+        }
+      },
       "StackExchange.Redis/2.8.31": {
         "dependencies": {
           "Microsoft.Extensions.Logging.Abstractions": "8.0.2",
@@ -741,8 +749,10 @@
         "dependencies": {
           "AutoMapper": "13.0.1",
           "FluentValidation.AspNetCore": "11.3.0",
+          "MesajX.ChatService.DataAccessLayer": "1.0.0",
           "MesajX.ChatService.DtoLayer": "1.0.0",
           "MesajX.ChatService.EntityLayer": "1.0.0",
+          "ServiceStack.Interfaces": "8.6.0",
           "StackExchange.Redis": "2.8.31"
         },
         "runtime": {
@@ -1077,6 +1087,13 @@
       "sha512": "sha512-zG2FApP5zxSx6OcdJQLbZDk2AVlN2BNQD6MorwIfV6gVj0RRxWPEp2LXAxqDGZqeNV1Zp0BNPcNaey/GXmTdvQ==",
       "path": "pipelines.sockets.unofficial/2.2.8",
       "hashPath": "pipelines.sockets.unofficial.2.2.8.nupkg.sha512"
+    },
+    "ServiceStack.Interfaces/8.6.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-qD9l9/JZa+O33NJ2638220BdcPAqv/4qSYe6UItf/fEwZXDKwJwO22w6tJ8iLA+PLQvpq+F5laYp77e1QXPibw==",
+      "path": "servicestack.interfaces/8.6.0",
+      "hashPath": "servicestack.interfaces.8.6.0.nupkg.sha512"
     },
     "StackExchange.Redis/2.8.31": {
       "type": "package",

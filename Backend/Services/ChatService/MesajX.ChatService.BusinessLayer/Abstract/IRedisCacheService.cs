@@ -10,7 +10,8 @@ namespace MesajX.ChatService.BusinessLayer.Abstract
     public interface IRedisCacheService
     {
         Task SetMessageAsync(SendMessageDto sendMessageDto);
-        Task<List<GetMessagesDto>> GetMessagesAsync(int count);
+        Task<List<GetMessagesDto>> GetMessagesAsync(string groupId,int count);
+        Task AddMemberToRoomAsync(string chatRoomId, int userId);
         Task<bool> IsUserInGroupChatAsync(string groupId, string userId);
     }
 }

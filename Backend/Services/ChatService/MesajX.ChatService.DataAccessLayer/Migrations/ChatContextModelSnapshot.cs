@@ -22,45 +22,49 @@ namespace MesajX.ChatService.DataAccessLayer.Migrations
 
             NpgsqlModelBuilderExtensions.UseIdentityByDefaultColumns(modelBuilder);
 
-            modelBuilder.Entity("MesajX.ChatService.EntityLayer.Entities.DMGroup", b =>
+            modelBuilder.Entity("MesajX.ChatService.EntityLayer.Entities.ChatRoom", b =>
                 {
-                    b.Property<string>("GroupId")
+                    b.Property<string>("ChatRoomId")
                         .HasColumnType("text");
 
                     b.Property<DateTime>("CreatedAt")
                         .HasColumnType("timestamp with time zone");
 
-                    b.HasKey("GroupId");
+                    b.Property<bool>("IsGroup")
+                        .HasColumnType("boolean");
 
-                    b.ToTable("DMGroups");
+                    b.Property<string>("Name")
+                        .HasColumnType("text");
+
+                    b.Property<string>("Photo")
+                        .HasColumnType("text");
+
+                    b.HasKey("ChatRoomId");
+
+                    b.ToTable("ChatRooms");
                 });
 
-            modelBuilder.Entity("MesajX.ChatService.EntityLayer.Entities.GroupMember", b =>
+            modelBuilder.Entity("MesajX.ChatService.EntityLayer.Entities.ChatRoomMember", b =>
                 {
-                    b.Property<string>("GroupMemberId")
+                    b.Property<string>("ChatRoomMemberId")
                         .HasColumnType("text");
 
-                    b.Property<string>("DMGroupGroupId")
-                        .HasColumnType("text");
-
-                    b.Property<string>("GroupId")
+                    b.Property<string>("ChatRoomId")
                         .IsRequired()
                         .HasColumnType("text");
 
-                    b.Property<string>("TeamGroupGroupId")
-                        .HasColumnType("text");
+                    b.Property<int>("Role")
+                        .HasColumnType("integer");
 
                     b.Property<string>("UserId")
                         .IsRequired()
                         .HasColumnType("text");
 
-                    b.HasKey("GroupMemberId");
+                    b.HasKey("ChatRoomMemberId");
 
-                    b.HasIndex("DMGroupGroupId");
+                    b.HasIndex("ChatRoomId");
 
-                    b.HasIndex("TeamGroupGroupId");
-
-                    b.ToTable("GroupMembers");
+                    b.ToTable("ChatRoomMembers");
                 });
 
             modelBuilder.Entity("MesajX.ChatService.EntityLayer.Entities.Message", b =>
@@ -68,11 +72,11 @@ namespace MesajX.ChatService.DataAccessLayer.Migrations
                     b.Property<string>("MessageId")
                         .HasColumnType("text");
 
-                    b.Property<string>("Content")
+                    b.Property<string>("ChatRoomId")
                         .IsRequired()
                         .HasColumnType("text");
 
-                    b.Property<string>("GroupId")
+                    b.Property<string>("Content")
                         .IsRequired()
                         .HasColumnType("text");
 
@@ -91,48 +95,36 @@ namespace MesajX.ChatService.DataAccessLayer.Migrations
 
                     b.HasKey("MessageId");
 
+                    b.HasIndex("ChatRoomId");
+
                     b.ToTable("Messages");
                 });
 
-            modelBuilder.Entity("MesajX.ChatService.EntityLayer.Entities.TeamGroup", b =>
+            modelBuilder.Entity("MesajX.ChatService.EntityLayer.Entities.ChatRoomMember", b =>
                 {
-                    b.Property<string>("GroupId")
-                        .HasColumnType("text");
+                    b.HasOne("MesajX.ChatService.EntityLayer.Entities.ChatRoom", "ChatRoom")
+                        .WithMany("Members")
+                        .HasForeignKey("ChatRoomId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
 
-                    b.Property<DateTime>("CreatedAt")
-                        .HasColumnType("timestamp with time zone");
-
-                    b.Property<string>("TeamGroupName")
-                        .IsRequired()
-                        .HasColumnType("text");
-
-                    b.Property<string>("TeamGroupPhoto")
-                        .HasColumnType("text");
-
-                    b.HasKey("GroupId");
-
-                    b.ToTable("TeamGroups");
+                    b.Navigation("ChatRoom");
                 });
 
-            modelBuilder.Entity("MesajX.ChatService.EntityLayer.Entities.GroupMember", b =>
+            modelBuilder.Entity("MesajX.ChatService.EntityLayer.Entities.Message", b =>
                 {
-                    b.HasOne("MesajX.ChatService.EntityLayer.Entities.DMGroup", null)
-                        .WithMany("GroupMembers")
-                        .HasForeignKey("DMGroupGroupId");
-
-                    b.HasOne("MesajX.ChatService.EntityLayer.Entities.TeamGroup", null)
-                        .WithMany("GroupMembers")
-                        .HasForeignKey("TeamGroupGroupId");
+                    b.HasOne("MesajX.ChatService.EntityLayer.Entities.ChatRoom", null)
+                        .WithMany("Messages")
+                        .HasForeignKey("ChatRoomId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
                 });
 
-            modelBuilder.Entity("MesajX.ChatService.EntityLayer.Entities.DMGroup", b =>
+            modelBuilder.Entity("MesajX.ChatService.EntityLayer.Entities.ChatRoom", b =>
                 {
-                    b.Navigation("GroupMembers");
-                });
+                    b.Navigation("Members");
 
-            modelBuilder.Entity("MesajX.ChatService.EntityLayer.Entities.TeamGroup", b =>
-                {
-                    b.Navigation("GroupMembers");
+                    b.Navigation("Messages");
                 });
 #pragma warning restore 612, 618
         }

@@ -12,9 +12,7 @@ namespace MesajX.ChatService.DataAccessLayer.Concrete
     {
         public ChatContext(DbContextOptions<ChatContext> options) : base(options) { }
         DbSet<Message> Messages { get; set; }
-        DbSet<GroupMember> GroupMembers { get; set; }
-        DbSet<DMGroup> DMGroups { get; set; }
-        DbSet<TeamGroup> TeamGroups { get; set; }
-
+        DbSet<ChatRoomMember> ChatRoomMembers { get; set; }
+        DbSet<ChatRoom> ChatRooms { get; set; }
     }
 }

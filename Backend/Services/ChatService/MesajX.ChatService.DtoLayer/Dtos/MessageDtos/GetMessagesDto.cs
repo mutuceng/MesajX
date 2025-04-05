@@ -1,4 +1,5 @@
-﻿using System;
+﻿using MesajX.ChatService.DtoLayer.Dtos.Enums;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -8,5 +9,12 @@ namespace MesajX.ChatService.DtoLayer.Dtos.MessageDtos
 {
     public class GetMessagesDto
     {
+        public string MessageId { get; set; }
+        public string UserId { get; set; } 
+        public string ChatRoomId { get; set; }
+        public string Content { get; set; } 
+        public string? MediaUrl { get; set; }  
+        public DateTime SentAt { get; set; }
+        public IsRead IsRead { get; set; }
     }
 }

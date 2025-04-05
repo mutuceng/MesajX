@@ -12,14 +12,13 @@ namespace MesajX.ChatService.EntityLayer.Entities
         [Key]
         public string MessageId { get; set; } = Guid.NewGuid().ToString();
         public string UserId { get; set; } = null!; 
-        public string GroupId { get; set; } = null!; 
+        public string ChatRoomId { get; set; } = null!; 
         public string Content { get; set; } = null!; // Mesaj içeriği
         public string? MediaUrl { get; set; }  // Görsel, video gibi medya
         public DateTime SentAt { get; set; }
         public IsRead IsRead { get; set; } = 0; // Mesaj okunmuş mu?
     }
      
-
     public enum IsRead
     {
         Sent,

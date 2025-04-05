@@ -844,6 +844,15 @@
           }
         }
       },
+      "ServiceStack.Interfaces/8.6.0": {
+        "type": "package",
+        "compile": {
+          "lib/net8.0/ServiceStack.Interfaces.dll": {}
+        },
+        "runtime": {
+          "lib/net8.0/ServiceStack.Interfaces.dll": {}
+        }
+      },
       "StackExchange.Redis/2.8.31": {
         "type": "package",
         "dependencies": {
@@ -1173,8 +1182,10 @@
         "dependencies": {
           "AutoMapper": "13.0.1",
           "FluentValidation.AspNetCore": "11.3.0",
+          "MesajX.ChatService.DataAccessLayer": "1.0.0",
           "MesajX.ChatService.DtoLayer": "1.0.0",
           "MesajX.ChatService.EntityLayer": "1.0.0",
+          "ServiceStack.Interfaces": "8.6.0",
           "StackExchange.Redis": "2.8.31"
         },
         "compile": {
@@ -2729,6 +2740,21 @@
         "lib/netstandard2.1/Pipelines.Sockets.Unofficial.xml",
         "pipelines.sockets.unofficial.2.2.8.nupkg.sha512",
         "pipelines.sockets.unofficial.nuspec"
+      ]
+    },
+    "ServiceStack.Interfaces/8.6.0": {
+      "sha512": "qD9l9/JZa+O33NJ2638220BdcPAqv/4qSYe6UItf/fEwZXDKwJwO22w6tJ8iLA+PLQvpq+F5laYp77e1QXPibw==",
+      "type": "package",
+      "path": "servicestack.interfaces/8.6.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "lib/net472/ServiceStack.Interfaces.dll",
+        "lib/net6.0/ServiceStack.Interfaces.dll",
+        "lib/net8.0/ServiceStack.Interfaces.dll",
+        "lib/netstandard2.0/ServiceStack.Interfaces.dll",
+        "servicestack.interfaces.8.6.0.nupkg.sha512",
+        "servicestack.interfaces.nuspec"
       ]
     },
     "StackExchange.Redis/2.8.31": {

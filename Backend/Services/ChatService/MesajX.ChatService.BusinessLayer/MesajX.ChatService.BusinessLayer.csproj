@@ -9,12 +9,18 @@
   <ItemGroup>
     <PackageReference Include="AutoMapper" Version="13.0.1" />
     <PackageReference Include="FluentValidation.AspNetCore" Version="11.3.0" />
+    <PackageReference Include="ServiceStack.Interfaces" Version="8.6.0" />
     <PackageReference Include="StackExchange.Redis" Version="2.8.31" />
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\MesajX.ChatService.DataAccessLayer\MesajX.ChatService.DataAccessLayer.csproj" />
     <ProjectReference Include="..\MesajX.ChatService.DtoLayer\MesajX.ChatService.DtoLayer.csproj" />
     <ProjectReference Include="..\MesajX.ChatService.EntityLayer\MesajX.ChatService.EntityLayer.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Services\ChatRoomMemberServices\" />
   </ItemGroup>
 
 </Project>

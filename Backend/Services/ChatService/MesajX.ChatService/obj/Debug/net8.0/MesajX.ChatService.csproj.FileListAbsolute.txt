@@ -136,3 +136,4 @@ C:\Users\Umutl\Belgeler\GitHub\MesajX\Backend\Services\ChatService\MesajX.ChatSe
 C:\Users\Umutl\Belgeler\GitHub\MesajX\Backend\Services\ChatService\MesajX.ChatService\bin\Debug\net8.0\MesajX.ChatService.DtoLayer.dll
 C:\Users\Umutl\Belgeler\GitHub\MesajX\Backend\Services\ChatService\MesajX.ChatService\bin\Debug\net8.0\MesajX.ChatService.BusinessLayer.pdb
 C:\Users\Umutl\Belgeler\GitHub\MesajX\Backend\Services\ChatService\MesajX.ChatService\bin\Debug\net8.0\MesajX.ChatService.DtoLayer.pdb
+C:\Users\Umutl\Belgeler\GitHub\MesajX\Backend\Services\ChatService\MesajX.ChatService\bin\Debug\net8.0\ServiceStack.Interfaces.dll
