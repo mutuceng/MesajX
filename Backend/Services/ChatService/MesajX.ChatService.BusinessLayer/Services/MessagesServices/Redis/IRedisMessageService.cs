@@ -10,7 +10,7 @@ namespace MesajX.ChatService.BusinessLayer.Services.MessagesServices.Redis
     public interface IRedisMessageService
     {
         Task SetMessageAsync(SendMessageDto sendMessageDto);
-        Task<List<GetMessagesDto>> GetRecentMessagesAsync(GetRecentMessagesRequestDto getRecentMessagesRequestDto, CancellationToken cancellationToken = default);
+        Task<List<GetMessagesDto>> GetRecentMessagesAsync(GetRecentMessagesRequestDto getRecentMessagesRequestDto);
         
     }
 }

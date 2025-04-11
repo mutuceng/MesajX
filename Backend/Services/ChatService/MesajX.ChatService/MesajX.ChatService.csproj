@@ -20,8 +20,13 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\..\..\RabbitMQ\MesajX.RabbitMQClient\MesajX.RabbitMQClient.csproj" />
     <ProjectReference Include="..\MesajX.ChatService.BusinessLayer\MesajX.ChatService.BusinessLayer.csproj" />
     <ProjectReference Include="..\MesajX.ChatService.DataAccessLayer\MesajX.ChatService.DataAccessLayer.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Hubs\" />
   </ItemGroup>
 
 </Project>

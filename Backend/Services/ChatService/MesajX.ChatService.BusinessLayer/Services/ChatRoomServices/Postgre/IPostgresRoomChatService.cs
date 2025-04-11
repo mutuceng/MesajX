@@ -14,8 +14,7 @@ namespace MesajX.ChatService.BusinessLayer.Services.ChatRoomServices.Postgre
         Task UpdateChatRoomAsync(UpdateChatRoomDto updateChatRoomDto);
         Task DeleteChatRoomAsync(string chatId);
         Task<List<GetChatRoomByUserIdDto>> GetChatsByUserId(string userId);
-        Task AddMemberToChatAsync(CreateMemberDto createMemberDto);
-        Task RemoveMemberFromChatAsync(string chatId, string userId);
+        Task<GetByIdChatRoomDto> GetChatRoomByIdAsync(string chatRoomId);
        
     }
 }

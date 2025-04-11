@@ -4,9 +4,9 @@ namespace SignalRRealTimeAPI.Hubs
 {
     public class ChatHub:Hub
     {
-        public async Task SendMessageAsync(string message)
+        public async Task SendMessageAsync(string message ,string senderId)
         {
-            await Clients.All.SendAsync("ReceiveMessage", message);
+            await Clients.All.SendAsync("ReceiveMessage", message, senderId);
         }
 
         public async Task JoinGroupChat(string chatId)

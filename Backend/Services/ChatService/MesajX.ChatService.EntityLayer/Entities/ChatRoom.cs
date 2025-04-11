@@ -8,7 +8,7 @@ namespace MesajX.ChatService.EntityLayer.Entities
 {
     public class ChatRoom
     {
-        public string ChatRoomId { get; set; } = Guid.NewGuid().ToString();
+        public string ChatRoomId { get; set; } = null!;
         public string? Name { get; set; } // Grup sohbetlerinde zorunlu, DM’lerde null
         public string? Photo { get; set; } // Grup sohbetlerinde opsiyonel, DM’lerde null
         public bool IsGroup { get; set; } 

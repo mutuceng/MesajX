@@ -16,20 +16,25 @@ namespace MesajX.ChatService.Services.ChatRoomServices
             _redisRoomChatService = redisRoomChatService;
         }
 
-        public async Task AddMemberToChatRoomAsync(CreateMemberDto createMemberDto)
-        {
-            await _postgreRoomChatService.AddMemberToChatAsync(createMemberDto); // asıl kayıt 
-            await _redisRoomChatService.AddMemberToChatAsync(createMemberDto, createMemberDto.ChatRoomId ); // redisle hızlı sorgu için hashli
-
-        }
-
         public async Task CreateChatRoomAsync(CreateChatRoomDto createChatRoomDto)
         {
-            await _postgreRoomChatService.CreateChatRoomAsync(createChatRoomDto); 
+            var isValid = createChatRoomDto.ValidateMemberCount();
+            if (!isValid)
+            {
+                throw new InvalidOperationException("Oda geçerli değil. DM'ler sadece 2 üyeden oluşabilir, grup sohbetlerinde ise en az 1 üye olmalıdır.");
+            }
+
+            await _postgreRoomChatService.CreateChatRoomAsync(createChatRoomDto);
         }
 
         public async Task DeleteChatRoomAsync(string chatRoomId)
         {
+            var chatRoom = await _postgreRoomChatService.GetChatRoomByIdAsync(chatRoomId);
+            if (chatRoom.IsGroup == false) // DM odaları silinemez
+            {
+                throw new InvalidOperationException("DM odaları silinemez.");
+            }
+
             await _postgreRoomChatService.DeleteChatRoomAsync(chatRoomId);
         }
 
@@ -38,28 +43,14 @@ namespace MesajX.ChatService.Services.ChatRoomServices
             var rooms = await _postgreRoomChatService.GetChatsByUserId(userId); 
             return rooms;
         }
-
-        public async Task<List<GetMembersByRoomIdDto>> GetMembersByRoomIdAsync(string chatRoomId)
-        {
-            var members = await _redisRoomChatService.GetMembersByRoomIdAsync(chatRoomId); // redisden hızlıca alıyoruz
-            return members;
-        }
-
         public Task<bool> IsUserInRoomAsync(string userId, string chatRoomId)
         {
-            var isUserInRoom = _redisRoomChatService.IsUserInGroupChatAsync(userId, chatRoomId);
+            var isUserInRoom = _redisRoomChatService.IsUserInGroupChatAsync(chatRoomId, userId);
             return isUserInRoom;
         }
-
-        public async Task RemoveMemberFromChatRoomAsync(string chatRoomId, string userId)
-        {
-            await _postgreRoomChatService.RemoveMemberFromChatAsync(chatRoomId, userId); 
-            await _redisRoomChatService.RemoveMemberFromChatAsync(chatRoomId, userId); // hashten silme
-        }
-
         public async Task UpdateChatRoomAsync(UpdateChatRoomDto updateChatRoomDto)
         {
-            await _postgreRoomChatService.UpdateChatRoomAsync(updateChatRoomDto); 
+            await _postgreRoomChatService.UpdateChatRoomAsync(updateChatRoomDto);
         }
     }
 }

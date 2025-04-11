@@ -20,7 +20,8 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Services\ChatRoomMemberServices\" />
+    <Folder Include="Services\EventPublishers\" />
+    <Folder Include="Services\MessageDelivery\" />
   </ItemGroup>
 
 </Project>

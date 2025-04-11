@@ -1,23 +1,28 @@
-import { useState } from 'react'
-import './App.css'
-import Chat from "./signalR/Chat";
-import Sidebar from './components/sidebar/sidebar';
+import Navbar from "./components/Navbar";
 
-function App() {
-  
+import HomePage from "./pages/HomePage";
+import SignUpPage from "./pages/SignUpPage";
+import SignInPage from "./pages/SignInPage";
+import SettingsPage from "./pages/SettingsPage";
+import ProfilePage from "./pages/ProfilePage";
+
+import { Routes, Route } from "react-router-dom";
+
+const App = () => {
 
   return (
-    <>
-      <div className='sidebar'>
-        <Sidebar/>
-      </div>
-      <div>
-          <h1>SignalR ile Gerçek Zamanlı Chat</h1>
-          <Chat />
-      </div>
-      
-    </>
-  )
-}
+    <div >
+      <Navbar />
 
-export default App
+      <Routes>
+      <Route path="/" element={<HomePage />} />
+      <Route path="/signup" element={<SignUpPage />} />
+      <Route path="/login" element={<SignInPage />} />
+      <Route path="/settings" element={<SettingsPage />} />
+      <Route path="/profile" element={<ProfilePage />} />
+      </Routes>
+
+    </div>
+  );
+};
+export default App;

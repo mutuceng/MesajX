@@ -8,8 +8,8 @@ namespace MesajX.ChatService.DtoLayer.Dtos.MessageDtos
 {
     public class GetRecentMessagesRequestDto
     {
-        public string ChatRoomId { get; set; }
-        public int Count { get; set; }
-        public DateTime? LastMessageDate { get; set; }
+        public string ChatRoomId { get; set; } = null!;
+        public int Page { get; set; }
+        public int PageSize { get; set; }
     }
 }

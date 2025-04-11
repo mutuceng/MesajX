@@ -22,13 +22,16 @@ namespace MesajX.ChatService.BusinessLayer.Services.MessagesServices.Postgre
             _chatContext = chatContext;
         }
 
-        public async Task<List<GetMessagesDto>> GetMessagesByRoomIdAsync(string roomId, int count)
+        public async Task<List<GetMessagesDto>> GetMessagesByRoomIdAsync(string chatRoomId, int page, int remaining)
         {
+            var skip = (page - 1) * remaining;
+
             var messages = await _chatContext.Set<Message>()
-                .Where(m => m.ChatRoomId == roomId)
-                .OrderByDescending(m => m.SentAt)
-                .Take(count)
-                .ToListAsync();
+               .Where(m => m.ChatRoomId == chatRoomId)
+               .OrderByDescending(m => m.SentAt)
+               .Skip(skip)
+               .Take(remaining)
+               .ToListAsync();
 
             return _mapper.Map<List<GetMessagesDto>>(messages);
         }

@@ -28,12 +28,7 @@ namespace MesajX.ChatService.BusinessLayer.Services.ChatRoomServices.Postgre
             await _chatContext.AddAsync(room);
             await _chatContext.SaveChangesAsync();
         }
-        public async Task AddMemberToChatAsync(CreateMemberDto createMemberDto)
-        {
-            var roomMember = _mapper.Map<ChatRoomMember>(createMemberDto);
-            await _chatContext.AddAsync(roomMember);
-            await _chatContext.SaveChangesAsync();
-        }
+
         //public async Task DeleteAllMessages(string chatId)
         //{
         //    var messages = await _chatContext.Set<Message>()
@@ -57,6 +52,20 @@ namespace MesajX.ChatService.BusinessLayer.Services.ChatRoomServices.Postgre
             }
         }
 
+        public async Task<GetByIdChatRoomDto> GetChatRoomByIdAsync(string chatRoomId)
+        {
+            var chatRoom = await _chatContext.Set<ChatRoom>()
+                                .Where(room => room.ChatRoomId == chatRoomId)
+                                .FirstOrDefaultAsync();
+
+            if (chatRoom == null)
+            {
+                throw new KeyNotFoundException("Chat room not found.");
+            }
+
+            return _mapper.Map<GetByIdChatRoomDto>(chatRoom);
+        }
+
         public async Task<List<GetChatRoomByUserIdDto>> GetChatsByUserId(string userId)
         {
             var chatRooms = await _chatContext.Set<ChatRoom>()
@@ -64,18 +73,6 @@ namespace MesajX.ChatService.BusinessLayer.Services.ChatRoomServices.Postgre
                 .ToListAsync();
 
             return _mapper.Map<List<GetChatRoomByUserIdDto>>(chatRooms);
-        }
-
-        public async Task RemoveMemberFromChatAsync(string chatId, string userId)
-        {
-            var member = await _chatContext.Set<ChatRoomMember>()
-                .FirstOrDefaultAsync(m => m.ChatRoomId == chatId && m.UserId == userId);
-
-            if (member != null)
-            {
-                _chatContext.Set<ChatRoomMember>().Remove(member);
-                await _chatContext.SaveChangesAsync();
-            }
         }
 
         public async Task UpdateChatRoomAsync(UpdateChatRoomDto updateChatRoomDto)

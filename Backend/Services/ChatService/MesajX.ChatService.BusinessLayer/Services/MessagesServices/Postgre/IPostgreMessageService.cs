@@ -9,7 +9,7 @@ namespace MesajX.ChatService.BusinessLayer.Services.MessagesServices.Postgre
 {
     public interface IPostgreMessageService
     {
-        Task<List<GetMessagesDto>> GetMessagesByRoomIdAsync(string roomId, int count);
+        Task<List<GetMessagesDto>> GetMessagesByRoomIdAsync(string chatRoomId, int page, int remaining);
         Task SaveMessagesAsync(List<SendMessageDto> sendMessageDtos, CancellationToken stoppingToken);
 
     }

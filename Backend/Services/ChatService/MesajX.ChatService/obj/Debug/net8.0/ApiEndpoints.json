@@ -1,5 +1,106 @@
 [
   {
+    "ContainingType": "MesajX.ChatService.Controllers.ChatRoomsController",
+    "Method": "CreateChatRoom",
+    "RelativePath": "api/ChatRooms",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "createChatRoomDto",
+        "Type": "MesajX.ChatService.DtoLayer.Dtos.ChatRoomDtos.CreateChatRoomDto",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "MesajX.ChatService.Controllers.ChatRoomsController",
+    "Method": "UpdateChatRoom",
+    "RelativePath": "api/ChatRooms",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "updateChatRoomDto",
+        "Type": "MesajX.ChatService.DtoLayer.Dtos.ChatRoomDtos.UpdateChatRoomDto",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "MesajX.ChatService.Controllers.ChatRoomsController",
+    "Method": "DeleteChatRoom",
+    "RelativePath": "api/ChatRooms/{chatRoomId}",
+    "HttpMethod": "DELETE",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "chatRoomId",
+        "Type": "System.String",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "MesajX.ChatService.Controllers.ChatRoomsController",
+    "Method": "AddMemberToChatRoom",
+    "RelativePath": "api/ChatRooms/addMember",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "createMemberDto",
+        "Type": "MesajX.ChatService.DtoLayer.Dtos.ChatRoomMemberDtos.CreateMemberDto",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "MesajX.ChatService.Controllers.ChatRoomsController",
+    "Method": "RemoveMemberFromChatRoom",
+    "RelativePath": "api/ChatRooms/removeMember",
+    "HttpMethod": "DELETE",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "chatRoomId",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "userId",
+        "Type": "System.String",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "MesajX.ChatService.Controllers.ChatRoomsController",
+    "Method": "GetAllRoomsByUserId",
+    "RelativePath": "api/ChatRooms/userId",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "userId",
+        "Type": "System.String",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
     "ContainingType": "MesajX.ChatService.Controllers.MessagesController",
     "Method": "GetMessages",
     "RelativePath": "api/Messages",
