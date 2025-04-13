@@ -7,11 +7,15 @@ import SettingsPage from "./pages/SettingsPage";
 import ProfilePage from "./pages/ProfilePage";
 
 import { Routes, Route } from "react-router-dom";
+import { Toaster } from "react-hot-toast";
+import { useThemeStore } from "./store/ThemeStore";
 
 const App = () => {
 
+  const { theme } = useThemeStore();
+  
   return (
-    <div >
+    <div data-theme={theme}>
       <Navbar />
 
       <Routes>
@@ -22,6 +26,7 @@ const App = () => {
       <Route path="/profile" element={<ProfilePage />} />
       </Routes>
 
+      <Toaster />
     </div>
   );
 };

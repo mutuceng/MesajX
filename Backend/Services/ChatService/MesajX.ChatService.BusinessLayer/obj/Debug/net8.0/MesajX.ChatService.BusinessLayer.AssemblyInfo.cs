@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("MesajX.ChatService.BusinessLayer")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+642c24efbc658b7da25c0d465e204c9e8b0307fc")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+9dffd1cdce4ab2c5df2e54c7d602ab04583e0813")]
 [assembly: System.Reflection.AssemblyProductAttribute("MesajX.ChatService.BusinessLayer")]
 [assembly: System.Reflection.AssemblyTitleAttribute("MesajX.ChatService.BusinessLayer")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

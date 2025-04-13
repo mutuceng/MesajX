@@ -137,3 +137,7 @@ C:\Users\Umutl\Belgeler\GitHub\MesajX\Backend\Services\ChatService\MesajX.ChatSe
 C:\Users\Umutl\Belgeler\GitHub\MesajX\Backend\Services\ChatService\MesajX.ChatService\bin\Debug\net8.0\MesajX.ChatService.BusinessLayer.pdb
 C:\Users\Umutl\Belgeler\GitHub\MesajX\Backend\Services\ChatService\MesajX.ChatService\bin\Debug\net8.0\MesajX.ChatService.DtoLayer.pdb
 C:\Users\Umutl\Belgeler\GitHub\MesajX\Backend\Services\ChatService\MesajX.ChatService\bin\Debug\net8.0\ServiceStack.Interfaces.dll
+C:\Users\Umutl\Belgeler\GitHub\MesajX\Backend\Services\ChatService\MesajX.ChatService\bin\Debug\net8.0\MassTransit.dll
+C:\Users\Umutl\Belgeler\GitHub\MesajX\Backend\Services\ChatService\MesajX.ChatService\bin\Debug\net8.0\MassTransit.Abstractions.dll
+C:\Users\Umutl\Belgeler\GitHub\MesajX\Backend\Services\ChatService\MesajX.ChatService\bin\Debug\net8.0\MesajX.RabbitMQClient.dll
+C:\Users\Umutl\Belgeler\GitHub\MesajX\Backend\Services\ChatService\MesajX.ChatService\bin\Debug\net8.0\MesajX.RabbitMQClient.pdb

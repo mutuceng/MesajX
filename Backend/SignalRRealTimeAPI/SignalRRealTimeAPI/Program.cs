@@ -1,4 +1,6 @@
+using MassTransit;
 using Microsoft.AspNetCore.Cors.Infrastructure;
+using SignalRRealTimeAPI.Consumers;
 using SignalRRealTimeAPI.Hubs;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -18,6 +20,14 @@ builder.Services.AddCors(opt => opt.AddPolicy(name: "CorsPolicy", builder =>
            .AllowCredentials()));
 
 builder.Services.AddSignalR();
+builder.Services.AddMassTransit(x =>
+{
+    x.AddConsumer<MessageCreatedEventConsumer>();
+    x.UsingRabbitMq((context, cfg) =>
+    {
+        cfg.Host("rabbitmq://localhost");
+    });
+});
 
 
 var app = builder.Build();
