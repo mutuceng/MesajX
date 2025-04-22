@@ -15,41 +15,42 @@ namespace SignalRRealTimeAPI.Hubs
                 SentAt = DateTime.UtcNow
             });
         }
-
-        public override async Task OnConnectedAsync()
-        {
-            var httpContext = Context.GetHttpContext();
-            var chatRoomId = httpContext?.Request.Query["chatRoomId"];
-
-            if (!string.IsNullOrEmpty(chatRoomId))
-            {
-                await Groups.AddToGroupAsync(Context.ConnectionId, chatRoomId);
-            }
-
-            await base.OnConnectedAsync();
-        }
-
-        public override async Task OnDisconnectedAsync(Exception? exception)
-        {
-            var httpContext = Context.GetHttpContext();
-            var chatRoomId = httpContext?.Request.Query["chatRoomId"];
-
-            if (!string.IsNullOrEmpty(chatRoomId))
-            {
-                await Groups.RemoveFromGroupAsync(Context.ConnectionId, chatRoomId);
-            }
-
-            await base.OnDisconnectedAsync(exception);
-        }
-
         public async Task JoinGroupChat(string chatId)
         {
             await Groups.AddToGroupAsync(Context.ConnectionId, chatId);
         }
 
-        public async Task SendPrivateMessage(string chatId, string senderId, string message, string mediaUrl = null)
+        public async Task LeaveGroupChat(string roomId)
         {
-
+            await Groups.RemoveFromGroupAsync(Context.ConnectionId, roomId);
         }
+
+        //public override async Task OnConnectedAsync()
+        //{
+        //    var httpContext = Context.GetHttpContext();
+        //    var chatRoomId = httpContext?.Request.Query["chatRoomId"];
+
+        //    if (!string.IsNullOrEmpty(chatRoomId))
+        //    {
+        //        await Groups.AddToGroupAsync(Context.ConnectionId, chatRoomId);
+        //    }
+
+        //    await base.OnConnectedAsync();
+        //}
+
+        //public override async Task OnDisconnectedAsync(Exception? exception)
+        //{
+        //    var httpContext = Context.GetHttpContext();
+        //    var chatRoomId = httpContext?.Request.Query["chatRoomId"];
+
+        //    if (!string.IsNullOrEmpty(chatRoomId))
+        //    {
+        //        await Groups.RemoveFromGroupAsync(Context.ConnectionId, chatRoomId);
+        //    }
+
+        //    await base.OnDisconnectedAsync(exception);
+        //}
+
+
     }
 }

@@ -11,8 +11,10 @@
           "MassTransit.RabbitMQ": "8.4.0",
           "MesajX.ChatService.DataAccessLayer": "1.0.0",
           "MesajX.ChatService.EntityLayer": "1.0.0",
+          "MesajX.RabbitMQShared": "1.0.0",
           "Microsoft.EntityFrameworkCore": "8.0.10",
           "Microsoft.Extensions.Hosting": "8.0.1",
+          "Npgsql.EntityFrameworkCore.PostgreSQL": "8.0.10",
           "RabbitMQ.Client": "7.1.2"
         },
         "runtime": {
@@ -631,6 +633,14 @@
             "fileVersion": "1.0.0.0"
           }
         }
+      },
+      "MesajX.RabbitMQShared/1.0.0": {
+        "runtime": {
+          "MesajX.RabbitMQShared.dll": {
+            "assemblyVersion": "1.0.0.0",
+            "fileVersion": "1.0.0.0"
+          }
+        }
       }
     }
   },
@@ -975,6 +985,11 @@
       "sha512": ""
     },
     "MesajX.ChatService.EntityLayer/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "MesajX.RabbitMQShared/1.0.0": {
       "type": "project",
       "serviceable": false,
       "sha512": ""

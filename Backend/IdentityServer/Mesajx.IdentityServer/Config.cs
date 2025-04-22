@@ -34,10 +34,10 @@ public static class Config
             // Visitor
             new Client
             {
-                ClientId = "Visitor",
-                ClientName = "MesajXVisitor",
+                ClientId = "MesajXVisitorId",
+                ClientName = "MesajX Visitor User",
                 AllowedGrantTypes = GrantTypes.ClientCredentials,
-                ClientSecrets = {new Secret("VisitorSecret".Sha256())},
+                ClientSecrets = {new Secret("mesajxsecret".Sha256())},
                 AllowedScopes = {"ChatReadPermission", IdentityServerConstants.LocalApi.ScopeName },
                 AllowAccessTokensViaBrowser = true
             },
@@ -45,10 +45,10 @@ public static class Config
             // User
             new Client
             {
-                ClientId = "User",
-                ClientName = "MesajXUser",
+                ClientId = "MesajXUserId",
+                ClientName = "MesajX User",
                 AllowedGrantTypes = GrantTypes.ResourceOwnerPassword,
-                ClientSecrets = {new Secret("UserSecret".Sha256())},
+                ClientSecrets = {new Secret("mesajxsecret".Sha256())},
                 AllowedScopes =
                 {
                     "ChatReadPermission", "ChatWritePermission",
@@ -61,10 +61,10 @@ public static class Config
             // Admin
             new Client
             {
-                ClientId = "Admin",
-                ClientName = "MesajXAdmin",
+                ClientId = "MesajXAdminId",
+                ClientName = "MesajX Admin User",
                 AllowedGrantTypes = GrantTypes.ResourceOwnerPassword,
-                ClientSecrets = {new Secret("AdminSecret".Sha256())},
+                ClientSecrets = {new Secret("mesajxsecret".Sha256())},
                 AllowedScopes =
                 {
                     "ChatFullPermission", "ChatReadPermission", "ChatWritePermission",

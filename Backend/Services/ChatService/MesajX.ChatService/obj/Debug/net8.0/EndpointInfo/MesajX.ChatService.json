@@ -5,6 +5,65 @@
     "version": "1.0"
   },
   "paths": {
+    "/api/ChatRoomMembers/addMember": {
+      "post": {
+        "tags": [
+          "ChatRoomMembers"
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/CreateMemberDto"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/CreateMemberDto"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/CreateMemberDto"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      }
+    },
+    "/api/ChatRoomMembers/removeMember": {
+      "delete": {
+        "tags": [
+          "ChatRoomMembers"
+        ],
+        "parameters": [
+          {
+            "name": "chatRoomId",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "userId",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      }
+    },
     "/api/ChatRooms/userId": {
       "get": {
         "tags": [
@@ -108,65 +167,6 @@
         }
       }
     },
-    "/api/ChatRooms/addMember": {
-      "post": {
-        "tags": [
-          "ChatRooms"
-        ],
-        "requestBody": {
-          "content": {
-            "application/json": {
-              "schema": {
-                "$ref": "#/components/schemas/CreateMemberDto"
-              }
-            },
-            "text/json": {
-              "schema": {
-                "$ref": "#/components/schemas/CreateMemberDto"
-              }
-            },
-            "application/*+json": {
-              "schema": {
-                "$ref": "#/components/schemas/CreateMemberDto"
-              }
-            }
-          }
-        },
-        "responses": {
-          "200": {
-            "description": "Success"
-          }
-        }
-      }
-    },
-    "/api/ChatRooms/removeMember": {
-      "delete": {
-        "tags": [
-          "ChatRooms"
-        ],
-        "parameters": [
-          {
-            "name": "chatRoomId",
-            "in": "query",
-            "schema": {
-              "type": "string"
-            }
-          },
-          {
-            "name": "userId",
-            "in": "query",
-            "schema": {
-              "type": "string"
-            }
-          }
-        ],
-        "responses": {
-          "200": {
-            "description": "Success"
-          }
-        }
-      }
-    },
     "/api/Messages": {
       "get": {
         "tags": [
@@ -178,6 +178,14 @@
             "in": "query",
             "schema": {
               "type": "string"
+            }
+          },
+          {
+            "name": "page",
+            "in": "query",
+            "schema": {
+              "type": "integer",
+              "format": "int32"
             }
           }
         ],
@@ -210,27 +218,6 @@
             }
           }
         },
-        "responses": {
-          "200": {
-            "description": "Success"
-          }
-        }
-      }
-    },
-    "/api/Messages/recent": {
-      "get": {
-        "tags": [
-          "Messages"
-        ],
-        "parameters": [
-          {
-            "name": "chatRoomId",
-            "in": "query",
-            "schema": {
-              "type": "string"
-            }
-          }
-        ],
         "responses": {
           "200": {
             "description": "Success"

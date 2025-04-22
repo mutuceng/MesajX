@@ -127,7 +127,6 @@ C:\Users\Umutl\Belgeler\GitHub\MesajX\Backend\Services\ChatService\MesajX.ChatSe
 C:\Users\Umutl\Belgeler\GitHub\MesajX\Backend\Services\ChatService\MesajX.ChatService\bin\Debug\net8.0\MesajX.ChatService.DataAccessLayer.pdb
 C:\Users\Umutl\Belgeler\GitHub\MesajX\Backend\Services\ChatService\MesajX.ChatService\bin\Debug\net8.0\MesajX.ChatService.EntityLayer.pdb
 C:\Users\Umutl\Belgeler\GitHub\MesajX\Backend\Services\ChatService\MesajX.ChatService\obj\Debug\net8.0\MesajX.ChatService.sourcelink.json
-C:\Users\Umutl\Belgeler\GitHub\MesajX\Backend\Services\ChatService\MesajX.ChatService\obj\Debug\net8.0\staticwebassets.upToDateCheck.txt
 C:\Users\Umutl\Belgeler\GitHub\MesajX\Backend\Services\ChatService\MesajX.ChatService\bin\Debug\net8.0\AutoMapper.dll
 C:\Users\Umutl\Belgeler\GitHub\MesajX\Backend\Services\ChatService\MesajX.ChatService\bin\Debug\net8.0\FluentValidation.dll
 C:\Users\Umutl\Belgeler\GitHub\MesajX\Backend\Services\ChatService\MesajX.ChatService\bin\Debug\net8.0\FluentValidation.AspNetCore.dll
@@ -139,5 +138,8 @@ C:\Users\Umutl\Belgeler\GitHub\MesajX\Backend\Services\ChatService\MesajX.ChatSe
 C:\Users\Umutl\Belgeler\GitHub\MesajX\Backend\Services\ChatService\MesajX.ChatService\bin\Debug\net8.0\ServiceStack.Interfaces.dll
 C:\Users\Umutl\Belgeler\GitHub\MesajX\Backend\Services\ChatService\MesajX.ChatService\bin\Debug\net8.0\MassTransit.dll
 C:\Users\Umutl\Belgeler\GitHub\MesajX\Backend\Services\ChatService\MesajX.ChatService\bin\Debug\net8.0\MassTransit.Abstractions.dll
-C:\Users\Umutl\Belgeler\GitHub\MesajX\Backend\Services\ChatService\MesajX.ChatService\bin\Debug\net8.0\MesajX.RabbitMQClient.dll
-C:\Users\Umutl\Belgeler\GitHub\MesajX\Backend\Services\ChatService\MesajX.ChatService\bin\Debug\net8.0\MesajX.RabbitMQClient.pdb
+C:\Users\Umutl\Belgeler\GitHub\MesajX\Backend\Services\ChatService\MesajX.ChatService\obj\Debug\net8.0\staticwebassets.upToDateCheck.txt
+C:\Users\Umutl\Belgeler\GitHub\MesajX\Backend\Services\ChatService\MesajX.ChatService\bin\Debug\net8.0\MassTransit.RabbitMqTransport.dll
+C:\Users\Umutl\Belgeler\GitHub\MesajX\Backend\Services\ChatService\MesajX.ChatService\bin\Debug\net8.0\RabbitMQ.Client.dll
+C:\Users\Umutl\Belgeler\GitHub\MesajX\Backend\Services\ChatService\MesajX.ChatService\bin\Debug\net8.0\MesajX.RabbitMQShared.dll
+C:\Users\Umutl\Belgeler\GitHub\MesajX\Backend\Services\ChatService\MesajX.ChatService\bin\Debug\net8.0\MesajX.RabbitMQShared.pdb

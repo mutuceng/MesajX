@@ -18,12 +18,6 @@ namespace MesajX.ChatService.Services.ChatRoomServices
 
         public async Task CreateChatRoomAsync(CreateChatRoomDto createChatRoomDto)
         {
-            var isValid = createChatRoomDto.ValidateMemberCount();
-            if (!isValid)
-            {
-                throw new InvalidOperationException("Oda geçerli değil. DM'ler sadece 2 üyeden oluşabilir, grup sohbetlerinde ise en az 1 üye olmalıdır.");
-            }
-
             await _postgreRoomChatService.CreateChatRoomAsync(createChatRoomDto);
         }
 

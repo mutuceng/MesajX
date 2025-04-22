@@ -8,12 +8,16 @@
     ".NETCoreApp,Version=v8.0": {
       "MesajX.ChatService/1.0.0": {
         "dependencies": {
+          "MassTransit": "8.4.0",
+          "MassTransit.RabbitMQ": "8.4.0",
           "MesajX.ChatService.BusinessLayer": "1.0.0",
           "MesajX.ChatService.DataAccessLayer": "1.0.0",
-          "MesajX.RabbitMQClient": "1.0.0",
+          "MesajX.RabbitMQShared": "1.0.0",
           "Microsoft.AspNetCore.Authentication.JwtBearer": "8.0.10",
           "Microsoft.EntityFrameworkCore.Design": "8.0.10",
           "Microsoft.EntityFrameworkCore.Tools": "8.0.10",
+          "Npgsql.EntityFrameworkCore.PostgreSQL": "8.0.10",
+          "RabbitMQ.Client": "7.1.2",
           "Swashbuckle.AspNetCore": "6.5.0"
         },
         "runtime": {
@@ -90,6 +94,18 @@
       "MassTransit.Abstractions/8.4.0": {
         "runtime": {
           "lib/net8.0/MassTransit.Abstractions.dll": {
+            "assemblyVersion": "8.4.0.0",
+            "fileVersion": "8.4.0.0"
+          }
+        }
+      },
+      "MassTransit.RabbitMQ/8.4.0": {
+        "dependencies": {
+          "MassTransit": "8.4.0",
+          "RabbitMQ.Client": "7.1.2"
+        },
+        "runtime": {
+          "lib/net8.0/MassTransit.RabbitMqTransport.dll": {
             "assemblyVersion": "8.4.0.0",
             "fileVersion": "8.4.0.0"
           }
@@ -284,7 +300,7 @@
           "Microsoft.Bcl.AsyncInterfaces": "6.0.0",
           "Microsoft.CodeAnalysis.Common": "4.5.0",
           "System.Composition": "6.0.0",
-          "System.IO.Pipelines": "6.0.3",
+          "System.IO.Pipelines": "8.0.0",
           "System.Threading.Channels": "6.0.0"
         },
         "runtime": {
@@ -635,12 +651,24 @@
       },
       "Pipelines.Sockets.Unofficial/2.2.8": {
         "dependencies": {
-          "System.IO.Pipelines": "6.0.3"
+          "System.IO.Pipelines": "8.0.0"
         },
         "runtime": {
           "lib/net5.0/Pipelines.Sockets.Unofficial.dll": {
             "assemblyVersion": "1.0.0.0",
             "fileVersion": "2.2.8.1080"
+          }
+        }
+      },
+      "RabbitMQ.Client/7.1.2": {
+        "dependencies": {
+          "System.IO.Pipelines": "8.0.0",
+          "System.Threading.RateLimiting": "8.0.0"
+        },
+        "runtime": {
+          "lib/net8.0/RabbitMQ.Client.dll": {
+            "assemblyVersion": "7.0.0.0",
+            "fileVersion": "7.1.2.0"
           }
         }
       },
@@ -788,7 +816,7 @@
           }
         }
       },
-      "System.IO.Pipelines/6.0.3": {},
+      "System.IO.Pipelines/8.0.0": {},
       "System.Reflection.Metadata/6.0.1": {
         "dependencies": {
           "System.Collections.Immutable": "6.0.0"
@@ -801,6 +829,7 @@
         }
       },
       "System.Threading.Channels/6.0.0": {},
+      "System.Threading.RateLimiting/8.0.0": {},
       "MesajX.ChatService.BusinessLayer/1.0.0": {
         "dependencies": {
           "AutoMapper": "13.0.1",
@@ -849,13 +878,9 @@
           }
         }
       },
-      "MesajX.RabbitMQClient/1.0.0": {
-        "dependencies": {
-          "MassTransit": "8.4.0",
-          "Microsoft.Extensions.Logging.Abstractions": "8.0.2"
-        },
+      "MesajX.RabbitMQShared/1.0.0": {
         "runtime": {
-          "MesajX.RabbitMQClient.dll": {
+          "MesajX.RabbitMQShared.dll": {
             "assemblyVersion": "1.0.0.0",
             "fileVersion": "1.0.0.0"
           }
@@ -917,6 +942,13 @@
       "sha512": "sha512-wGiNlHZOwAY1CRxxLfrr+hbP3Ooj9RK3JJZtGHlEmbDTLuSQu67skC2QdTVRCe2WmH/23XUwOzhNNYsFHdstQg==",
       "path": "masstransit.abstractions/8.4.0",
       "hashPath": "masstransit.abstractions.8.4.0.nupkg.sha512"
+    },
+    "MassTransit.RabbitMQ/8.4.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-+dFq3z2iiEOe1zC9oTzaNK9wvQB4CZdeDR0OwkJytx87c+10gFHGWL6lj0eL5vBPDv72tUFaSDkuI084NjX26A==",
+      "path": "masstransit.rabbitmq/8.4.0",
+      "hashPath": "masstransit.rabbitmq.8.4.0.nupkg.sha512"
     },
     "Microsoft.AspNetCore.Authentication.JwtBearer/8.0.10": {
       "type": "package",
@@ -1205,6 +1237,13 @@
       "path": "pipelines.sockets.unofficial/2.2.8",
       "hashPath": "pipelines.sockets.unofficial.2.2.8.nupkg.sha512"
     },
+    "RabbitMQ.Client/7.1.2": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-y3c6ulgULScWthHw5PLM1ShHRLhxg0vCtzX/hh61gRgNecL3ZC3WoBW2HYHoXOVRqTl99Br9E7CZEytGZEsCyQ==",
+      "path": "rabbitmq.client/7.1.2",
+      "hashPath": "rabbitmq.client.7.1.2.nupkg.sha512"
+    },
     "ServiceStack.Interfaces/8.6.0": {
       "type": "package",
       "serviceable": true,
@@ -1317,12 +1356,12 @@
       "path": "system.identitymodel.tokens.jwt/7.1.2",
       "hashPath": "system.identitymodel.tokens.jwt.7.1.2.nupkg.sha512"
     },
-    "System.IO.Pipelines/6.0.3": {
+    "System.IO.Pipelines/8.0.0": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-ryTgF+iFkpGZY1vRQhfCzX0xTdlV3pyaTTqRu2ETbEv+HlV7O6y7hyQURnghNIXvctl5DuZ//Dpks6HdL/Txgw==",
-      "path": "system.io.pipelines/6.0.3",
-      "hashPath": "system.io.pipelines.6.0.3.nupkg.sha512"
+      "sha512": "sha512-FHNOatmUq0sqJOkTx+UF/9YK1f180cnW5FVqnQMvYUN0elp6wFzbtPSiqbo1/ru8ICp43JM1i7kKkk6GsNGHlA==",
+      "path": "system.io.pipelines/8.0.0",
+      "hashPath": "system.io.pipelines.8.0.0.nupkg.sha512"
     },
     "System.Reflection.Metadata/6.0.1": {
       "type": "package",
@@ -1352,6 +1391,13 @@
       "path": "system.threading.channels/6.0.0",
       "hashPath": "system.threading.channels.6.0.0.nupkg.sha512"
     },
+    "System.Threading.RateLimiting/8.0.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-7mu9v0QDv66ar3DpGSZHg9NuNcxDaaAcnMULuZlaTpP9+hwXhrxNGsF5GmLkSHxFdb5bBc1TzeujsRgTrPWi+Q==",
+      "path": "system.threading.ratelimiting/8.0.0",
+      "hashPath": "system.threading.ratelimiting.8.0.0.nupkg.sha512"
+    },
     "MesajX.ChatService.BusinessLayer/1.0.0": {
       "type": "project",
       "serviceable": false,
@@ -1372,7 +1418,7 @@
       "serviceable": false,
       "sha512": ""
     },
-    "MesajX.RabbitMQClient/1.0.0": {
+    "MesajX.RabbitMQShared/1.0.0": {
       "type": "project",
       "serviceable": false,
       "sha512": ""

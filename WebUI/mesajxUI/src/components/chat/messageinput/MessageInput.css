@@ -1,5 +1,4 @@
 .message-input {
-    background: white;
     border-top: 1px solid #e5e7eb;
     box-shadow: 0 -2px 4px rgba(0, 0, 0, 0.05);
     padding: 12px 16px;
@@ -10,7 +9,7 @@
   
   .message-input input {
     flex: 1;
-    background: #f1f5f9;
+    background: #a4bdd3;
     border: none;
     padding: 10px 16px;
     border-radius: 9999px;

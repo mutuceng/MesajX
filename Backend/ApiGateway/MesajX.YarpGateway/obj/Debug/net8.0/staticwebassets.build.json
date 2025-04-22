@@ -1,0 +1,12 @@
+{
+  "Version": 1,
+  "Hash": "12tRuxaLux3caNUa1Cmk1GuPjzv0ZVQ8J9OGzHgORTE=",
+  "Source": "MesajX.YarpGateway",
+  "BasePath": "_content/MesajX.YarpGateway",
+  "Mode": "Default",
+  "ManifestType": "Build",
+  "ReferencedProjectsConfiguration": [],
+  "DiscoveryPatterns": [],
+  "Assets": [],
+  "Endpoints": []
+}

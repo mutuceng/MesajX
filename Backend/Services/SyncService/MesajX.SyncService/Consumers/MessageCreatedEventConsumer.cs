@@ -1,9 +1,7 @@
 ﻿using MassTransit;
+using MesajX.RabbitMQShared.Events;
 using MesajX.SyncService.Dtos;
-using MesajX.SyncService.Events;
 using MesajX.SyncService.SyncServices.MessageSyncService;
-using RabbitMQ.Client;
-using RabbitMQ.Client.Events;
 using System;
 using System.Collections.Generic;
 using System.Linq;

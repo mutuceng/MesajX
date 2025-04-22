@@ -35,3 +35,9 @@ C:\Users\Umutl\Belgeler\GitHub\MesajX\Backend\SignalRRealTimeAPI\SignalRRealTime
 C:\Users\Umutl\Belgeler\GitHub\MesajX\Backend\SignalRRealTimeAPI\SignalRRealTimeAPI\obj\Debug\net8.0\ref\SignalRRealTimeAPI.dll
 C:\Users\Umutl\Belgeler\GitHub\MesajX\Backend\SignalRRealTimeAPI\SignalRRealTimeAPI\obj\Debug\net8.0\SignalRRealTimeAPI.sourcelink.json
 C:\Users\Umutl\Belgeler\GitHub\MesajX\Backend\SignalRRealTimeAPI\SignalRRealTimeAPI\obj\Debug\net8.0\staticwebassets.upToDateCheck.txt
+C:\Users\Umutl\Belgeler\GitHub\MesajX\Backend\SignalRRealTimeAPI\SignalRRealTimeAPI\bin\Debug\net8.0\MassTransit.dll
+C:\Users\Umutl\Belgeler\GitHub\MesajX\Backend\SignalRRealTimeAPI\SignalRRealTimeAPI\bin\Debug\net8.0\MassTransit.Abstractions.dll
+C:\Users\Umutl\Belgeler\GitHub\MesajX\Backend\SignalRRealTimeAPI\SignalRRealTimeAPI\bin\Debug\net8.0\MassTransit.AspNetCoreIntegration.dll
+C:\Users\Umutl\Belgeler\GitHub\MesajX\Backend\SignalRRealTimeAPI\SignalRRealTimeAPI\bin\Debug\net8.0\MassTransit.ExtensionsDependencyInjectionIntegration.dll
+C:\Users\Umutl\Belgeler\GitHub\MesajX\Backend\SignalRRealTimeAPI\SignalRRealTimeAPI\bin\Debug\net8.0\MassTransit.RabbitMqTransport.dll
+C:\Users\Umutl\Belgeler\GitHub\MesajX\Backend\SignalRRealTimeAPI\SignalRRealTimeAPI\bin\Debug\net8.0\RabbitMQ.Client.dll

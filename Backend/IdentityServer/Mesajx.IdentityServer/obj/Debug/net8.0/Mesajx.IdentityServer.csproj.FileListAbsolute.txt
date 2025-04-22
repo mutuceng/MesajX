@@ -159,7 +159,6 @@ C:\Users\Umutl\Belgeler\GitHub\MesajX\Backend\IdentityServer\Mesajx.IdentityServ
 C:\Users\Umutl\Belgeler\GitHub\MesajX\Backend\IdentityServer\Mesajx.IdentityServer\obj\Debug\net8.0\Mesajx.IdentityServer.pdb
 C:\Users\Umutl\Belgeler\GitHub\MesajX\Backend\IdentityServer\Mesajx.IdentityServer\obj\Debug\net8.0\Mesajx.IdentityServer.genruntimeconfig.cache
 C:\Users\Umutl\Belgeler\GitHub\MesajX\Backend\IdentityServer\Mesajx.IdentityServer\obj\Debug\net8.0\ref\Mesajx.IdentityServer.dll
-C:\Users\Umutl\Belgeler\GitHub\MesajX\Backend\IdentityServer\Mesajx.IdentityServer\obj\Debug\net8.0\staticwebassets.upToDateCheck.txt
 C:\Users\Umutl\Belgeler\GitHub\MesajX\Backend\IdentityServer\Mesajx.IdentityServer\bin\Debug\net8.0\Microsoft.Extensions.Caching.Memory.dll
 C:\Users\Umutl\Belgeler\GitHub\MesajX\Backend\IdentityServer\Mesajx.IdentityServer\bin\Debug\net8.0\Microsoft.Extensions.DependencyInjection.dll
 C:\Users\Umutl\Belgeler\GitHub\MesajX\Backend\IdentityServer\Mesajx.IdentityServer\bin\Debug\net8.0\Microsoft.Extensions.DependencyInjection.Abstractions.dll
@@ -167,3 +166,4 @@ C:\Users\Umutl\Belgeler\GitHub\MesajX\Backend\IdentityServer\Mesajx.IdentityServ
 C:\Users\Umutl\Belgeler\GitHub\MesajX\Backend\IdentityServer\Mesajx.IdentityServer\bin\Debug\net8.0\Microsoft.Extensions.Logging.Abstractions.dll
 C:\Users\Umutl\Belgeler\GitHub\MesajX\Backend\IdentityServer\Mesajx.IdentityServer\bin\Debug\net8.0\Npgsql.dll
 C:\Users\Umutl\Belgeler\GitHub\MesajX\Backend\IdentityServer\Mesajx.IdentityServer\bin\Debug\net8.0\Npgsql.EntityFrameworkCore.PostgreSQL.dll
+C:\Users\Umutl\Belgeler\GitHub\MesajX\Backend\IdentityServer\Mesajx.IdentityServer\obj\Debug\net8.0\staticwebassets.upToDateCheck.txt

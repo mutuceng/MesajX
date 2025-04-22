@@ -28,10 +28,10 @@ C:\Users\Umutl\Belgeler\GitHub\MesajX\Backend\Services\NotificationService\Mesaj
 C:\Users\Umutl\Belgeler\GitHub\MesajX\Backend\Services\NotificationService\MesajX.NotificationService\obj\Debug\net8.0\staticwebassets\msbuild.buildMultiTargeting.MesajX.NotificationService.props
 C:\Users\Umutl\Belgeler\GitHub\MesajX\Backend\Services\NotificationService\MesajX.NotificationService\obj\Debug\net8.0\staticwebassets\msbuild.buildTransitive.MesajX.NotificationService.props
 C:\Users\Umutl\Belgeler\GitHub\MesajX\Backend\Services\NotificationService\MesajX.NotificationService\obj\Debug\net8.0\staticwebassets.pack.json
-C:\Users\Umutl\Belgeler\GitHub\MesajX\Backend\Services\NotificationService\MesajX.NotificationService\obj\Debug\net8.0\staticwebassets.upToDateCheck.txt
 C:\Users\Umutl\Belgeler\GitHub\MesajX\Backend\Services\NotificationService\MesajX.NotificationService\obj\Debug\net8.0\MesajX.N.A5A27574.Up2Date
 C:\Users\Umutl\Belgeler\GitHub\MesajX\Backend\Services\NotificationService\MesajX.NotificationService\obj\Debug\net8.0\MesajX.NotificationService.dll
 C:\Users\Umutl\Belgeler\GitHub\MesajX\Backend\Services\NotificationService\MesajX.NotificationService\obj\Debug\net8.0\refint\MesajX.NotificationService.dll
 C:\Users\Umutl\Belgeler\GitHub\MesajX\Backend\Services\NotificationService\MesajX.NotificationService\obj\Debug\net8.0\MesajX.NotificationService.pdb
 C:\Users\Umutl\Belgeler\GitHub\MesajX\Backend\Services\NotificationService\MesajX.NotificationService\obj\Debug\net8.0\MesajX.NotificationService.genruntimeconfig.cache
 C:\Users\Umutl\Belgeler\GitHub\MesajX\Backend\Services\NotificationService\MesajX.NotificationService\obj\Debug\net8.0\ref\MesajX.NotificationService.dll
+C:\Users\Umutl\Belgeler\GitHub\MesajX\Backend\Services\NotificationService\MesajX.NotificationService\obj\Debug\net8.0\staticwebassets.upToDateCheck.txt

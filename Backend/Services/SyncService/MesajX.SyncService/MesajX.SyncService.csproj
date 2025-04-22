@@ -1,21 +1,23 @@
-<Project Sdk="Microsoft.NET.Sdk.Worker">
+﻿    <Project Sdk="Microsoft.NET.Sdk.Worker">
 
-  <PropertyGroup>
-    <TargetFramework>net8.0</TargetFramework>
-    <Nullable>enable</Nullable>
-    <ImplicitUsings>enable</ImplicitUsings>
-    <UserSecretsId>dotnet-MesajX.SyncService-24ecf44e-96d6-4a5a-9bd5-3029716d7668</UserSecretsId>
-  </PropertyGroup>
+      <PropertyGroup>
+        <TargetFramework>net8.0</TargetFramework>
+        <Nullable>enable</Nullable>
+        <ImplicitUsings>enable</ImplicitUsings>
+        <UserSecretsId>dotnet-MesajX.SyncService-24ecf44e-96d6-4a5a-9bd5-3029716d7668</UserSecretsId>
+      </PropertyGroup>
 
-  <ItemGroup>
-    <PackageReference Include="MassTransit.RabbitMQ" Version="8.4.0" />
-    <PackageReference Include="Microsoft.EntityFrameworkCore" Version="8.0.10" />
-    <PackageReference Include="Microsoft.Extensions.Hosting" Version="8.0.1" />
-    <PackageReference Include="RabbitMQ.Client" Version="7.1.2" />
-  </ItemGroup>
+      <ItemGroup>
+        <PackageReference Include="MassTransit.RabbitMQ" Version="8.4.0" />
+        <PackageReference Include="Microsoft.EntityFrameworkCore" Version="8.0.10" />
+        <PackageReference Include="Microsoft.Extensions.Hosting" Version="8.0.1" />
+        <PackageReference Include="Npgsql.EntityFrameworkCore.PostgreSQL" Version="8.0.10" />
+        <PackageReference Include="RabbitMQ.Client" Version="7.1.2" />
+      </ItemGroup>
 
-  <ItemGroup>
-    <ProjectReference Include="..\..\ChatService\MesajX.ChatService.DataAccessLayer\MesajX.ChatService.DataAccessLayer.csproj" />
-    <ProjectReference Include="..\..\ChatService\MesajX.ChatService.EntityLayer\MesajX.ChatService.EntityLayer.csproj" />
-  </ItemGroup>
-</Project>
+      <ItemGroup>
+        <ProjectReference Include="..\..\..\RabbitMQShared\MesajX.RabbitMQShared\MesajX.RabbitMQShared.csproj" />
+        <ProjectReference Include="..\..\ChatService\MesajX.ChatService.DataAccessLayer\MesajX.ChatService.DataAccessLayer.csproj" />
+        <ProjectReference Include="..\..\ChatService\MesajX.ChatService.EntityLayer\MesajX.ChatService.EntityLayer.csproj" />
+      </ItemGroup>
+    </Project>

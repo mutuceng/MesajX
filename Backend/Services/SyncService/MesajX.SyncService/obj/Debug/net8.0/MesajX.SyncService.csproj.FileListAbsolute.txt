@@ -69,3 +69,5 @@ C:\Users\Umutl\Belgeler\GitHub\MesajX\Backend\Services\SyncService\MesajX.SyncSe
 C:\Users\Umutl\Belgeler\GitHub\MesajX\Backend\Services\SyncService\MesajX.SyncService\bin\Debug\net8.0\MesajX.ChatService.EntityLayer.dll
 C:\Users\Umutl\Belgeler\GitHub\MesajX\Backend\Services\SyncService\MesajX.SyncService\bin\Debug\net8.0\MesajX.ChatService.DataAccessLayer.pdb
 C:\Users\Umutl\Belgeler\GitHub\MesajX\Backend\Services\SyncService\MesajX.SyncService\bin\Debug\net8.0\MesajX.ChatService.EntityLayer.pdb
+C:\Users\Umutl\Belgeler\GitHub\MesajX\Backend\Services\SyncService\MesajX.SyncService\bin\Debug\net8.0\MesajX.RabbitMQShared.dll
+C:\Users\Umutl\Belgeler\GitHub\MesajX\Backend\Services\SyncService\MesajX.SyncService\bin\Debug\net8.0\MesajX.RabbitMQShared.pdb

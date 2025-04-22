@@ -10,7 +10,7 @@ namespace MesajX.ChatService.EntityLayer.Entities
     public class Message
     {
         [Key]
-        public string MessageId { get; set; } = Guid.NewGuid().ToString();
+        public string MessageId { get; set; } 
         public string UserId { get; set; } = null!; 
         public string ChatRoomId { get; set; } = null!; 
         public string Content { get; set; } = null!; // Mesaj içeriği

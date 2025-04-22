@@ -1,0 +1,12 @@
+C:\Users\Umutl\Belgeler\GitHub\MesajX\Backend\RabbitMQShared\MesajX.RabbitMQShared\bin\Debug\net8.0\MesajX.RabbitMQShared.deps.json
+C:\Users\Umutl\Belgeler\GitHub\MesajX\Backend\RabbitMQShared\MesajX.RabbitMQShared\bin\Debug\net8.0\MesajX.RabbitMQShared.dll
+C:\Users\Umutl\Belgeler\GitHub\MesajX\Backend\RabbitMQShared\MesajX.RabbitMQShared\bin\Debug\net8.0\MesajX.RabbitMQShared.pdb
+C:\Users\Umutl\Belgeler\GitHub\MesajX\Backend\RabbitMQShared\MesajX.RabbitMQShared\obj\Debug\net8.0\MesajX.RabbitMQShared.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Umutl\Belgeler\GitHub\MesajX\Backend\RabbitMQShared\MesajX.RabbitMQShared\obj\Debug\net8.0\MesajX.RabbitMQShared.AssemblyInfoInputs.cache
+C:\Users\Umutl\Belgeler\GitHub\MesajX\Backend\RabbitMQShared\MesajX.RabbitMQShared\obj\Debug\net8.0\MesajX.RabbitMQShared.AssemblyInfo.cs
+C:\Users\Umutl\Belgeler\GitHub\MesajX\Backend\RabbitMQShared\MesajX.RabbitMQShared\obj\Debug\net8.0\MesajX.RabbitMQShared.csproj.CoreCompileInputs.cache
+C:\Users\Umutl\Belgeler\GitHub\MesajX\Backend\RabbitMQShared\MesajX.RabbitMQShared\obj\Debug\net8.0\MesajX.RabbitMQShared.sourcelink.json
+C:\Users\Umutl\Belgeler\GitHub\MesajX\Backend\RabbitMQShared\MesajX.RabbitMQShared\obj\Debug\net8.0\MesajX.RabbitMQShared.dll
+C:\Users\Umutl\Belgeler\GitHub\MesajX\Backend\RabbitMQShared\MesajX.RabbitMQShared\obj\Debug\net8.0\refint\MesajX.RabbitMQShared.dll
+C:\Users\Umutl\Belgeler\GitHub\MesajX\Backend\RabbitMQShared\MesajX.RabbitMQShared\obj\Debug\net8.0\MesajX.RabbitMQShared.pdb
+C:\Users\Umutl\Belgeler\GitHub\MesajX\Backend\RabbitMQShared\MesajX.RabbitMQShared\obj\Debug\net8.0\ref\MesajX.RabbitMQShared.dll

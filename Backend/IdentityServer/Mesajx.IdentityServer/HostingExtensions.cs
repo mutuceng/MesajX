@@ -1,10 +1,17 @@
 using Duende.IdentityServer;
+using Duende.IdentityServer.Services;
 using Mesajx.IdentityServer.Data;
 using Mesajx.IdentityServer.Models;
+using Mesajx.IdentityServer.Services.SignInService;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Serilog;
+using Microsoft.Extensions.Http;
+using Mesajx.IdentityServer.Services.TokenService;
+using ITokenService = Mesajx.IdentityServer.Services.TokenService.ITokenService;
+using Mesajx.IdentityServer.Services.FriendshipService;
+
 
 namespace Mesajx.IdentityServer;
 
@@ -15,6 +22,13 @@ internal static class HostingExtensions
         builder.Services.AddRazorPages();
 
         builder.Services.AddControllers();
+        builder.Services.AddHttpContextAccessor();
+        builder.Services.AddHttpClient<ITokenService, TokenService>();
+
+        builder.Services.AddScoped<ISignInService, SignInService>();
+        builder.Services.AddScoped<IFriendshipService, FriendshipService>();
+
+
 
         builder.Services.AddDbContext<ApplicationDbContext>(options =>
             options.UseNpgsql(builder.Configuration.GetConnectionString("DefaultConnection")));

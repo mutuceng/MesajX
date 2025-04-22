@@ -1,0 +1,6 @@
+Identity		---> http://localhost:5011
+SignalR         ---> http://localhost:5001
+Chat			---> http://localhost:5280
+Notification    ---> http://localhost:5178
+
+YARP			---> http://localhost:5281

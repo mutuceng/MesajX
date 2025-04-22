@@ -1,18 +1,35 @@
 import React, { useEffect, useState } from "react";
 import * as signalR from "@microsoft/signalr";
 import ChatWindow from "./chatwindow/ChatWindow";
-import MessageInput from "./messageinput/MessageInput";
+import { v4 as uuidv4 } from "uuid"; // benzersiz _id üretmek için
+
+interface User {
+  _id: string;
+  profilePic?: string;
+}
 
 interface Message {
+  _id: string;
   senderId: string;
-  text: string;
-  timestamp: string;
+  text?: string;
+  image?: string | null;
+  createdAt: string;
 }
 
 const Chat: React.FC = () => {
   const [connection, setConnection] = useState<signalR.HubConnection | null>(null);
   const [messages, setMessages] = useState<Message[]>([]);
-  const currentUser = "user1";
+
+  // Sadece örnek kullanıcılar
+  const authUser: User = {
+    _id: "user1",
+    profilePic: "https://placekitten.com/100/100",
+  };
+
+  const selectedUser: User = {
+    _id: "user2",
+    profilePic: "https://placekitten.com/101/101",
+  };
 
   useEffect(() => {
     const newConnection = new signalR.HubConnectionBuilder()
@@ -29,31 +46,34 @@ const Chat: React.FC = () => {
         .start()
         .then(() => {
           console.log("SignalR bağlantısı kuruldu!");
-          connection.on("ReceiveMessage", (message: string, senderId: string) => {
-            const timestamp = new Date().toLocaleTimeString([], {
-              hour: "2-digit",
-              minute: "2-digit",
-            });
-            setMessages((prev) => [...prev, { text: message, senderId, timestamp }]);
+
+          connection.on("ReceiveMessage", (text: string, senderId: string) => {
+            const newMsg: Message = {
+              _id: uuidv4(),
+              senderId,
+              text,
+              createdAt: new Date().toISOString(),
+              image: null,
+            };
+            setMessages((prev) => [...prev, newMsg]);
           });
         })
         .catch((err) => console.error("Bağlantı hatası: ", err));
     }
   }, [connection]);
 
-  useEffect(() => {
-    console.log("Gelen mesajlar:", messages);
-  }, [messages]);
-
   const handleSend = async (text: string) => {
     if (connection) {
       try {
-        const timestamp = new Date().toLocaleTimeString([], {
-          hour: "2-digit",
-          minute: "2-digit",
-        });
-        await connection.invoke("SendMessageAsync", text, currentUser);
-        setMessages((prev) => [...prev, { text, senderId: currentUser, timestamp }]);
+        await connection.invoke("SendMessageAsync", text, authUser._id);
+        const newMsg: Message = {
+          _id: uuidv4(),
+          senderId: authUser._id,
+          text,
+          createdAt: new Date().toISOString(),
+          image: null,
+        };
+        setMessages((prev) => [...prev, newMsg]);
       } catch (err) {
         console.error("Mesaj gönderilemedi:", err);
       }
@@ -62,8 +82,12 @@ const Chat: React.FC = () => {
 
   return (
     <div className="flex flex-col flex-1 h-full">
-      <ChatWindow messages={messages} currentUser={currentUser} />
-      <MessageInput onSend={handleSend} />
+      <ChatWindow
+        authUser={authUser}
+        selectedUser={selectedUser}
+        messages={messages}
+        onSend={handleSend}
+      />
     </div>
   );
 };

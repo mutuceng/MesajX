@@ -72,6 +72,23 @@
           }
         }
       },
+      "MassTransit.RabbitMQ/8.4.0": {
+        "type": "package",
+        "dependencies": {
+          "MassTransit": "8.4.0",
+          "RabbitMQ.Client": "7.1.2"
+        },
+        "compile": {
+          "lib/net8.0/MassTransit.RabbitMqTransport.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net8.0/MassTransit.RabbitMqTransport.dll": {
+            "related": ".xml"
+          }
+        }
+      },
       "Microsoft.Extensions.ApiDescription.Server/6.0.5": {
         "type": "package",
         "build": {
@@ -479,6 +496,27 @@
         "lib/netstandard2.0/MassTransit.ExtensionsDependencyInjectionIntegration.xml",
         "masstransit.extensions.dependencyinjection.7.3.1.nupkg.sha512",
         "masstransit.extensions.dependencyinjection.nuspec",
+        "mt-logo-small.png"
+      ]
+    },
+    "MassTransit.RabbitMQ/8.4.0": {
+      "sha512": "+dFq3z2iiEOe1zC9oTzaNK9wvQB4CZdeDR0OwkJytx87c+10gFHGWL6lj0eL5vBPDv72tUFaSDkuI084NjX26A==",
+      "type": "package",
+      "path": "masstransit.rabbitmq/8.4.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "NuGet.README.md",
+        "lib/net472/MassTransit.RabbitMqTransport.dll",
+        "lib/net472/MassTransit.RabbitMqTransport.xml",
+        "lib/net8.0/MassTransit.RabbitMqTransport.dll",
+        "lib/net8.0/MassTransit.RabbitMqTransport.xml",
+        "lib/net9.0/MassTransit.RabbitMqTransport.dll",
+        "lib/net9.0/MassTransit.RabbitMqTransport.xml",
+        "lib/netstandard2.0/MassTransit.RabbitMqTransport.dll",
+        "lib/netstandard2.0/MassTransit.RabbitMqTransport.xml",
+        "masstransit.rabbitmq.8.4.0.nupkg.sha512",
+        "masstransit.rabbitmq.nuspec",
         "mt-logo-small.png"
       ]
     },
@@ -1278,6 +1316,7 @@
     "net8.0": [
       "MassTransit >= 8.4.0",
       "MassTransit.AspNetCore >= 7.3.1",
+      "MassTransit.RabbitMQ >= 8.4.0",
       "RabbitMQ.Client >= 7.1.2",
       "Swashbuckle.AspNetCore >= 6.6.2"
     ]
@@ -1341,6 +1380,10 @@
             "target": "Package",
             "version": "[7.3.1, )"
           },
+          "MassTransit.RabbitMQ": {
+            "target": "Package",
+            "version": "[8.4.0, )"
+          },
           "RabbitMQ.Client": {
             "target": "Package",
             "version": "[7.1.2, )"
@@ -1365,6 +1408,10 @@
           {
             "name": "Microsoft.AspNetCore.App.Ref",
             "version": "[8.0.13, 8.0.13]"
+          },
+          {
+            "name": "Microsoft.Net.Sdk.Compilers.Toolset",
+            "version": "[9.0.200, 9.0.200]"
           },
           {
             "name": "Microsoft.NETCore.App.Host.win-x64",

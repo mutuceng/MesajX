@@ -7,6 +7,8 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <PackageReference Include="MassTransit" Version="8.4.0" />
+    <PackageReference Include="MassTransit.RabbitMQ" Version="8.4.0" />
     <PackageReference Include="Microsoft.AspNetCore.Authentication.JwtBearer" Version="8.0.10" />
     <PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="8.0.10">
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
@@ -16,11 +18,13 @@
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
       <PrivateAssets>all</PrivateAssets>
     </PackageReference>
+    <PackageReference Include="Npgsql.EntityFrameworkCore.PostgreSQL" Version="8.0.10" />
+    <PackageReference Include="RabbitMQ.Client" Version="7.1.2" />
     <PackageReference Include="Swashbuckle.AspNetCore" Version="6.5.0" />
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\..\..\RabbitMQ\MesajX.RabbitMQClient\MesajX.RabbitMQClient.csproj" />
+    <ProjectReference Include="..\..\..\RabbitMQShared\MesajX.RabbitMQShared\MesajX.RabbitMQShared.csproj" />
     <ProjectReference Include="..\MesajX.ChatService.BusinessLayer\MesajX.ChatService.BusinessLayer.csproj" />
     <ProjectReference Include="..\MesajX.ChatService.DataAccessLayer\MesajX.ChatService.DataAccessLayer.csproj" />
   </ItemGroup>

@@ -10,9 +10,9 @@ using StackExchange.Redis;
 using MesajX.ChatService.BusinessLayer.Services.MessagesServices.Postgre;
 using MesajX.ChatService.Services.ChatRoomServices;
 using MesajX.ChatService.Services.MessageServices;
-using MesajX.RabbitMQClient.Publisher;
 using MesajX.ChatService.BusinessLayer.Services.ChatRoomMemberServices.Redis;
 using MesajX.ChatService.Services.ChatRoomMemberServices;
+using MassTransit;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -28,6 +28,36 @@ builder.Services.AddSingleton<IConnectionMultiplexer>(sp =>
 
 //builder.Services.AddHostedService<MessageSyncService>();
 
+var rabbitMQUri = builder.Configuration["RabbitMQSettings:RabbitMQUri"];
+var username = builder.Configuration["RabbitMQSettings:UserName"];
+var password = builder.Configuration["RabbitMQSettings:Password"];
+
+if (string.IsNullOrEmpty(rabbitMQUri) || string.IsNullOrEmpty(username) || string.IsNullOrEmpty(password))
+{
+    throw new ArgumentNullException("RabbitMQ konfigürasyonlarý eksik veya null.");
+}
+
+builder.Services.AddMassTransit(x =>
+{
+    x.SetKebabCaseEndpointNameFormatter();
+    x.UsingRabbitMq((ctx, cfg) =>
+    {
+        cfg.Host(rabbitMQUri, configurator =>
+        {
+            configurator.Username(username);
+            configurator.Password(password);
+        });
+
+        //cfg.Message<MessageCreatedEvent>(configurator =>
+        //{
+        //    configurator.SetEntityName("message-created-event");
+        //});
+
+        //cfg.ConfigureEndpoints(ctx);
+
+    });
+});
+
 builder.Services.AddScoped<IRedisMessageService, RedisMessageService>();
 builder.Services.AddScoped<IPostgreMessageService, PostgreMessageService>();
 
@@ -37,11 +67,10 @@ builder.Services.AddScoped<IRedisRoomChatService, RedisRoomChatService>();
 builder.Services.AddScoped<IRedisChatMemberService, RedisChatMemberService>();
 
 builder.Services.AddScoped<IChatRoomService, ChatRoomService>();
+
 builder.Services.AddScoped<IMessageService, MessageService>();
 builder.Services.AddScoped<IChatRoomMemberService, ChatRoomMemberService>();
 
-
-builder.Services.AddScoped<IRabbitMQPublisher, RabbitMQPublisher>();
 
 builder.Services.AddControllers();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle

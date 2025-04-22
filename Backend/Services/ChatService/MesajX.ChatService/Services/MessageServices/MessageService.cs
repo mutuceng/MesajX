@@ -1,9 +1,9 @@
-﻿using MesajX.ChatService.BusinessLayer.Services.MessagesServices.Postgre;
+﻿using MassTransit;
+using MesajX.ChatService.BusinessLayer.Services.MessagesServices.Postgre;
 using MesajX.ChatService.BusinessLayer.Services.MessagesServices.Redis;
 using MesajX.ChatService.DtoLayer.Dtos.MessageDtos;
-using MesajX.ChatService.Events;
 using MesajX.ChatService.Services.ChatRoomServices;
-using MesajX.RabbitMQClient.Publisher;
+using MesajX.RabbitMQShared.Events;
 
 namespace MesajX.ChatService.Services.MessageServices
 {
@@ -12,14 +12,16 @@ namespace MesajX.ChatService.Services.MessageServices
         private readonly IPostgreMessageService _postgreMessageService;
         private readonly IRedisMessageService _redisMessageService;
         private readonly IChatRoomService _chatRoomService;
-        private readonly IRabbitMQPublisher _eventPublisher;
+        private readonly IPublishEndpoint _publishEndpoint;
+        private readonly ILogger<MessageService> _logger;
 
-        public MessageService(IRedisMessageService redisMessageService, IPostgreMessageService postgreMessageService, IRabbitMQPublisher eventPublisher, IChatRoomService chatRoomService)
+        public MessageService(IRedisMessageService redisMessageService, IPostgreMessageService postgreMessageService, IPublishEndpoint publishEndpoint, IChatRoomService chatRoomService, ILogger<MessageService> logger)
         {
             _redisMessageService = redisMessageService;
             _postgreMessageService = postgreMessageService;
-            _eventPublisher = eventPublisher;
+            _publishEndpoint = publishEndpoint;
             _chatRoomService = chatRoomService;
+            _logger = logger;
         }
 
         public async Task<List<GetMessagesDto>> GetMessagesByRoomIdAsync(string chatRoomId, int page, int pageSize)
@@ -52,16 +54,27 @@ namespace MesajX.ChatService.Services.MessageServices
 
             await _redisMessageService.SetMessageAsync(sendMessageDto);
 
-            var @messageEvent = new MessageCreatedEvent
+            try
             {
-                ChatRoomId = sendMessageDto.ChatRoomId,
-                UserId = sendMessageDto.UserId,
-                Content = sendMessageDto.Content,
-                SentAt = DateTime.UtcNow, // Eğer frontend'ten gelmiyorsa
-                MediaUrl = string.IsNullOrEmpty(sendMessageDto.MediaUrl) ? null : sendMessageDto.MediaUrl
-            };
+                await _publishEndpoint.Publish<MessageCreatedEvent>(new
+                {
+                    MessageId = sendMessageDto.MessageId,
+                    ChatRoomId = sendMessageDto.ChatRoomId,
+                    UserId = sendMessageDto.UserId,
+                    Content = sendMessageDto.Content,
+                    SentAt = DateTime.UtcNow,
+                    MediaUrl = string.IsNullOrEmpty(sendMessageDto.MediaUrl) ? null : sendMessageDto.MediaUrl
+                });
 
-            await _eventPublisher.PublishMessage(@messageEvent);
+                // Başarılı olduğunu logla
+                _logger.LogInformation($"Message event published for ChatRoomId: {sendMessageDto.ChatRoomId}");
+            }
+            catch (Exception ex)
+            {
+                _logger.LogError(ex, $"Failed to publish message event for ChatRoomId: {sendMessageDto.ChatRoomId}");
+                // Hata durumunda ne yapacağınıza karar verin (yeniden deneme, hata fırlatma, vb.)
+                throw;
+            }
 
             //await _signalRMessageSender.SendMessageToRoomAsync(sendMessageDto.ChatRoomId, sendMessageDto);
         }

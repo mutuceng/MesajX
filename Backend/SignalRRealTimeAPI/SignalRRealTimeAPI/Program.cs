@@ -23,9 +23,19 @@ builder.Services.AddSignalR();
 builder.Services.AddMassTransit(x =>
 {
     x.AddConsumer<MessageCreatedEventConsumer>();
-    x.UsingRabbitMq((context, cfg) =>
+
+    x.UsingRabbitMq((ctx, cfg) =>
     {
-        cfg.Host("rabbitmq://localhost");
+        cfg.Host(builder.Configuration["RABBITMQ_SETTINGS:RabbitMQUrl"], configurator =>
+        {
+            configurator.Username(builder.Configuration["RABBITMQ_SETTINGS:Username"]);
+            configurator.Password(builder.Configuration["RABBITMQ_SETTINGS:Password"]);
+        });
+
+        cfg.ReceiveEndpoint("message-created-event", e =>
+        {
+            e.ConfigureConsumer<MessageCreatedEventConsumer>(ctx);
+        });
     });
 });
 
