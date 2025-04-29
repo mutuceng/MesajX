@@ -1,12 +1,14 @@
 ﻿using MesajX.ChatService.DtoLayer.Dtos.ChatRoomDtos;
 using MesajX.ChatService.DtoLayer.Dtos.ChatRoomMemberDtos;
 using MesajX.ChatService.Services.ChatRoomServices;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 
 namespace MesajX.ChatService.Controllers
 {
-    [Route("api/[controller]")]
+    [Authorize]
+    [Route("api/chat/[controller]")]
     [ApiController]
     public class ChatRoomsController : ControllerBase
     {
@@ -17,7 +19,8 @@ namespace MesajX.ChatService.Controllers
             _chatRoomService = chatRoomService;
         }
 
-        [HttpGet("userId")]
+        // [HttpGet("userId")] bu sekil olursa eğer ? ile query
+        [HttpGet("{userId}")]
         public async Task<IActionResult> GetAllRoomsByUserId(string userId)
         {
              var rooms = await _chatRoomService.GetAllChatRoomByUserIdAsync(userId);

@@ -5,7 +5,7 @@
     "version": "1.0"
   },
   "paths": {
-    "/api/ChatRoomMembers/addMember": {
+    "/api/chat/ChatRoomMembers/addMember": {
       "post": {
         "tags": [
           "ChatRoomMembers"
@@ -36,7 +36,7 @@
         }
       }
     },
-    "/api/ChatRoomMembers/removeMember": {
+    "/api/chat/ChatRoomMembers/removeMember": {
       "delete": {
         "tags": [
           "ChatRoomMembers"
@@ -64,7 +64,7 @@
         }
       }
     },
-    "/api/ChatRooms/userId": {
+    "/api/chat/ChatRooms/{userId}": {
       "get": {
         "tags": [
           "ChatRooms"
@@ -72,7 +72,8 @@
         "parameters": [
           {
             "name": "userId",
-            "in": "query",
+            "in": "path",
+            "required": true,
             "schema": {
               "type": "string"
             }
@@ -85,7 +86,7 @@
         }
       }
     },
-    "/api/ChatRooms": {
+    "/api/chat/ChatRooms": {
       "post": {
         "tags": [
           "ChatRooms"
@@ -145,7 +146,7 @@
         }
       }
     },
-    "/api/ChatRooms/{chatRoomId}": {
+    "/api/chat/ChatRooms/{chatRoomId}": {
       "delete": {
         "tags": [
           "ChatRooms"
@@ -167,7 +168,7 @@
         }
       }
     },
-    "/api/Messages": {
+    "/api/chat/Messages": {
       "get": {
         "tags": [
           "Messages"

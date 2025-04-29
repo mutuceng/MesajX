@@ -50,12 +50,21 @@ namespace Mesajx.IdentityServer.Services.TokenService
                 throw new UnauthorizedAccessException("Refresh token geçersiz");
             }
 
-            // Yeni token'ı döndür
+            var tokenHandler = new System.IdentityModel.Tokens.Jwt.JwtSecurityTokenHandler();
+            var token = tokenHandler.ReadJwtToken(refreshTokenResponse.AccessToken);
+            var subClaim = token.Claims.FirstOrDefault(c => c.Type == "sub")?.Value;
+
+            if (string.IsNullOrEmpty(subClaim))
+            {
+                throw new Exception("sub claim'i token içinde bulunamadı.");
+            }
+
             return new TokenResponseDto
             {
                 AccessToken = refreshTokenResponse.AccessToken,
                 RefreshToken = refreshTokenResponse.RefreshToken,
-                ExpiresIn = refreshTokenResponse.ExpiresIn
+                ExpiresIn = refreshTokenResponse.ExpiresIn,
+                UserId = subClaim
             };
         }
 
@@ -87,10 +96,19 @@ namespace Mesajx.IdentityServer.Services.TokenService
             if (passwordTokenResponse.IsError)
                 throw new Exception("Token error: " + passwordTokenResponse.Error);
 
+            var tokenHandler = new System.IdentityModel.Tokens.Jwt.JwtSecurityTokenHandler();
+            var token = tokenHandler.ReadJwtToken(passwordTokenResponse.AccessToken);
+            var subClaim = token.Claims.FirstOrDefault(c => c.Type == "sub")?.Value;
+
+            if (string.IsNullOrEmpty(subClaim))
+            {
+                throw new Exception("sub claim'i token içinde bulunamadı.");
+            }
             return new TokenResponseDto
             {
                 AccessToken = passwordTokenResponse.AccessToken,
                 RefreshToken = passwordTokenResponse.RefreshToken,
+                UserId = subClaim,
                 ExpiresIn = passwordTokenResponse.ExpiresIn,
             };
 

@@ -29,8 +29,4 @@
     <ProjectReference Include="..\MesajX.ChatService.DataAccessLayer\MesajX.ChatService.DataAccessLayer.csproj" />
   </ItemGroup>
 
-  <ItemGroup>
-    <Folder Include="Hubs\" />
-  </ItemGroup>
-
 </Project>

@@ -167,3 +167,4 @@ C:\Users\Umutl\Belgeler\GitHub\MesajX\Backend\IdentityServer\Mesajx.IdentityServ
 C:\Users\Umutl\Belgeler\GitHub\MesajX\Backend\IdentityServer\Mesajx.IdentityServer\bin\Debug\net8.0\Npgsql.dll
 C:\Users\Umutl\Belgeler\GitHub\MesajX\Backend\IdentityServer\Mesajx.IdentityServer\bin\Debug\net8.0\Npgsql.EntityFrameworkCore.PostgreSQL.dll
 C:\Users\Umutl\Belgeler\GitHub\MesajX\Backend\IdentityServer\Mesajx.IdentityServer\obj\Debug\net8.0\staticwebassets.upToDateCheck.txt
+C:\Users\Umutl\Belgeler\GitHub\MesajX\Backend\IdentityServer\Mesajx.IdentityServer\bin\Debug\net8.0\keys\is-signing-key-8BE10EC7EDB1F209C9DBFCF8B06F01C5.json

@@ -15,7 +15,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("MesajX.SyncService")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+9921cd66c8ad9cdf14923a6717eedc9cab12627f")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+9a59e6fcf3e8b6591ca681f03dc616ccec88e50d")]
 [assembly: System.Reflection.AssemblyProductAttribute("MesajX.SyncService")]
 [assembly: System.Reflection.AssemblyTitleAttribute("MesajX.SyncService")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

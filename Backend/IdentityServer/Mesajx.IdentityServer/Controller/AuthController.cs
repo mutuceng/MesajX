@@ -16,7 +16,7 @@ using System.Security.Claims;
 
 namespace Mesajx.IdentityServer.Controller
 {
-    [Route("api/auth")]
+    [Route("api/user/[controller]")]
     [ApiController]
     public class AuthController : ControllerBase
     {
@@ -48,7 +48,7 @@ namespace Mesajx.IdentityServer.Controller
         }
 
 
-        [HttpPost("refresh-token")]
+        [HttpPost("getRefreshToken")]
         public async Task<IActionResult> RefreshToken([FromBody] RefreshTokenDto refreshTokenDto)
         {
             try

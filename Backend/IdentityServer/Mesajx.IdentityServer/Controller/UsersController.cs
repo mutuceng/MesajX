@@ -1,12 +1,16 @@
 ﻿using Mesajx.IdentityServer.Models;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.IdentityModel.JsonWebTokens;
+using System.Security.Claims;
+using static Duende.IdentityServer.IdentityServerConstants;
 
 namespace Mesajx.IdentityServer.Controller
 {
-    [Route("api/[controller]")]
+    [Authorize(LocalApi.PolicyName)]
+    [Route("api/user/[controller]")]
     [ApiController]
     public class UsersController : ControllerBase
     {
@@ -20,9 +24,20 @@ namespace Mesajx.IdentityServer.Controller
         [HttpGet("GetUserInfo")]
         public async Task<IActionResult> GetUserInfo()
         {
-            var userClaim = User.Claims.FirstOrDefault(x => x.Type == JwtRegisteredClaimNames.Sub);
+            var userClaim = User.Claims.FirstOrDefault(x => 
+                            x.Type == JwtRegisteredClaimNames.Sub || 
+                            x.Type == System.Security.Claims.ClaimTypes.NameIdentifier);
+            if (userClaim == null)
+            {
+                return Unauthorized("Kullanıcı kimlik bilgisi bulunamadı.");
+            }
 
             var user = await _userManager.FindByIdAsync(userClaim.Value);
+            if (user == null)
+            {
+                return NotFound("Kullanıcı bulunamadı.");
+            }
+
             return Ok(new
             {
                 Id = user.Id,

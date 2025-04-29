@@ -32,3 +32,11 @@ C:\Users\Umutl\Belgeler\GitHub\MesajX\Backend\ApiGateway\MesajX.YarpGateway\obj\
 C:\Users\Umutl\Belgeler\GitHub\MesajX\Backend\ApiGateway\MesajX.YarpGateway\obj\Debug\net8.0\MesajX.YarpGateway.genruntimeconfig.cache
 C:\Users\Umutl\Belgeler\GitHub\MesajX\Backend\ApiGateway\MesajX.YarpGateway\obj\Debug\net8.0\ref\MesajX.YarpGateway.dll
 C:\Users\Umutl\Belgeler\GitHub\MesajX\Backend\ApiGateway\MesajX.YarpGateway\obj\Debug\net8.0\staticwebassets.upToDateCheck.txt
+C:\Users\Umutl\Belgeler\GitHub\MesajX\Backend\ApiGateway\MesajX.YarpGateway\bin\Debug\net8.0\Microsoft.AspNetCore.Authentication.JwtBearer.dll
+C:\Users\Umutl\Belgeler\GitHub\MesajX\Backend\ApiGateway\MesajX.YarpGateway\bin\Debug\net8.0\Microsoft.IdentityModel.Abstractions.dll
+C:\Users\Umutl\Belgeler\GitHub\MesajX\Backend\ApiGateway\MesajX.YarpGateway\bin\Debug\net8.0\Microsoft.IdentityModel.JsonWebTokens.dll
+C:\Users\Umutl\Belgeler\GitHub\MesajX\Backend\ApiGateway\MesajX.YarpGateway\bin\Debug\net8.0\Microsoft.IdentityModel.Logging.dll
+C:\Users\Umutl\Belgeler\GitHub\MesajX\Backend\ApiGateway\MesajX.YarpGateway\bin\Debug\net8.0\Microsoft.IdentityModel.Protocols.dll
+C:\Users\Umutl\Belgeler\GitHub\MesajX\Backend\ApiGateway\MesajX.YarpGateway\bin\Debug\net8.0\Microsoft.IdentityModel.Protocols.OpenIdConnect.dll
+C:\Users\Umutl\Belgeler\GitHub\MesajX\Backend\ApiGateway\MesajX.YarpGateway\bin\Debug\net8.0\Microsoft.IdentityModel.Tokens.dll
+C:\Users\Umutl\Belgeler\GitHub\MesajX\Backend\ApiGateway\MesajX.YarpGateway\bin\Debug\net8.0\System.IdentityModel.Tokens.Jwt.dll

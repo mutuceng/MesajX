@@ -1,12 +1,14 @@
 ﻿using MesajX.ChatService.DtoLayer.Dtos.ChatRoomMemberDtos;
 using MesajX.ChatService.Services.ChatRoomMemberServices;
 using MesajX.ChatService.Services.ChatRoomServices;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 
 namespace MesajX.ChatService.Controllers
 {
-    [Route("api/[controller]")]
+    [Authorize]
+    [Route("api/chat/[controller]")]
     [ApiController]
     public class ChatRoomMembersController : ControllerBase
     {

@@ -13,10 +13,27 @@ using MesajX.ChatService.Services.MessageServices;
 using MesajX.ChatService.BusinessLayer.Services.ChatRoomMemberServices.Redis;
 using MesajX.ChatService.Services.ChatRoomMemberServices;
 using MassTransit;
+using MesajX.ChatService.Hubs;
+using Microsoft.AspNetCore.Authentication.JwtBearer;
+using Microsoft.IdentityModel.Tokens;
 
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
+builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme).AddJwtBearer(opt =>
+{
+    opt.Authority = builder.Configuration["IdentityServerUrl"];
+    opt.Audience = "ResourceChat";
+    opt.RequireHttpsMetadata = false;
+});
+
+
+builder.Services.AddCors(opt => opt.AddPolicy(name: "CorsPolicy", builder =>
+    builder.WithOrigins("http://localhost:5173")
+           .AllowAnyMethod()
+           .AllowAnyHeader()
+           .AllowCredentials()));
+
 
 builder.Services.AddDbContext<ChatContext>(options =>
     options.UseNpgsql(builder.Configuration.GetConnectionString("DefaultConnection")));
@@ -58,6 +75,9 @@ builder.Services.AddMassTransit(x =>
     });
 });
 
+
+builder.Services.AddSignalR();
+
 builder.Services.AddScoped<IRedisMessageService, RedisMessageService>();
 builder.Services.AddScoped<IPostgreMessageService, PostgreMessageService>();
 
@@ -93,10 +113,10 @@ if (app.Environment.IsDevelopment())
     app.UseSwaggerUI();
 }
 
-app.UseHttpsRedirection();
-
+app.UseCors("CorsPolicy");
+app.UseAuthentication();
 app.UseAuthorization();
-
+app.MapHub<ChatHub>("/chatHub");
 app.MapControllers();
 
 app.Run();

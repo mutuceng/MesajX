@@ -6,7 +6,7 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace Mesajx.IdentityServer.Controller
 {
-    [Route("api/[controller]")]
+    [Route("api/user/[controller]")]
     [ApiController]
     public class RegistersController : ControllerBase
     {
@@ -25,7 +25,7 @@ namespace Mesajx.IdentityServer.Controller
                 UserName = userRegisterDto.Username,
                 Email = userRegisterDto.Email,
                 ProfileImageUrl = userRegisterDto.ProfileImageUrl,
-                BirthDate = userRegisterDto.BirthDate,
+                BirthDate = DateTime.SpecifyKind(userRegisterDto.BirthDate, DateTimeKind.Utc),
                 PhoneNumber = userRegisterDto.PhoneNumber
             };
             var result = await _userManager.CreateAsync(user, userRegisterDto.Password);

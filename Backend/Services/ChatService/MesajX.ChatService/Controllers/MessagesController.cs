@@ -1,24 +1,30 @@
 ﻿using MesajX.ChatService.DtoLayer.Dtos.MessageDtos;
+using MesajX.ChatService.Hubs;
 using MesajX.ChatService.Services.ChatRoomServices;
 using MesajX.ChatService.Services.MessageServices;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.SignalR;
 
 namespace MesajX.ChatService.Controllers
 {
-    [Route("api/[controller]")]
+    [Authorize]
+    [Route("api/chat/[controller]")]
     [ApiController]
     public class MessagesController : ControllerBase
     {
         private readonly ILogger<MessagesController> _logger;
         private readonly IMessageService _messageService;
         private readonly IChatRoomService _chatRoomService;
+        private readonly IHubContext<ChatHub> _hubContext;
 
-        public MessagesController(ILogger<MessagesController> logger, IMessageService messageService, IChatRoomService chatRoomService)
+        public MessagesController(ILogger<MessagesController> logger, IMessageService messageService, IChatRoomService chatRoomService, IHubContext<ChatHub> hubContext)
         {
             _logger = logger;
             _messageService = messageService;
             _chatRoomService = chatRoomService;
+            _hubContext = hubContext;
         }
 
         [HttpGet]
@@ -26,6 +32,12 @@ namespace MesajX.ChatService.Controllers
         {
             int pageSize = 250;
             var messages = await _messageService.GetMessagesByRoomIdAsync(chatRoomId, page, pageSize);
+
+            if (messages == null || !messages.Any())
+            {
+                return Ok(new { message = "No messages have been sent yet." });
+            }
+
             return Ok(messages);
         }
 
@@ -43,7 +55,20 @@ namespace MesajX.ChatService.Controllers
                 else
                 {
                     await _messageService.SetMessageAsync(sendMessageDto);
+
+                    await _hubContext.Clients.Group(sendMessageDto.ChatRoomId).SendAsync(
+                                "ReceiveMessage",
+                                new
+                                {
+                                    sendMessageDto.MessageId,
+                                    sendMessageDto.UserId,
+                                    sendMessageDto.ChatRoomId,
+                                    sendMessageDto.Content,
+                                    sendMessageDto.MediaUrl,
+                                    sendMessageDto.SentAt,
+                                });
                     return Ok(new { message = "Message sent successfully" });
+
 
                 }
             }

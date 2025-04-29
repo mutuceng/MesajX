@@ -9,6 +9,14 @@
       {
         "Path": "Services\\SyncService\\MesajX.SyncService\\MesajX.SyncService.csproj",
         "Action": "Start"
+      },
+      {
+        "Path": "IdentityServer\\Mesajx.IdentityServer\\Mesajx.IdentityServer.csproj",
+        "Action": "Start"
+      },
+      {
+        "Path": "ApiGateway\\MesajX.YarpGateway\\MesajX.YarpGateway.csproj",
+        "Action": "Start"
       }
     ]
   }

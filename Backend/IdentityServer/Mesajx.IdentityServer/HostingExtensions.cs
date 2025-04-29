@@ -11,6 +11,7 @@ using Microsoft.Extensions.Http;
 using Mesajx.IdentityServer.Services.TokenService;
 using ITokenService = Mesajx.IdentityServer.Services.TokenService.ITokenService;
 using Mesajx.IdentityServer.Services.FriendshipService;
+using Mesajx.IdentityServer.Settings;
 
 
 namespace Mesajx.IdentityServer;
@@ -51,6 +52,7 @@ internal static class HostingExtensions
             .AddInMemoryIdentityResources(Config.IdentityResources)
             .AddInMemoryApiScopes(Config.ApiScopes)
             .AddInMemoryClients(Config.Clients)
+            .AddInMemoryApiResources(Config.ApiResources)
             .AddAspNetIdentity<ApplicationUser>();
         
         builder.Services.AddAuthentication()
@@ -64,6 +66,11 @@ internal static class HostingExtensions
                 options.ClientId = "copy client ID from Google here";
                 options.ClientSecret = "copy client secret from Google here";
             });
+
+        builder.Services.AddLocalApiAuthentication();
+
+
+        builder.Services.Configure<ClientSettings>(builder.Configuration.GetSection("ClientSettings"));
 
         return builder.Build();
     }
@@ -79,9 +86,12 @@ internal static class HostingExtensions
 
         app.UseStaticFiles();
         app.UseRouting();
-        app.UseIdentityServer();
+        app.UseAuthentication(); // <-- mutlaka bu olmalý
         app.UseAuthorization();
-        
+        app.MapControllers();
+
+        app.UseIdentityServer();
+  
         app.MapRazorPages()
             .RequireAuthorization();
 

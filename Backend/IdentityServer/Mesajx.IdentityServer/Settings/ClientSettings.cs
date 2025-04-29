@@ -2,7 +2,6 @@
 {
     public class ClientSettings
     {  
-        public Client MesajXVisitorClient { get; set; }
         public Client MesajXUserClient { get; set; }
         public Client MesajXAdminClient { get; set; }
         

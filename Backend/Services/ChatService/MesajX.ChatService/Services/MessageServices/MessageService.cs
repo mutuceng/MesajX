@@ -2,8 +2,10 @@
 using MesajX.ChatService.BusinessLayer.Services.MessagesServices.Postgre;
 using MesajX.ChatService.BusinessLayer.Services.MessagesServices.Redis;
 using MesajX.ChatService.DtoLayer.Dtos.MessageDtos;
+using MesajX.ChatService.Hubs;
 using MesajX.ChatService.Services.ChatRoomServices;
 using MesajX.RabbitMQShared.Events;
+using Microsoft.AspNetCore.SignalR;
 
 namespace MesajX.ChatService.Services.MessageServices
 {
@@ -68,6 +70,9 @@ namespace MesajX.ChatService.Services.MessageServices
 
                 // Başarılı olduğunu logla
                 _logger.LogInformation($"Message event published for ChatRoomId: {sendMessageDto.ChatRoomId}");
+
+
+                
             }
             catch (Exception ex)
             {

@@ -1,1 +1,76 @@
-[]
+[
+  {
+    "ContainingType": "Mesajx.IdentityServer.Controller.FriendshipController",
+    "Method": "SendFriendRequest",
+    "RelativePath": "api/Friendship/add-friend",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "requestDto",
+        "Type": "Mesajx.IdentityServer.Dtos.SendFriendshipRequestDto",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Mesajx.IdentityServer.Controller.AuthController",
+    "Method": "RefreshToken",
+    "RelativePath": "api/user/Auth/getRefreshToken",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "refreshTokenDto",
+        "Type": "Mesajx.IdentityServer.Dtos.RefreshTokenDto",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Mesajx.IdentityServer.Controller.AuthController",
+    "Method": "UserLogin",
+    "RelativePath": "api/user/Auth/login",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "signInDto",
+        "Type": "Mesajx.IdentityServer.Dtos.SignInDto",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Mesajx.IdentityServer.Controller.RegistersController",
+    "Method": "UserRegister",
+    "RelativePath": "api/user/Registers",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "userRegisterDto",
+        "Type": "Mesajx.IdentityServer.Dtos.UserRegisterDto",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Mesajx.IdentityServer.Controller.UsersController",
+    "Method": "GetUserInfo",
+    "RelativePath": "api/user/Users/GetUserInfo",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  }
+]

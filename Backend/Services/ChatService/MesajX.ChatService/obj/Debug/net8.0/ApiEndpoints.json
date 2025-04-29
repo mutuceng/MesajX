@@ -2,7 +2,7 @@
   {
     "ContainingType": "MesajX.ChatService.Controllers.ChatRoomMembersController",
     "Method": "AddMemberToChatRoom",
-    "RelativePath": "api/ChatRoomMembers/addMember",
+    "RelativePath": "api/chat/ChatRoomMembers/addMember",
     "HttpMethod": "POST",
     "IsController": true,
     "Order": 0,
@@ -18,7 +18,7 @@
   {
     "ContainingType": "MesajX.ChatService.Controllers.ChatRoomMembersController",
     "Method": "RemoveMemberFromChatRoom",
-    "RelativePath": "api/ChatRoomMembers/removeMember",
+    "RelativePath": "api/chat/ChatRoomMembers/removeMember",
     "HttpMethod": "DELETE",
     "IsController": true,
     "Order": 0,
@@ -39,7 +39,7 @@
   {
     "ContainingType": "MesajX.ChatService.Controllers.ChatRoomsController",
     "Method": "CreateChatRoom",
-    "RelativePath": "api/ChatRooms",
+    "RelativePath": "api/chat/ChatRooms",
     "HttpMethod": "POST",
     "IsController": true,
     "Order": 0,
@@ -55,7 +55,7 @@
   {
     "ContainingType": "MesajX.ChatService.Controllers.ChatRoomsController",
     "Method": "UpdateChatRoom",
-    "RelativePath": "api/ChatRooms",
+    "RelativePath": "api/chat/ChatRooms",
     "HttpMethod": "PUT",
     "IsController": true,
     "Order": 0,
@@ -71,7 +71,7 @@
   {
     "ContainingType": "MesajX.ChatService.Controllers.ChatRoomsController",
     "Method": "DeleteChatRoom",
-    "RelativePath": "api/ChatRooms/{chatRoomId}",
+    "RelativePath": "api/chat/ChatRooms/{chatRoomId}",
     "HttpMethod": "DELETE",
     "IsController": true,
     "Order": 0,
@@ -87,7 +87,7 @@
   {
     "ContainingType": "MesajX.ChatService.Controllers.ChatRoomsController",
     "Method": "GetAllRoomsByUserId",
-    "RelativePath": "api/ChatRooms/userId",
+    "RelativePath": "api/chat/ChatRooms/{userId}",
     "HttpMethod": "GET",
     "IsController": true,
     "Order": 0,
@@ -95,7 +95,7 @@
       {
         "Name": "userId",
         "Type": "System.String",
-        "IsRequired": false
+        "IsRequired": true
       }
     ],
     "ReturnTypes": []
@@ -103,7 +103,7 @@
   {
     "ContainingType": "MesajX.ChatService.Controllers.MessagesController",
     "Method": "GetMessages",
-    "RelativePath": "api/Messages",
+    "RelativePath": "api/chat/Messages",
     "HttpMethod": "GET",
     "IsController": true,
     "Order": 0,
@@ -124,7 +124,7 @@
   {
     "ContainingType": "MesajX.ChatService.Controllers.MessagesController",
     "Method": "SendMessage",
-    "RelativePath": "api/Messages",
+    "RelativePath": "api/chat/Messages",
     "HttpMethod": "POST",
     "IsController": true,
     "Order": 0,
