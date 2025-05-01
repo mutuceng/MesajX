@@ -5,45 +5,59 @@ import SignUpPage from "./pages/SignUpPage";
 import SignInPage from "./pages/SignInPage";
 import SettingsPage from "./pages/SettingsPage";
 
-import { Routes, Route, Navigate } from "react-router-dom";
+import { Routes, Route, Navigate, useNavigate } from "react-router-dom";
 import { Toaster } from "react-hot-toast";
 import { useThemeStore } from "./store/ThemeStore";
 import { useAppDispatch, useAppSelector } from "./hooks/hooks";
-import { useEffect } from "react";
-import { setUser } from "./features/account/accountSlice";
+import { useCallback, useEffect } from "react";
+import { jwtDecode } from "jwt-decode";
+import { logOut, setUser } from "./features/account/accountSlice";
 import requests from "./api/requests";
+import { User } from "./constants/types/IUser";
 
 const App = () => {
   const dispatch = useAppDispatch();
-  const { user } = useAppSelector(state => state.account);
+  const navigate = useNavigate();
+  const { user } = useAppSelector((state) => state.account);
   const { theme } = useThemeStore();
+
+  const isTokenExpired = (token: string): boolean => {
+    try {
+      const decoded: any = jwtDecode(token);
+      const currentTime = Date.now() / 1000;
+      return decoded.exp < currentTime;
+    } catch (error) {
+      return true; // geçersiz token gibi davran
+    }
+  };
+
+  const checkTokenValidity = useCallback(
+    async (storedUser: User) => {
+      if (isTokenExpired(storedUser.accessToken)) {
+        try {
+          console.log("🔁 Refresh token yenileniyor...");
+          const newUser = await requests.Account.refreshToken(storedUser.refreshToken);
+          dispatch(setUser(newUser));
+          localStorage.setItem("user", JSON.stringify(newUser));
+        } catch (error) {
+          console.error("🔒 Token yenileme başarısız:", error);
+          dispatch(logOut());
+          navigate("/login");
+        }
+      }
+    },
+    [dispatch, navigate]
+  );
 
   useEffect(() => {
     console.log("App.tsx useEffect çalıştı");
-    const storedUser = JSON.parse(localStorage.getItem("user") || "null");
+    const storedUser = JSON.parse(localStorage.getItem("user") || "null") as User | null;
 
     if (storedUser) {
       dispatch(setUser(storedUser));
       checkTokenValidity(storedUser);
     }
-  }, []);
-
-  const checkTokenValidity = async (storedUser: any) => {
-    const currentTime = Date.now() / 1000;
-
-    if (storedUser.expiresIn < currentTime) {
-      try {
-        console.log("Refresh token yenileniyor...");
-
-        const newUser = await requests.Account.refreshToken(storedUser.refreshToken);
-        dispatch(setUser(newUser));
-        localStorage.setItem("user", JSON.stringify(newUser));
-      } catch (error) {
-        console.error("🔒 Token yenileme başarısız:", error);
-        // İsteğe bağlı: logout işlemi yapılabilir
-      }
-    }
-  };
+  }, [dispatch, checkTokenValidity]);
 
   return (
     <div data-theme={theme}>

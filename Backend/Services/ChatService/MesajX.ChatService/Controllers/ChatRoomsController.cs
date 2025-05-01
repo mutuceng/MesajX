@@ -28,10 +28,59 @@ namespace MesajX.ChatService.Controllers
         }
 
         [HttpPost]
-        public async Task<IActionResult> CreateChatRoom(CreateChatRoomDto createChatRoomDto)
+        public async Task<IActionResult> CreateChatRoom([FromForm] CreateRoomDto createRoom, [FromForm] IFormFile groupImage)
         {
-             await _chatRoomService.CreateChatRoomAsync(createChatRoomDto);
-            return Ok(new { message = "Chat room created successfully" });
+
+            try
+            {
+                var chatRoom = new CreateChatRoomDto
+                {
+                    ChatRoomId = createRoom.ChatRoomId,
+                    Name = createRoom.Name,
+                    IsGroup = createRoom.IsGroup,
+                    CreatedAt = createRoom.CreatedAt
+                };
+
+
+                string? photoPath = null;
+                if (groupImage != null)
+                {
+                    // Dosya adını oluştur (örneğin, GUID + orijinal dosya uzantısı)
+                    var fileName = $"{Guid.NewGuid()}{Path.GetExtension(groupImage.FileName)}";
+                    var filePath = Path.Combine(Directory.GetCurrentDirectory(), "wwwroot/uploads", fileName);
+
+                    // Klasörün var olduğundan emin ol
+                    Directory.CreateDirectory(Path.GetDirectoryName(filePath));
+
+                    // Dosyayı kaydet
+                    using (var stream = new FileStream(filePath, FileMode.Create))
+                    {
+                        await groupImage.CopyToAsync(stream);
+                    }
+
+                    // Dosya yolunu sakla (örneğin, veritabanına kaydetmek için)
+                    photoPath = $"/uploads/{fileName}";
+                }
+                else
+                {
+                    photoPath = "/uploads/default.png"; 
+                }
+
+                chatRoom.Photo = photoPath;
+
+                await _chatRoomService.CreateChatRoomAsync(chatRoom);
+
+                return Ok(new
+                {
+                    Message = "Sohbet odası oluşturuldu",
+                    ChatRoomId = chatRoom.ChatRoomId,
+                    PhotoPath = photoPath
+                });
+            }
+            catch (Exception ex)
+            {
+                return StatusCode(500, new { Error = "Bir hata oluştu", Details = ex.Message });
+            }
         }
 
         [HttpPut]

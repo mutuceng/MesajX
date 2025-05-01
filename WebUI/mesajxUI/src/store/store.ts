@@ -1,13 +1,15 @@
 import { configureStore } from '@reduxjs/toolkit';
 import { accountSlice } from '../features/account/accountSlice';
-import { userInfoSlice } from '../features/userInfo/userInfoSlice';
+import { chatRoomSlice } from '../features/chat/chatRoomSlice';
+import  chatRoomMemberSlice from '../features/chat/chatRoomMemberSlice.ts';
 
 export const store = configureStore({
   reducer: {
     account: accountSlice.reducer,
-    userInfo: userInfoSlice.reducer,
+    chatRoom: chatRoomSlice.reducer,
+    chatRoomMember: chatRoomMemberSlice,
   }
 });
 
-export type RootState = ReturnType<typeof store.getState>; 
+export type RootState = ReturnType<typeof store.getState>;
 export type AppDispatch = typeof store.dispatch; 

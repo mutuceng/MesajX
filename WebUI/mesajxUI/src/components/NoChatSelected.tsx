@@ -1,66 +1,48 @@
 import { MessageSquare, UserPlus, Users } from "lucide-react";
 import { useEffect, useState } from "react";
 import { useAppDispatch, useAppSelector } from "../hooks/hooks";
-import requests from "../api/requests";
-import { setUserInfo } from "../features/userInfo/userInfoSlice";
+import { fetchChatRooms } from "../features/chat/chatRoomSlice";
+import CreateChatRoom from "./chat/CreateChatRoom"; // Adjust path to your CreateChatRoom component
 
 const NoChatSelected = () => {
-  
   const dispatch = useAppDispatch();
   const { user } = useAppSelector((state) => state.account);
-  const { userInfo } = useAppSelector((state) => state.userInfo);
+  const { rooms, error } = useAppSelector((state) => state.chatRoom);
   const [hasRooms, setHasRooms] = useState<boolean | null>(null);
-  const [loading, setLoading] = useState(true);
+  const [isModalOpen, setIsModalOpen] = useState(false); // Modal state
 
   useEffect(() => {
-    const fetchUserInfoAndRooms = async () => {
-      if (!user) {
-        setLoading(false);
-        return;
-      }
+    if (user) {
+      dispatch(fetchChatRooms(user.userId));
+    }
+  }, [dispatch, user]);
 
-      try {
-        // Kullanıcı bilgilerini al
-        const rooms = await requests.ChatRoom.getRoomsByUserId(user?.userId);
-        setHasRooms(rooms.length > 0);
-        setLoading(false);
-      } catch (error) {
-        console.error("Hata oluştu:", error);
-        setHasRooms(false);
-      } finally {
-        setLoading(false);
-      }
-    };
+  useEffect(() => {
+    if (rooms) {
+      setHasRooms(rooms.length > 0);
+    }
+  }, [rooms]);
 
-    fetchUserInfoAndRooms();
-  }, [dispatch, user, userInfo]);
-
+  if (error) return <div>Error: {error}</div>;
 
   const handleCreateGroup = () => {
-    console.log("Grup oluşturma işlemi başlatıldı");
+    setIsModalOpen(true); // Open the modal
   };
 
-  // Arkadaş ekleme aksiyonu
   const handleAddFriend = () => {
     console.log("Arkadaş ekleme işlemi başlatıldı");
   };
 
-  if (loading) {
-    return (
-      <div className="w-full flex flex-1 flex-col items-center justify-center p-16 bg-base-100/50">
-        <p className="text-base-content/60">Yükleniyor...</p>
-      </div>
-    );
-  }
+  const handleCloseModal = () => {
+    setIsModalOpen(false); // Close the modal
+  };
 
   return (
-<div className="w-full flex flex-1 flex-col items-center justify-center p-16 bg-base-100/50">
+    <div className="w-full flex flex-1 flex-col items-center justify-center p-16 bg-base-100/50">
       <div className="max-w-md text-center space-y-6">
         <div className="flex justify-center gap-4 mb-4">
           <div className="relative">
-            <div
-              className="w-16 h-16 rounded-2xl bg-primary/10 flex items-center justify-center animate-bounce"
-            >
+            <div className="w-16 h-16 rounded-2xl bg-primary/10 flex items-center justify-center animate-bounce">
               <MessageSquare className="w-8 h-8 text-primary" />
             </div>
           </div>
@@ -92,6 +74,9 @@ const NoChatSelected = () => {
           </div>
         )}
       </div>
+
+      {/* CreateChatRoom Modal */}
+      <CreateChatRoom isOpen={isModalOpen} onClose={handleCloseModal} />
     </div>
   );
 };

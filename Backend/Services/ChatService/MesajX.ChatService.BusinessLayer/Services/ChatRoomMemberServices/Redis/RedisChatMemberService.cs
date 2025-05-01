@@ -32,9 +32,16 @@ namespace MesajX.ChatService.BusinessLayer.Services.ChatRoomMemberServices.Redis
             try
             {
                 var db = _redisConnectionFactory.GetConnection().GetDatabase();
-                var key = $"chat:{createMemberDto.ChatRoomId}:members";
+
+                //hash ile
+                //var key = $"chat:{createMemberDto.ChatRoomId}:members";
+                //var roomMember = _mapper.Map<ChatRoomMember>(createMemberDto);
+                //await db.HashSetAsync(key, roomMember.UserId.ToString(), ((int)roomMember.Role).ToString());
+
                 var roomMember = _mapper.Map<ChatRoomMember>(createMemberDto);
-                await db.HashSetAsync(key, roomMember.UserId.ToString(), ((int)roomMember.Role).ToString());
+                var memberKey = $"chat:{createMemberDto.ChatRoomId}:member:{createMemberDto.UserId.ToString()}";
+                var value = JsonSerializer.Serialize(roomMember);
+                await db.StringSetAsync(memberKey, value);
             }
             catch (RedisConnectionException ex)
             {
@@ -48,8 +55,8 @@ namespace MesajX.ChatService.BusinessLayer.Services.ChatRoomMemberServices.Redis
         public async Task RemoveMemberFromChatAsync(string chatRoomId, string userId)
         {
             var db = _redisConnectionFactory.GetConnection().GetDatabase();
-            var key = $"chat:{chatRoomId}:members";
-            await db.HashDeleteAsync(key, userId);
+            var memberKey = $"chat:{chatRoomId}:member:{userId}";
+            await db.KeyDeleteAsync(memberKey);
         }
 
         public async Task<List<GetMembersByRoomIdDto>> GetMembersByRoomIdAsync(string chatRoomId)
@@ -69,6 +76,7 @@ namespace MesajX.ChatService.BusinessLayer.Services.ChatRoomMemberServices.Redis
                     Role = Enum.Parse<DtoLayer.Dtos.Enums.Role>(memberData["Role"].ToString())
                 };
             }).ToList();
+
 
             return memberDtos;
         }

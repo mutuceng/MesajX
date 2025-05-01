@@ -15,11 +15,21 @@ namespace MesajX.ChatService.DataAccessLayer.Concrete
 
         public RedisConnectionFactory(IConfiguration configuration)
         {
-            var redisCongif = ConfigurationOptions.Parse(configuration["Redis:ConnectionString"]);
-            redisCongif.AbortOnConnectFail = false;
-            redisCongif.ConnectRetry = 5;
+            var redisConfig = ConfigurationOptions.Parse(configuration["Redis:ConnectionString"]);
+            redisConfig.AbortOnConnectFail = false;
+            redisConfig.ConnectRetry = 5;
+            redisConfig.AllowAdmin = true;
 
-            _connectionMultiplexer = new Lazy<IConnectionMultiplexer>(() => ConnectionMultiplexer.Connect(redisCongif));
+            _connectionMultiplexer = new Lazy<IConnectionMultiplexer>(() =>
+            {
+                var connection = ConnectionMultiplexer.Connect(redisConfig);
+
+                var server = connection.GetServer("localhost", 6380); // Sunucu adresi ve portu
+                server.ConfigSet("maxmemory", "100mb"); // Memory limit
+                server.ConfigSet("maxmemory-policy", "allkeys-lru"); // LRU politikası
+                return connection;
+            });
+            //_connectionMultiplexer = new Lazy<IConnectionMultiplexer>(() => ConnectionMultiplexer.Connect(redisCongif));
         }
 
 

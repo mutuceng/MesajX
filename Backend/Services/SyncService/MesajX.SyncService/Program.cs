@@ -2,6 +2,7 @@ using MassTransit;
 using MesajX.ChatService.DataAccessLayer.Concrete;
 using MesajX.SyncService;
 using MesajX.SyncService.Consumers;
+using MesajX.SyncService.SyncServices.MemberSyncService;
 using MesajX.SyncService.SyncServices.MessageSyncService;
 using Microsoft.EntityFrameworkCore;
 
@@ -18,6 +19,8 @@ var host = Host.CreateDefaultBuilder(args)
             x.SetKebabCaseEndpointNameFormatter();
 
             x.AddConsumer<MessageCreatedEventConsumer>();
+
+            x.AddConsumer<MemberAddedEventConsumer>();
 
 
             var rabbitMQUri = hostContext.Configuration["RabbitMQSettings:RabbitMQUri"];
@@ -43,11 +46,16 @@ var host = Host.CreateDefaultBuilder(args)
                     e.ConfigureConsumer<MessageCreatedEventConsumer>(ctx);
                 });
 
+                cfg.ReceiveEndpoint("member-added-event", e =>
+                {
+                    e.ConfigureConsumer<MemberAddedEventConsumer>(ctx);
+                });
+
             });
         });
 
         services.AddScoped<IMessageSyncService, MessageSyncService>();
-        services.AddHostedService<Worker>();
+        services.AddScoped<IMemberSyncService, MemberSyncService>();
 
     }).Build();
 

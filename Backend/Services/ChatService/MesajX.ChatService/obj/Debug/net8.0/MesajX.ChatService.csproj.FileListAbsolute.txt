@@ -143,3 +143,4 @@ C:\Users\Umutl\Belgeler\GitHub\MesajX\Backend\Services\ChatService\MesajX.ChatSe
 C:\Users\Umutl\Belgeler\GitHub\MesajX\Backend\Services\ChatService\MesajX.ChatService\bin\Debug\net8.0\RabbitMQ.Client.dll
 C:\Users\Umutl\Belgeler\GitHub\MesajX\Backend\Services\ChatService\MesajX.ChatService\bin\Debug\net8.0\MesajX.RabbitMQShared.dll
 C:\Users\Umutl\Belgeler\GitHub\MesajX\Backend\Services\ChatService\MesajX.ChatService\bin\Debug\net8.0\MesajX.RabbitMQShared.pdb
+C:\Users\Umutl\Belgeler\GitHub\MesajX\Backend\Services\ChatService\MesajX.ChatService\bin\Debug\net8.0\MesajX.ChatService.staticwebassets.runtime.json

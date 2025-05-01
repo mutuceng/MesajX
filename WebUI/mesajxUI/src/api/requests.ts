@@ -8,9 +8,16 @@ axios.defaults.headers.post['Content-Type'] = 'application/json';
 
 
 axios.interceptors.request.use( request => {
-    const token = store.getState().account.user?.token;
+
+    console.log("Request:  authmiddleware calıstı", request);
+    const token = store.getState().account.user?.accessToken;
+    console.log("Store State:", store.getState());
     if(token){
+        console.log("token:  token okey", token);
         request.headers.Authorization = `Bearer ${token}`;
+    }
+    else{
+        console.log("token:  token yok", token);
     }
     return request;
 })
@@ -46,6 +53,12 @@ const queries =
     getAll: (url: string) => axios.get(url).then((response: AxiosResponse) => response.data),
     getById: (url: string, id: number) => axios.get(`${url}/${id}`).then((response: AxiosResponse) => response.data),
     post: (url: string, body: {}) => axios.post(url, body).then((response: AxiosResponse) => response.data),
+    postFormData: (url: string, formData: FormData) =>
+        axios.post(url, formData, {
+            headers: {
+                'Content-Type': 'multipart/form-data',
+            },
+        }).then((response: AxiosResponse) => response.data),
     put: (url: string, body: {}) => axios.put(url, body).then((response: AxiosResponse) => response.data),
     delete: (url: string, id: number) => axios.delete(`${url}/${id}`).then((response: AxiosResponse) => response.data),
 }
@@ -71,14 +84,14 @@ const ChatRoom =
 {
     getRoomsByUserId: (userId: string) => queries.getAll(`chat/ChatRooms/${userId}`),
     getChatRoomById: (id: number) => queries.getById("chat/ChatRooms", id),
-    createChatRoom: (CreateChatRoomDto: {}) => queries.post("chat/ChatRooms", CreateChatRoomDto),
+    createChatRoom: (formData: FormData) => queries.postFormData("chat/ChatRooms", formData),
     updateChatRoom: (UpdateChatRoomDto: {}) => queries.put("chat/ChatRooms", UpdateChatRoomDto),
     deleteChatRoom: (id: number) => queries.delete("chat/ChatRooms", id),
 }
 
 const ChatRoomMember = 
 {
-    addMember: (AddMemberDto: {}) => queries.post("chat/RoomMembers/addMember", AddMemberDto),
+    addMember: (AddMemberDto: {}) => queries.post("chat/ChatRoomMembers/addMember", AddMemberDto),
     removeMember: (id: number) => queries.delete("chat/RoomMembers/removeMember", id),
     getMembersByRoomId: (roomId: number) => queries.getAll(`chat/RoomMembers/${roomId}`),
 }

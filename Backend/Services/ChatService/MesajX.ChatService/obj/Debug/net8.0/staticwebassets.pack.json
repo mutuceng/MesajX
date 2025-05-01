@@ -1,0 +1,41 @@
+{
+  "Files": [
+    {
+      "Id": "C:\\Users\\Umutl\\Belgeler\\GitHub\\MesajX\\Backend\\Services\\ChatService\\MesajX.ChatService\\wwwroot\\uploads\\1476d3e6-4418-4aeb-a808-ad0251a0736e.gif",
+      "PackagePath": "staticwebassets\\uploads\\1476d3e6-4418-4aeb-a808-ad0251a0736e.gif"
+    },
+    {
+      "Id": "C:\\Users\\Umutl\\Belgeler\\GitHub\\MesajX\\Backend\\Services\\ChatService\\MesajX.ChatService\\wwwroot\\uploads\\610c4ca5-1b4b-48a1-971e-e7bff47e5ab1.jpg",
+      "PackagePath": "staticwebassets\\uploads\\610c4ca5-1b4b-48a1-971e-e7bff47e5ab1.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Umutl\\Belgeler\\GitHub\\MesajX\\Backend\\Services\\ChatService\\MesajX.ChatService\\wwwroot\\uploads\\a03bcc57-3519-4735-83fa-1de8adf04148.webp",
+      "PackagePath": "staticwebassets\\uploads\\a03bcc57-3519-4735-83fa-1de8adf04148.webp"
+    },
+    {
+      "Id": "C:\\Users\\Umutl\\Belgeler\\GitHub\\MesajX\\Backend\\Services\\ChatService\\MesajX.ChatService\\wwwroot\\uploads\\c3737a68-bd8c-4222-a313-5e45be64600b.jpeg",
+      "PackagePath": "staticwebassets\\uploads\\c3737a68-bd8c-4222-a313-5e45be64600b.jpeg"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.MesajX.ChatService.Microsoft.AspNetCore.StaticWebAssetEndpoints.props",
+      "PackagePath": "build\\Microsoft.AspNetCore.StaticWebAssetEndpoints.props"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.MesajX.ChatService.Microsoft.AspNetCore.StaticWebAssets.props",
+      "PackagePath": "build\\Microsoft.AspNetCore.StaticWebAssets.props"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.build.MesajX.ChatService.props",
+      "PackagePath": "build\\MesajX.ChatService.props"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.buildMultiTargeting.MesajX.ChatService.props",
+      "PackagePath": "buildMultiTargeting\\MesajX.ChatService.props"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.buildTransitive.MesajX.ChatService.props",
+      "PackagePath": "buildTransitive\\MesajX.ChatService.props"
+    }
+  ],
+  "ElementsToRemove": []
+}
