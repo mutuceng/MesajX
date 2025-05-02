@@ -1,7 +1,8 @@
 import React, { useState, useEffect } from "react";
 import { useAppDispatch, useAppSelector } from "../hooks/hooks";
 import { fetchChatRooms } from "../features/chat/chatRoomSlice";
-import CreateChatRoom from "./chat/CreateChatRoom";
+import CreateChatRoom from "./CreateChatRoom";
+import { setSelectedChatRoomId } from "../features/chat/messageSlice";
 
 const API_BASE_URL = "http://localhost:5281";
 
@@ -14,7 +15,7 @@ const Sidebar = () => {
   const chatRooms = useAppSelector((state) => state.chatRoom.rooms);
   const chatRoomStatus = useAppSelector((state) => state.chatRoom.status);
   const chatRoomError = useAppSelector((state) => state.chatRoom.error);
-
+  
   const [isModalOpen, setIsModalOpen] = useState(false);
   
   const handleCreateGroup = () => {
@@ -35,6 +36,12 @@ const Sidebar = () => {
   useEffect(() => {
     console.log("Chat Rooms:", chatRooms);
   }, [chatRooms]);
+  
+
+  const handleRoomSelect = (chatRoom: any) => {
+    console.log("Butona tıklandı, seçilen chatRoomId:", chatRoom.chatRoomId); // Tıklama logu
+    dispatch(setSelectedChatRoomId(chatRoom.chatRoomId));
+  };
 
   return (
     <aside
@@ -61,7 +68,7 @@ const Sidebar = () => {
         {chatRooms.map((chatRoom) => (
           <button
             key={chatRoom.chatRoomId}
-            onClick={() => setSelectedChatRoom(chatRoom)}
+            onClick={() => handleRoomSelect(chatRoom)}
             className={`
               w-full p-3 flex items-center gap-3
               hover:bg-base-200 transition-colors

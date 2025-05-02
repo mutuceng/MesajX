@@ -22,36 +22,41 @@ axios.interceptors.request.use( request => {
     return request;
 })
 
-axios.interceptors.response.use( response => {
-    return response;
-}, (error: AxiosError) => {
-        const {data, status} = error.response as AxiosResponse;
-        switch (status){
-            case 400:
-                toast.error("Bad Request: " + data.title);
-                break;
-            case 401:
-                toast.error("Unauthorized: " + data.title);
-                break;
-            case 403:
-                toast.error("Forbidden: " + data.title);
-                break;
-            case 404:
-                toast.error("Not Found: " + data.title);
-                break;
-            case 500:
-                toast.error("Internal Server Error: " + data.title);
-                break;
-            default:
-                console.log("Unknown Error: ", data);
-        }
-        return Promise.reject(error); // hata aldıktan sonra da devam etmesini sağlıyoruz.
-    })
-
+axios.interceptors.response.use(
+    response => response,
+    (error: AxiosError) => {
+      const { data, status } = error.response as AxiosResponse;
+      const errorMessage = data?.title || "Bilinmeyen bir hata oluştu";
+      switch (status) {
+        case 400:
+          toast.error(`Hatalı istek: ${errorMessage}`);
+          break;
+        case 401:
+          toast.error(`Giriş yapmanız gerekiyor: ${errorMessage}`);
+          break;
+        case 403:
+          toast.error(`Bu işlemi yapmaya yetkiniz yok: ${errorMessage}`);
+          break;
+        case 404:
+          toast.error(`Kaynak bulunamadı: ${errorMessage}`);
+          break;
+        case 500:
+          toast.error(`Sunucu hatası: ${errorMessage}`);
+          break;
+        default:
+          toast.error(`Bilinmeyen bir hata: ${errorMessage}`);
+      }
+      return Promise.reject(error);
+    }
+  );
 const queries = 
 {
     getAll: (url: string) => axios.get(url).then((response: AxiosResponse) => response.data),
-    getById: (url: string, id: number) => axios.get(`${url}/${id}`).then((response: AxiosResponse) => response.data),
+    getWithParams: (url: string, params: any) =>
+        axios
+          .get(url, { params })
+          .then((response: AxiosResponse) => response.data),
+    getById: (url: string, id: string) => axios.get(`${url}/${id}`).then((response: AxiosResponse) => response.data),
     post: (url: string, body: {}) => axios.post(url, body).then((response: AxiosResponse) => response.data),
     postFormData: (url: string, formData: FormData) =>
         axios.post(url, formData, {
@@ -65,8 +70,9 @@ const queries =
 
 const Message = 
 {
-    getAllMessages: () => queries.getAll("chat/Messages"),
-    sendMessage: (SendMessageDto: {}) => queries.post("chat/Messages", SendMessageDto),
+    getMessagesByRoomId: (chatRoomId: string, page: number = 1) =>
+        queries.getWithParams("chat/Messages", { chatRoomId, page }),
+      sendMessage: (sendMessageDto: {}) => queries.post("chat/Messages", sendMessageDto),
 }
 
 const Account = 
@@ -77,13 +83,15 @@ const Account =
         queries.post("user/Auth/getRefreshToken", { 
             RefreshToken: refreshToken 
         }),
+    getUserIdByUsername : (username: string) =>
+        queries.getById("user/users/username", username),
       
 }
 
 const ChatRoom = 
 {
     getRoomsByUserId: (userId: string) => queries.getAll(`chat/ChatRooms/${userId}`),
-    getChatRoomById: (id: number) => queries.getById("chat/ChatRooms", id),
+    getChatRoomById: (id: string) => queries.getById("chat/ChatRooms/room", id),
     createChatRoom: (formData: FormData) => queries.postFormData("chat/ChatRooms", formData),
     updateChatRoom: (UpdateChatRoomDto: {}) => queries.put("chat/ChatRooms", UpdateChatRoomDto),
     deleteChatRoom: (id: number) => queries.delete("chat/ChatRooms", id),
@@ -96,12 +104,11 @@ const ChatRoomMember =
     getMembersByRoomId: (roomId: number) => queries.getAll(`chat/RoomMembers/${roomId}`),
 }
 
-const requests =
-{
+const requests = {
     Message,
     Account,
     ChatRoom,
     ChatRoomMember,
-}
+  };
 
 export default requests;

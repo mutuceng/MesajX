@@ -9,8 +9,10 @@ public static class Config
     {
         new ApiResource("ResourceChat") { Scopes = {"ChatFullPermission", "ChatReadPermission", "ChatWritePermission"}},
         new ApiResource("ResourceYARP") { Scopes = { "YARPFullPermission" } },
-
         new ApiResource(IdentityServerConstants.LocalApi.ScopeName)
+        {
+            Scopes = { IdentityServerConstants.LocalApi.ScopeName }
+        }
 
     };
 
@@ -29,7 +31,9 @@ public static class Config
             new ApiScope("ChatReadPermission", "Can read chat messages"),
             new ApiScope("ChatWritePermission", "Can write chat messages"),
             new ApiScope("YARPFullPermission","Has full authority for YARP operations"),
-            new ApiScope(IdentityServerConstants.LocalApi.ScopeName)
+            new ApiScope(IdentityServerConstants.LocalApi.ScopeName, "Local API scope") // <- burada net şekilde tanımlanmalı
+
+
 
         };
 
@@ -51,7 +55,9 @@ public static class Config
                     IdentityServerConstants.StandardScopes.OpenId,
                     IdentityServerConstants.StandardScopes.Email,
                     IdentityServerConstants.StandardScopes.Profile,
-                    IdentityServerConstants.StandardScopes.OfflineAccess
+                    IdentityServerConstants.StandardScopes.OfflineAccess,
+                    IdentityServerConstants.LocalApi.ScopeName,
+
                 },
                 AccessTokenLifetime = 120,
             },
@@ -69,6 +75,8 @@ public static class Config
                     IdentityServerConstants.StandardScopes.OpenId,
                     IdentityServerConstants.StandardScopes.Email,
                     IdentityServerConstants.StandardScopes.Profile,
+                    IdentityServerConstants.LocalApi.ScopeName // <-- BURASI EKLENDİ
+
                 },
                 AccessTokenLifetime = 7200
             }

@@ -10,6 +10,6 @@ namespace MesajX.ChatService.Services.ChatRoomServices
         Task CreateChatRoomAsync(CreateChatRoomDto createChatRoomDto);
         Task UpdateChatRoomAsync(UpdateChatRoomDto updateChatRoomDto);
         Task DeleteChatRoomAsync(string chatRoomId);
-
+        Task<GetByIdChatRoomDto> GetChatRoomByIdAsync(string chatRoomId);
     }
 }

@@ -14,12 +14,14 @@ import { jwtDecode } from "jwt-decode";
 import { logOut, setUser } from "./features/account/accountSlice";
 import requests from "./api/requests";
 import { User } from "./constants/types/IUser";
+import React from "react";
 
 const App = () => {
   const dispatch = useAppDispatch();
   const navigate = useNavigate();
   const { user } = useAppSelector((state) => state.account);
   const { theme } = useThemeStore();
+  const [loading, setLoading] = React.useState(true); // Yükleme durumu
 
   const isTokenExpired = (token: string): boolean => {
     try {
@@ -27,7 +29,7 @@ const App = () => {
       const currentTime = Date.now() / 1000;
       return decoded.exp < currentTime;
     } catch (error) {
-      return true; // geçersiz token gibi davran
+      return true;
     }
   };
 
@@ -50,26 +52,36 @@ const App = () => {
   );
 
   useEffect(() => {
-    console.log("App.tsx useEffect çalıştı");
-    const storedUser = JSON.parse(localStorage.getItem("user") || "null") as User | null;
+    const initializeUser = async () => {
+      console.log("App.tsx useEffect çalıştı");
+      const storedUser = JSON.parse(localStorage.getItem("user") || "null") as User | null;
 
-    if (storedUser) {
-      dispatch(setUser(storedUser));
-      checkTokenValidity(storedUser);
-    }
+      if (storedUser) {
+        dispatch(setUser(storedUser));
+        await checkTokenValidity(storedUser);
+      }
+      setLoading(false); // Yükleme tamamlandı
+    };
+
+    initializeUser();
   }, [dispatch, checkTokenValidity]);
+
+  console.log("Current User:", user);
+
+  // Yükleme sırasında bir şey göstermemek için
+  if (loading) {
+    return <div>Loading...</div>;
+  }
 
   return (
     <div data-theme={theme}>
       <Navbar />
-
       <Routes>
         <Route path="/" element={user ? <HomePage /> : <Navigate to="/login" replace />} />
         <Route path="/login" element={user ? <Navigate to="/" replace /> : <SignInPage />} />
         <Route path="/signup" element={user ? <Navigate to="/" replace /> : <SignUpPage />} />
         <Route path="/settings" element={user ? <SettingsPage /> : <Navigate to="/login" replace />} />
       </Routes>
-
       <Toaster />
     </div>
   );

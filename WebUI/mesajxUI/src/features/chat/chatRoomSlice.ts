@@ -12,6 +12,7 @@ interface ChatRoom {
   createdAt: string;
 }
 interface ChatRoomState {
+  [x: string]: any;
   rooms: ChatRoom[];
   activeRoom: any | null;
   status: "idle" | "loading" | "succeeded" | "failed";
@@ -86,8 +87,9 @@ export const chatRoomSlice = createSlice({
   name: "chatRoom",
   initialState,
   reducers: {
-    setActiveRoom: (state, action) => {
-      state.activeRoom = action.payload;
+    setSelectedRoom: (state, action) => {
+      state.selectedRoom = action.payload;
+      console.log("setSelectedRoom çalıştı, yeni değer:", state.selectedRoom); // Log ekle
     },
     clearCreatedPhotoPath: (state) => {
       state.createdPhotoPath = null;
@@ -132,6 +134,6 @@ export const chatRoomSlice = createSlice({
   },
 });
 
-export const { setActiveRoom, clearCreatedPhotoPath } = chatRoomSlice.actions;
+export const { setSelectedRoom, clearCreatedPhotoPath } = chatRoomSlice.actions;
 
 export default chatRoomSlice.reducer;

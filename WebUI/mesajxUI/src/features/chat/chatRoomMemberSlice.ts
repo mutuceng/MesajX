@@ -1,16 +1,36 @@
 import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
 import requests from "../../api/requests";
 
-export const addMember = createAsyncThunk(
-    "chatRoomMember/addMember",
-    async (memberData: { chatRoomId: string; userId: string ; role:number}, { rejectWithValue }) => {
-        try {
-            const response = await requests.ChatRoomMember.addMember(memberData);
-            return response.data; 
-        } catch (error: any) {
-            return rejectWithValue(error.response?.data?.error || "Üye ekleme hatası");
-        }
+enum Role {
+    Moderator = 0,
+    Member = 1,
+}
+
+interface Member {
+    UserId: string;
+    ChatRoomId: string;
+    Role: Role;
+}
+
+export const addMember = createAsyncThunk<
+  Member,
+  { chatRoomId: string; userId: string; role?: Role },
+  { rejectValue: string }
+>(
+  "member/addMember",
+  async ({ chatRoomId, userId, role = Role.Member }, { rejectWithValue }) => {
+    try {
+      const memberData = {
+        UserId: userId,
+        ChatRoomId: chatRoomId,
+        Role: role,
+      };
+      const response = await requests.ChatRoomMember.addMember(memberData);
+      return response;
+    } catch (error: any) {
+      return rejectWithValue(error.message || "Üye eklenemedi");
     }
+  }
 );
 
 const chatRoomMemberSlice = createSlice({

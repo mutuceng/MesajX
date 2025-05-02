@@ -27,6 +27,13 @@ namespace MesajX.ChatService.Controllers
             return Ok(rooms);
         }
 
+        [HttpGet("room/{chatRoomId}")]
+        public async Task<IActionResult> GetChatRoomById(string chatRoomId)
+        {
+            var rooms = await _chatRoomService.GetChatRoomByIdAsync(chatRoomId);
+            return Ok(rooms);
+        }
+
         [HttpPost]
         public async Task<IActionResult> CreateChatRoom([FromForm] CreateRoomDto createRoom, [FromForm] IFormFile groupImage)
         {

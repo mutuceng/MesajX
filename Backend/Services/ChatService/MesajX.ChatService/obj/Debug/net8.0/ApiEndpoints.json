@@ -146,6 +146,22 @@
     "ReturnTypes": []
   },
   {
+    "ContainingType": "MesajX.ChatService.Controllers.ChatRoomsController",
+    "Method": "GetChatRoomById",
+    "RelativePath": "api/chat/ChatRooms/room/{chatRoomId}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "chatRoomId",
+        "Type": "System.String",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
     "ContainingType": "MesajX.ChatService.Controllers.MessagesController",
     "Method": "GetMessages",
     "RelativePath": "api/chat/Messages",

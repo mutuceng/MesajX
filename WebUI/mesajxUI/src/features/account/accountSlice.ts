@@ -25,6 +25,22 @@ export const loginUser = createAsyncThunk<User, FieldValues>(
   }
 );
 
+export const getUserIdByUsername = createAsyncThunk<
+  string,
+  string,
+  { rejectValue: string }
+>(
+  "account/getUserIdByUsername",
+  async (username, { rejectWithValue }) => {
+    try {
+      const response = await requests.Account.getUserIdByUsername(username);
+      return response;
+    } catch (error: any) {
+      return rejectWithValue(error.message || "Kullanıcı bulunamadı");
+    }
+  }
+);
+
 // ACCOUNT SLICE
 export const accountSlice = createSlice({
   name: "account",
@@ -45,6 +61,8 @@ export const accountSlice = createSlice({
     });
   },
 });
+
+
 
 export const { logOut, setUser } = accountSlice.actions;
 export default accountSlice.reducer;

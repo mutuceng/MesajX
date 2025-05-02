@@ -45,5 +45,22 @@ namespace Mesajx.IdentityServer.Controller
                 UserName = user.UserName
             });
         }
+
+        [HttpGet("username/{username}")]
+        public async Task<IActionResult> GetUserIdByUsername(string username)
+        {
+            if (string.IsNullOrEmpty(username))
+            {
+                return BadRequest(new { title = "Kullanıcı adı boş olamaz" });
+            }
+
+            var user = await _userManager.FindByNameAsync(username);
+            if (user == null)
+            {
+                return NotFound(new { title = "Kullanıcı bulunamadı" });
+            }
+
+            return Ok(new { userId = user.Id });
+        }
     }
 }

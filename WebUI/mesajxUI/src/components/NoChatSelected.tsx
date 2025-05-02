@@ -2,7 +2,7 @@ import { MessageSquare, UserPlus, Users } from "lucide-react";
 import { useEffect, useState } from "react";
 import { useAppDispatch, useAppSelector } from "../hooks/hooks";
 import { fetchChatRooms } from "../features/chat/chatRoomSlice";
-import CreateChatRoom from "./chat/CreateChatRoom"; // Adjust path to your CreateChatRoom component
+import CreateChatRoom from "./CreateChatRoom"; // Adjust path to your CreateChatRoom component
 
 const NoChatSelected = () => {
   const dispatch = useAppDispatch();
