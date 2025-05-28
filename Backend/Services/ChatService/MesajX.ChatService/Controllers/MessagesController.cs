@@ -28,17 +28,42 @@ namespace MesajX.ChatService.Controllers
         }
 
         [HttpGet]
-        public async Task<IActionResult> GetMessages(string chatRoomId, int page)
+        public async Task<IActionResult> GetMessages(string chatRoomId, int page = 1)
         {
-            int pageSize = 250;
-            var messages = await _messageService.GetMessagesByRoomIdAsync(chatRoomId, page, pageSize);
-
-            if (messages == null || !messages.Any())
+            // Validasyon
+            if (string.IsNullOrEmpty(chatRoomId))
             {
-                return Ok(new { message = "No messages have been sent yet." });
+                return BadRequest(new { error = "Chat room ID is required." });
             }
 
-            return Ok(messages);
+            if (page < 1)
+            {
+                return BadRequest(new { error = "Page number must be greater than or equal to 1." });
+            }
+
+            const int pageSize = 250;
+
+            try
+            {
+
+                var messages = await _messageService.GetMessagesByRoomIdAsync(chatRoomId, page, pageSize);
+
+                if (messages == null || !messages.Any())
+                {
+                    return Ok(new { message = "No messages have been sent yet." });
+                }
+
+                // Controller'da sıralama: En son mesaj en sonda
+                var sortedMessages = messages.OrderByDescending(m => m.SentAt).ToList();
+
+                // Mesajları dön
+                return Ok(sortedMessages);
+            }
+            catch (Exception ex)
+            {
+                // Hata loglama (örneğin, ILogger ile)
+                return StatusCode(500, new { error = "An error occurred while fetching messages." });
+            }
         }
 
         [HttpPost]

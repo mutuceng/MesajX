@@ -27,5 +27,6 @@
 	<ItemGroup>
 	  <Folder Include="Data\Migrations\" />
 	  <Folder Include="Tools\" />
+	  <Folder Include="wwwroot\uploads\profileImages\" />
 	</ItemGroup>
 </Project>

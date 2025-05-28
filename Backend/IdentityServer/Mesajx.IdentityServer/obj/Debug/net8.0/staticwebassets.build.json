@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "xMymNdUARpTRvz5O2Po13XZZSr7XvXndDcCOq1PIYLw=",
+  "Hash": "IIZVjq6vE0iODa1xaOf39Wxt6Qt3rKdD+HIpOBft6L8=",
   "Source": "Mesajx.IdentityServer",
   "BasePath": "_content/Mesajx.IdentityServer",
   "Mode": "Default",
@@ -2283,6 +2283,48 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\lib\\jquery\\README.md"
+    },
+    {
+      "Identity": "C:\\Users\\Umutl\\Belgeler\\GitHub\\MesajX\\Backend\\IdentityServer\\Mesajx.IdentityServer\\wwwroot\\uploads\\profileImages\\d709fc48-f814-417f-988f-bd3d1e92997f.jpg",
+      "SourceId": "Mesajx.IdentityServer",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\Umutl\\Belgeler\\GitHub\\MesajX\\Backend\\IdentityServer\\Mesajx.IdentityServer\\wwwroot\\",
+      "BasePath": "_content/Mesajx.IdentityServer",
+      "RelativePath": "uploads/profileImages/d709fc48-f814-417f-988f-bd3d1e92997f#[.{fingerprint}]?.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "hly6x3t28b",
+      "Integrity": "pfFHCSpc4VBGeLPir2MAWKwNByGJesWzQ9uYermDfPE=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\uploads\\profileImages\\d709fc48-f814-417f-988f-bd3d1e92997f.jpg"
+    },
+    {
+      "Identity": "C:\\Users\\Umutl\\Belgeler\\GitHub\\MesajX\\Backend\\IdentityServer\\Mesajx.IdentityServer\\wwwroot\\uploads\\profileImages\\default.jpg",
+      "SourceId": "Mesajx.IdentityServer",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\Umutl\\Belgeler\\GitHub\\MesajX\\Backend\\IdentityServer\\Mesajx.IdentityServer\\wwwroot\\",
+      "BasePath": "_content/Mesajx.IdentityServer",
+      "RelativePath": "uploads/profileImages/default#[.{fingerprint}]?.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "row2dqgofl",
+      "Integrity": "++YtgQ7xqlRpljdC/BUNrBZdPY92qtZ2L91BzaXs5xQ=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\uploads\\profileImages\\default.jpg"
     }
   ],
   "Endpoints": [
@@ -8439,6 +8481,170 @@
         {
           "Name": "integrity",
           "Value": "sha256-JrH/0shezfLLp5cmgmjSisdvGCoLTh3P9VCuQY9CiNQ="
+        }
+      ]
+    },
+    {
+      "Route": "uploads/profileImages/d709fc48-f814-417f-988f-bd3d1e92997f.hly6x3t28b.jpg",
+      "AssetFile": "C:\\Users\\Umutl\\Belgeler\\GitHub\\MesajX\\Backend\\IdentityServer\\Mesajx.IdentityServer\\wwwroot\\uploads\\profileImages\\d709fc48-f814-417f-988f-bd3d1e92997f.jpg",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "1475916"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/jpeg"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"pfFHCSpc4VBGeLPir2MAWKwNByGJesWzQ9uYermDfPE=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Fri, 16 May 2025 05:29:42 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "hly6x3t28b"
+        },
+        {
+          "Name": "label",
+          "Value": "uploads/profileImages/d709fc48-f814-417f-988f-bd3d1e92997f.jpg"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-pfFHCSpc4VBGeLPir2MAWKwNByGJesWzQ9uYermDfPE="
+        }
+      ]
+    },
+    {
+      "Route": "uploads/profileImages/d709fc48-f814-417f-988f-bd3d1e92997f.jpg",
+      "AssetFile": "C:\\Users\\Umutl\\Belgeler\\GitHub\\MesajX\\Backend\\IdentityServer\\Mesajx.IdentityServer\\wwwroot\\uploads\\profileImages\\d709fc48-f814-417f-988f-bd3d1e92997f.jpg",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "1475916"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/jpeg"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"pfFHCSpc4VBGeLPir2MAWKwNByGJesWzQ9uYermDfPE=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Fri, 16 May 2025 05:29:42 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=3600, must-revalidate"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-pfFHCSpc4VBGeLPir2MAWKwNByGJesWzQ9uYermDfPE="
+        }
+      ]
+    },
+    {
+      "Route": "uploads/profileImages/default.jpg",
+      "AssetFile": "C:\\Users\\Umutl\\Belgeler\\GitHub\\MesajX\\Backend\\IdentityServer\\Mesajx.IdentityServer\\wwwroot\\uploads\\profileImages\\default.jpg",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "67492"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/jpeg"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"++YtgQ7xqlRpljdC/BUNrBZdPY92qtZ2L91BzaXs5xQ=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Fri, 16 May 2025 05:28:03 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=3600, must-revalidate"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-++YtgQ7xqlRpljdC/BUNrBZdPY92qtZ2L91BzaXs5xQ="
+        }
+      ]
+    },
+    {
+      "Route": "uploads/profileImages/default.row2dqgofl.jpg",
+      "AssetFile": "C:\\Users\\Umutl\\Belgeler\\GitHub\\MesajX\\Backend\\IdentityServer\\Mesajx.IdentityServer\\wwwroot\\uploads\\profileImages\\default.jpg",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "67492"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/jpeg"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"++YtgQ7xqlRpljdC/BUNrBZdPY92qtZ2L91BzaXs5xQ=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Fri, 16 May 2025 05:28:03 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "row2dqgofl"
+        },
+        {
+          "Name": "label",
+          "Value": "uploads/profileImages/default.jpg"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-++YtgQ7xqlRpljdC/BUNrBZdPY92qtZ2L91BzaXs5xQ="
         }
       ]
     }

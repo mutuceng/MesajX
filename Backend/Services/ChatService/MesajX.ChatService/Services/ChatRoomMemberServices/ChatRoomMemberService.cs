@@ -31,6 +31,9 @@ namespace MesajX.ChatService.Services.ChatRoomMemberServices
 
             try
             {
+
+                await _redisChatMemberService.AddMemberToChatAsync(createMemberDto); // redisle hızlı sorgu için hashli
+
                 await _publishEndpoint.Publish<MemberAddedEvent>(new
                 {
                     ChatRoomId = createMemberDto.ChatRoomId,
@@ -50,7 +53,6 @@ namespace MesajX.ChatService.Services.ChatRoomMemberServices
                 // Hata durumunda ne yapacağınıza karar verin (yeniden deneme, hata fırlatma, vb.)
                 throw;
             }
-            await _redisChatMemberService.AddMemberToChatAsync(createMemberDto); // redisle hızlı sorgu için hashli
         }
         public async Task RemoveMemberFromChatRoomAsync(string userId, string chatRoomId)
         {

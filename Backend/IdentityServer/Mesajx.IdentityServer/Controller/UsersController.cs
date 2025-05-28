@@ -62,5 +62,30 @@ namespace Mesajx.IdentityServer.Controller
 
             return Ok(new { userId = user.Id });
         }
+
+        [HttpGet("getchatusers")]
+        public async Task<IActionResult> GetChatUsers()
+        {
+            var userClaim = User.Claims.FirstOrDefault(x =>
+                            x.Type == JwtRegisteredClaimNames.Sub ||
+                            x.Type == System.Security.Claims.ClaimTypes.NameIdentifier);
+            if (userClaim == null)
+            {
+                return Unauthorized("Kullanıcı kimlik bilgisi bulunamadı.");
+            }
+
+            var user = await _userManager.FindByIdAsync(userClaim.Value);
+            if (user == null)
+            {
+                return NotFound("Kullanıcı bulunamadı.");
+            }
+
+            return Ok(new
+            {
+                Id = user.Id,
+                Email = user.Email,
+                UserName = user.UserName
+            });
+        }
     }
 }

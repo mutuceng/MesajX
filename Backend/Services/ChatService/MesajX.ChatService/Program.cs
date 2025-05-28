@@ -39,9 +39,7 @@ builder.Services.AddDbContext<ChatContext>(options =>
     options.UseNpgsql(builder.Configuration.GetConnectionString("DefaultConnection")));
 
 builder.Services.AddSingleton<IRedisConnectionFactory, RedisConnectionFactory>();
-builder.Services.AddSingleton<IConnectionMultiplexer>(sp =>
-    sp.GetRequiredService<IRedisConnectionFactory>().GetConnection()
-);
+
 
 //builder.Services.AddHostedService<MessageSyncService>();
 

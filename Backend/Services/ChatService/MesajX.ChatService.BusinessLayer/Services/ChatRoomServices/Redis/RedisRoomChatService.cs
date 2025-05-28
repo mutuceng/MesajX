@@ -28,9 +28,32 @@ namespace MesajX.ChatService.BusinessLayer.Services.ChatRoomServices.Redis
 
         public async Task<bool> IsUserInGroupChatAsync(string chatRoomId, string userId)
         {
-            var db = _redisConnectionFactory.GetConnection().GetDatabase();
-            var key = $"chat:{chatRoomId}:members";
-            return await db.HashExistsAsync(key, userId);
+            try
+            {
+                var connection = await _redisConnectionFactory.GetConnectionAsync();
+
+                if (!connection.IsConnected)
+                {
+                    _logger.LogWarning("Redis is not connected");
+                    return false;
+                }
+
+                var db = connection.GetDatabase();
+                var key = $"chat:{chatRoomId}:members";
+
+                return await db.HashExistsAsync(key, userId);
+            }
+            catch (RedisConnectionException ex)
+            {
+                _logger.LogError(ex, "Redis connection error while checking user in group");
+                return false;
+            }
+            catch (Exception ex)
+            {
+                // Log or handle the exception
+                Console.WriteLine($"Unexpected error checking user in group chat {ex.Message}");
+                return false;
+            }
         }
 
     }

@@ -1,116 +1,45 @@
-import React, { useEffect, useRef, useState } from "react";
-import ChatHeader from "./ChatHeader";
-import MessageInput from "./MessageInput";
+import React, { useEffect, useRef } from "react";
+import { useAppSelector } from "../hooks/hooks";
 
+const ChatWindow = () => {
+  const messages = useAppSelector((state) => state.message.messages);
+  const endOfMessagesRef = useRef<HTMLDivElement>(null);
+  const currentUserId = useAppSelector((state) => state.account?.user?.userId); // Kullanıcının ID'sini al
 
-interface User {
-  _id: string;
-  profilePic?: string;
-}
-
-interface Message {
-  _id: string;
-  senderId: string;
-  text?: string;
-  image?: string | null;
-  createdAt: string;
-}
-
-interface ChatWindowProps {
-  authUser: User;
-  selectedUser: User;
-  messages: Message[];
-  onSend: (text: string) => void;
-}
-
-const ChatWindow: React.FC<ChatWindowProps> = ({ authUser, selectedUser }) => {
-  const [messages, setMessages] = useState<Message[]>([]);
-  const messageEndRef = useRef<HTMLDivElement | null>(null);
-
+  // Mesajlar değiştiğinde en aşağıya kaydır
   useEffect(() => {
-    const dummyMessages: Message[] = [
-      {
-        _id: "1",
-        senderId: authUser._id,
-        text: "Selam! Nasılsın?",
-        image: null,
-        createdAt: new Date().toISOString(),
-      },
-      {
-        _id: "2",
-        senderId: selectedUser._id,
-        text: "İyiyim sen nasılsın?",
-        image: null,
-        createdAt: new Date().toISOString(),
-      },
-      {
-        _id: "3",
-        senderId: selectedUser._id,
-        image: "https://placekitten.com/200/300",
-        createdAt: new Date().toISOString(),
-      },
-      {
-        _id: "4",
-        senderId: authUser._id,
-        text: "Bu da fotoğraf 🐱",
-        image: "https://placekitten.com/250/300",
-        createdAt: new Date().toISOString(),
-      },
-    ];
+    endOfMessagesRef.current?.scrollIntoView({ behavior: "smooth" });
+  }, [messages]);
 
-    setMessages(dummyMessages);
-  }, [authUser._id, selectedUser._id]);
-
-  function onSend(message: string): void {
-    throw new Error("Function not implemented.");
-  }
+  const validMessages = messages.filter(msg => typeof msg.content === 'string' && msg.content.trim() !== '');
 
   return (
-    <div className="flex-1 flex flex-col overflow-auto">
-      <ChatHeader />
+    <div className="p-4 overflow-y-auto h-full">
+      {/* Her bir mesajı ayrı bir kartla göster */}
+      {validMessages.map((msg, index) => {
+        const isCurrentUser = msg.userId === currentUserId;
 
-      <div className="flex-1 overflow-y-auto p-4 space-y-4">
-        {messages.map((message) => (
+        return (
           <div
-            key={message._id}
-            className={`chat ${
-              message.senderId === authUser._id ? "chat-end" : "chat-start"
+            key={msg.messageId || index}
+            className={`mb-3 p-2 max-w-3/4 ${isCurrentUser
+              ? "ml-auto text-right rounded-l-lg rounded-t-lg text-white"
+              : "mr-auto rounded-r-lg rounded-t-lg"
             }`}
-            ref={messageEndRef}
+            style={{
+              width: "fit-content",
+              maxWidth: "75%",
+              backgroundColor: isCurrentUser
+                ? "oklch(0.65 0.15 145 / 1)"
+                : "oklch(0.58 0.23 275.12 / 1)"
+            }}
           >
-            <div className="chat-image avatar">
-              <div className="size-10 rounded-full border">
-                <img
-                  src={
-                    message.senderId === authUser._id
-                      ? authUser.profilePic || "/avatar.png"
-                      : selectedUser.profilePic || "/avatar.png"
-                  }
-                  alt="profile pic"
-                />
-              </div>
-            </div>
-            <div className="chat-header mb-1">
-              <time className="text-xs opacity-50 ml-1">
-                {new Date(message.createdAt).toLocaleTimeString()}
-              </time>
-            </div>
-            <div className="chat-bubble flex flex-col">
-              {message.image && (
-                <img
-                  src={message.image}
-                  alt="Attachment"
-                  className="sm:max-w-[200px] rounded-md mb-2"
-                />
-              )}
-              {message.text && <p>{message.text}</p>}
-            </div>
+            <div className="font-bold">{msg.userId}</div>
+            <div className="mt-1">{msg.content}</div>
           </div>
-        ))}
-      </div>
-
-      <MessageInput onSend={onSend} />
-
+        )
+      })}
+      <div ref={endOfMessagesRef} />
     </div>
   );
 };

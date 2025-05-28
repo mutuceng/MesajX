@@ -25,7 +25,8 @@ namespace MesajX.ChatService.BusinessLayer.Services.MessagesServices.Redis
 
         public async Task<List<GetMessagesDto>> GetRecentMessagesAsync(GetRecentMessagesRequestDto getRecentMessagesDto)
         {
-            var db = _redisConnectionFactory.GetConnection().GetDatabase();
+            var connection = await _redisConnectionFactory.GetConnectionAsync();
+            var db = connection.GetDatabase();
 
             // Redis'ten mesajları almak için doğru aralık hesaplanmalı
             int startIndex = (getRecentMessagesDto.Page - 1) * getRecentMessagesDto.PageSize;
@@ -52,7 +53,8 @@ namespace MesajX.ChatService.BusinessLayer.Services.MessagesServices.Redis
 
         public async Task SetMessageAsync(SendMessageDto sendMessageDto)
         {
-            var db = _redisConnectionFactory.GetConnection().GetDatabase();
+            var connection = await _redisConnectionFactory.GetConnectionAsync();
+            var db = connection.GetDatabase();
 
             var message = _mapper.Map<SendMessageDto>(sendMessageDto);
 

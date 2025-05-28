@@ -9,6 +9,6 @@ namespace MesajX.ChatService.DataAccessLayer.Abstract
 {
     public interface IRedisConnectionFactory
     {
-        IConnectionMultiplexer GetConnection();
+        Task<IConnectionMultiplexer> GetConnectionAsync();
     }
 }

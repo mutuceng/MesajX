@@ -1,6 +1,7 @@
 import axios , { AxiosError, AxiosResponse } from 'axios';
 import toast from 'react-hot-toast';
 import { store } from '../store/store';
+import { UserInfo } from '../constants/types/IUserInfo';
 
 axios.defaults.baseURL = "http://localhost:5281/api/";
 axios.defaults.withCredentials = true;
@@ -26,10 +27,12 @@ axios.interceptors.response.use(
     response => response,
     (error: AxiosError) => {
       const { data, status } = error.response as AxiosResponse;
-      const errorMessage = data?.title || "Bilinmeyen bir hata oluştu";
+      const errorMessage = data?.message || data?.title || "Bilinmeyen bir hata oluştu";
+      const errorDetails = data?.errors || data?.detail || "";
+      
       switch (status) {
         case 400:
-          toast.error(`Hatalı istek: ${errorMessage}`);
+          toast.error(`Hatalı istek: ${errorMessage} ${errorDetails ? `\nDetaylar: ${errorDetails}` : ''}`);
           break;
         case 401:
           toast.error(`Giriş yapmanız gerekiyor: ${errorMessage}`);
@@ -49,6 +52,8 @@ axios.interceptors.response.use(
       return Promise.reject(error);
     }
   );
+
+
 const queries = 
 {
     getAll: (url: string) => axios.get(url).then((response: AxiosResponse) => response.data),
@@ -70,21 +75,44 @@ const queries =
 
 const Message = 
 {
-    getMessagesByRoomId: (chatRoomId: string, page: number = 1) =>
-        queries.getWithParams("chat/Messages", { chatRoomId, page }),
-      sendMessage: (sendMessageDto: {}) => queries.post("chat/Messages", sendMessageDto),
+    getMessagesByRoomId: async (chatRoomId: string, page: number = 1) => {
+        try {
+            console.log("getMessagesByRoomId isteği gönderiliyor:", { chatRoomId, page });
+            const response = await queries.getWithParams("chat/Messages", { chatRoomId, page });
+            console.log("getMessagesByRoomId yanıtı:", response);
+            return response;
+        } catch (error) {
+            console.error("getMessagesByRoomId hatası:", error);
+            throw error;
+        }
+    },
+    sendMessage: async (sendMessageDto: {}) => {
+        try {
+            console.log("sendMessage isteği gönderiliyor:", sendMessageDto);
+            const response = await queries.post("chat/messages", sendMessageDto);
+            console.log("sendMessage yanıtı:", response);
+            return response;
+        } catch (error) {
+            console.error("sendMessage hatası:", error);
+            throw error;
+        }
+    }
 }
 
 const Account = 
 {
     login: (formData: any) => queries.post("user/Auth/login", formData),
-    register: (formData: any) => queries.post("user/registers", formData),
+    register: (formData: any) => queries.postFormData("user/registers", formData),
     refreshToken: (refreshToken: string) =>
         queries.post("user/Auth/getRefreshToken", { 
             RefreshToken: refreshToken 
         }),
     getUserIdByUsername : (username: string) =>
         queries.getById("user/users/username", username),
+    getUserProfile: (userId: string) =>
+        queries.getById("user/users/GetUserInfo", userId),
+    getMultipleUserProfiles: (userIds: string[]): Promise<UserInfo[]> => 
+        queries.getWithParams("user/users/GetMultipleUserInfo", { userIds }),
       
 }
 

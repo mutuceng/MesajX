@@ -11,6 +11,7 @@ using System.Linq;
 using System.Text;
 using System.Text.Json;
 using System.Threading.Tasks;
+using static Microsoft.EntityFrameworkCore.DbLoggerCategory.Database;
 
 namespace MesajX.ChatService.BusinessLayer.Services.ChatRoomMemberServices.Redis
 {
@@ -31,54 +32,118 @@ namespace MesajX.ChatService.BusinessLayer.Services.ChatRoomMemberServices.Redis
         {
             try
             {
-                var db = _redisConnectionFactory.GetConnection().GetDatabase();
+                var connection = await _redisConnectionFactory.GetConnectionAsync();
+                var db = connection.GetDatabase();
 
-                //hash ile
-                //var key = $"chat:{createMemberDto.ChatRoomId}:members";
-                //var roomMember = _mapper.Map<ChatRoomMember>(createMemberDto);
-                //await db.HashSetAsync(key, roomMember.UserId.ToString(), ((int)roomMember.Role).ToString());
+                var key = $"chat:{createMemberDto.ChatRoomId}:members";
 
                 var roomMember = _mapper.Map<ChatRoomMember>(createMemberDto);
-                var memberKey = $"chat:{createMemberDto.ChatRoomId}:member:{createMemberDto.UserId.ToString()}";
-                var value = JsonSerializer.Serialize(roomMember);
-                await db.StringSetAsync(memberKey, value);
+                var memberJson = JsonSerializer.Serialize(roomMember);
+
+                await db.HashSetAsync(key, createMemberDto.UserId, memberJson);
+
+                _logger.LogInformation("Added member {UserId} to chat room {ChatRoomId}",
+                    createMemberDto.UserId, createMemberDto.ChatRoomId);
             }
             catch (RedisConnectionException ex)
             {
-                _logger.LogError(ex, "Failed to connect to Redis while adding member to chat room {ChatRoomId}", createMemberDto.ChatRoomId);
+                _logger.LogError(ex, "Failed to connect to Redis while adding member to chat room {ChatRoomId}",
+                    createMemberDto.ChatRoomId);
                 throw;
             }
-
-
+            catch (Exception ex)
+            {
+                _logger.LogError(ex, "Unexpected error adding member {UserId} to chat room {ChatRoomId}",
+                    createMemberDto.UserId, createMemberDto.ChatRoomId);
+                throw;
+            }
         }
 
         public async Task RemoveMemberFromChatAsync(string chatRoomId, string userId)
         {
-            var db = _redisConnectionFactory.GetConnection().GetDatabase();
-            var memberKey = $"chat:{chatRoomId}:member:{userId}";
-            await db.KeyDeleteAsync(memberKey);
+            try
+            {
+                var connection = await _redisConnectionFactory.GetConnectionAsync();
+                var db = connection.GetDatabase();
+
+                var key = $"chat:{chatRoomId}:members";
+
+                var success = await db.HashDeleteAsync(key, userId);
+
+                if (success)
+                {
+                    _logger.LogInformation("Removed member {UserId} from chat room {ChatRoomId}",
+                        userId, chatRoomId);
+                }
+                else
+                {
+                    _logger.LogWarning("Member {UserId} not found in chat room {ChatRoomId}",
+                        userId, chatRoomId);
+                }
+            }
+            catch (Exception ex)
+            {
+                _logger.LogError(ex, "Error removing member {UserId} from chat room {ChatRoomId}",
+                    userId, chatRoomId);
+                throw;
+            }
         }
 
         public async Task<List<GetMembersByRoomIdDto>> GetMembersByRoomIdAsync(string chatRoomId)
         {
-            var db = _redisConnectionFactory.GetConnection().GetDatabase();
-            var key = $"chat:{chatRoomId}:members";
-            var members = await db.HashGetAllAsync(key);
-            var memberDtos = members.Select(m =>
+            try
             {
-                var memberData = JsonSerializer.Deserialize<Dictionary<string, object>>(m.Value.ToString());
+                var connection = await _redisConnectionFactory.GetConnectionAsync();
+                var db = connection.GetDatabase();
 
-                return new GetMembersByRoomIdDto
+                // Hash anahtarı
+                var key = $"chat:{chatRoomId}:members";
+
+                // Tüm hash değerlerini getir
+                var members = await db.HashGetAllAsync(key);
+
+                if (members == null || members.Length == 0)
                 {
-                    ChatRoomMemberId = m.Name.ToString(),
-                    UserId = memberData["UserId"].ToString(),
-                    ChatRoomId = chatRoomId,
-                    Role = Enum.Parse<DtoLayer.Dtos.Enums.Role>(memberData["Role"].ToString())
-                };
-            }).ToList();
+                    _logger.LogInformation("No members found in chat room {ChatRoomId}", chatRoomId);
+                    return new List<GetMembersByRoomIdDto>();
+                }
 
+                var memberDtos = new List<GetMembersByRoomIdDto>();
 
-            return memberDtos;
+                foreach (var entry in members)
+                {
+                    try
+                    {
+                        // Hash değeri bir JSON string
+                        var memberJson = entry.Value.ToString();
+
+                        // JSON'ı nesneye dönüştür
+                        var roomMember = JsonSerializer.Deserialize<ChatRoomMember>(memberJson);
+
+                        var memberDto = new GetMembersByRoomIdDto
+                        {
+                            ChatRoomMemberId = roomMember.ChatRoomMemberId.ToString(),
+                            UserId = entry.Name.ToString(), // UserId hash'in anahtarı
+                            ChatRoomId = chatRoomId,
+                            Role = (DtoLayer.Dtos.Enums.Role)roomMember.Role
+                        };
+
+                        memberDtos.Add(memberDto);
+                    }
+                    catch (JsonException ex)
+                    {
+                        _logger.LogWarning(ex, "Failed to deserialize member {MemberKey} in chat room {ChatRoomId}",
+                            entry.Name, chatRoomId);
+                    }
+                }
+
+                return memberDtos;
+            }
+            catch (Exception ex)
+            {
+                _logger.LogError(ex, "Error getting members from chat room {ChatRoomId}", chatRoomId);
+                throw;
+            }
         }
     }
 }

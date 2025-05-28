@@ -193,6 +193,14 @@
       "PackagePath": "staticwebassets\\lib\\jquery\\dist\\jquery.slim.min.map"
     },
     {
+      "Id": "C:\\Users\\Umutl\\Belgeler\\GitHub\\MesajX\\Backend\\IdentityServer\\Mesajx.IdentityServer\\wwwroot\\uploads\\profileImages\\d709fc48-f814-417f-988f-bd3d1e92997f.jpg",
+      "PackagePath": "staticwebassets\\uploads\\profileImages\\d709fc48-f814-417f-988f-bd3d1e92997f.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Umutl\\Belgeler\\GitHub\\MesajX\\Backend\\IdentityServer\\Mesajx.IdentityServer\\wwwroot\\uploads\\profileImages\\default.jpg",
+      "PackagePath": "staticwebassets\\uploads\\profileImages\\default.jpg"
+    },
+    {
       "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.Mesajx.IdentityServer.Microsoft.AspNetCore.StaticWebAssetEndpoints.props",
       "PackagePath": "build\\Microsoft.AspNetCore.StaticWebAssetEndpoints.props"
     },

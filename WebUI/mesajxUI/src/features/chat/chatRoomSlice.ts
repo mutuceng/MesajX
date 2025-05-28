@@ -11,6 +11,7 @@ interface ChatRoom {
   isGroup: boolean;
   createdAt: string;
 }
+
 interface ChatRoomState {
   [x: string]: any;
   rooms: ChatRoom[];

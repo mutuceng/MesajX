@@ -43,9 +43,9 @@ namespace MesajX.ChatService.Services.ChatRoomServices
             var room = await _postgreRoomChatService.GetChatRoomByIdAsync(chatRoomId);
             return room; 
         }
-        public Task<bool> IsUserInRoomAsync(string userId, string chatRoomId)
+        public async Task<bool> IsUserInRoomAsync(string userId, string chatRoomId)
         {
-            var isUserInRoom = _redisRoomChatService.IsUserInGroupChatAsync(chatRoomId, userId);
+            var isUserInRoom = await _redisRoomChatService.IsUserInGroupChatAsync(chatRoomId, userId);
             return isUserInRoom;
         }
         public async Task UpdateChatRoomAsync(UpdateChatRoomDto updateChatRoomDto)

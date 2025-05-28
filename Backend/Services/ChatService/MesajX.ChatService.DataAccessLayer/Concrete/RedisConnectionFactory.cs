@@ -1,50 +1,58 @@
 ﻿using MesajX.ChatService.DataAccessLayer.Abstract;
 using Microsoft.Extensions.Configuration;
+using Microsoft.Extensions.Logging;
 using StackExchange.Redis;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
-namespace MesajX.ChatService.DataAccessLayer.Concrete
+public class RedisConnectionFactory : IRedisConnectionFactory, IAsyncDisposable
 {
-    public class RedisConnectionFactory : IRedisConnectionFactory, IDisposable
+    private IConnectionMultiplexer _connectionMultiplexer;
+    private readonly IConfiguration _configuration;
+    private readonly ILogger<RedisConnectionFactory> _logger;
+
+    public RedisConnectionFactory(IConfiguration configuration, ILogger<RedisConnectionFactory> logger)
     {
-        private readonly Lazy<IConnectionMultiplexer> _connectionMultiplexer;
+        _configuration = configuration;
+        _logger = logger;
+    }
 
-        public RedisConnectionFactory(IConfiguration configuration)
+    public async Task<IConnectionMultiplexer> GetConnectionAsync()
+    {
+        if (_connectionMultiplexer != null)
+            return _connectionMultiplexer;
+
+        var redisConfig = ConfigurationOptions.Parse(_configuration["Redis:ConnectionString"]);
+        redisConfig.AbortOnConnectFail = false;
+        redisConfig.ConnectRetry = 5;
+        redisConfig.ConnectTimeout = 5000;
+        redisConfig.SyncTimeout = 5000;
+        redisConfig.ReconnectRetryPolicy = new LinearRetry(1000);
+
+        try
         {
-            var redisConfig = ConfigurationOptions.Parse(configuration["Redis:ConnectionString"]);
-            redisConfig.AbortOnConnectFail = false;
-            redisConfig.ConnectRetry = 5;
-            redisConfig.AllowAdmin = true;
+            _logger.LogInformation("Attempting to connect to Redis...");
+            _connectionMultiplexer = await ConnectionMultiplexer.ConnectAsync(redisConfig);
 
-            _connectionMultiplexer = new Lazy<IConnectionMultiplexer>(() =>
-            {
-                var connection = ConnectionMultiplexer.Connect(redisConfig);
+            _connectionMultiplexer.ConnectionFailed += (sender, args) =>
+                _logger.LogError($"Redis Connection Failed: {args.Exception}");
 
-                var server = connection.GetServer("localhost", 6380); // Sunucu adresi ve portu
-                server.ConfigSet("maxmemory", "100mb"); // Memory limit
-                server.ConfigSet("maxmemory-policy", "allkeys-lru"); // LRU politikası
-                return connection;
-            });
-            //_connectionMultiplexer = new Lazy<IConnectionMultiplexer>(() => ConnectionMultiplexer.Connect(redisCongif));
+            _connectionMultiplexer.ConnectionRestored += (sender, args) =>
+                _logger.LogInformation("Redis Connection Restored");
+
+            return _connectionMultiplexer;
         }
-
-
-        public IConnectionMultiplexer GetConnection()
+        catch (Exception ex)
         {
-           return _connectionMultiplexer.Value;
+            _logger.LogError(ex, "Failed to connect to Redis");
+            throw;
         }
+    }
 
-        public void Dispose()
+    public async ValueTask DisposeAsync()
+    {
+        if (_connectionMultiplexer != null)
         {
-            if(_connectionMultiplexer.IsValueCreated && _connectionMultiplexer.Value !=null)
-            {
-                _connectionMultiplexer.Value.Dispose();
-            }
+            await _connectionMultiplexer.CloseAsync();
+            _connectionMultiplexer.Dispose();
         }
-
     }
 }

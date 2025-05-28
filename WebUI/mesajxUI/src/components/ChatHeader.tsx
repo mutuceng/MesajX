@@ -3,7 +3,6 @@ import { useAppDispatch, useAppSelector } from "../hooks/hooks";
 import { useEffect, useState } from "react";
 import requests from "../api/requests";
 import { setSelectedRoom } from "../features/chat/chatRoomSlice";
-import { clearMessages } from "../features/chat/messageSlice";
 import AddMember from "./AddMember";
 
 const API_BASE_URL = "http://localhost:5281";
@@ -55,7 +54,6 @@ const ChatHeader = () => {
   const handleClose = () => {
     console.log("Close butonuna tıklandı, seçili oda ID:", selectedChatRoomId);
     dispatch(setSelectedRoom(null));
-    dispatch(clearMessages());
     setRoomInfo(null);
   };
 

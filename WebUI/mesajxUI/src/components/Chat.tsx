@@ -1,45 +1,44 @@
-import React, { useState } from "react";
+import React, { useEffect } from "react";
+import { useAppDispatch, useAppSelector } from "../hooks/hooks";
+import { startSignalRConnection } from "../api/SignalRService";
+import { fetchMessages } from "../features/chat/messageSlice";
+import ChatHeader from "./ChatHeader";
 import ChatWindow from "./ChatWindow";
-
-interface User {
-  _id: string;
-  profilePic?: string;
-}
-
-interface Message {
-  _id: string;
-  senderId: string;
-  text?: string;
-  image?: string | null;
-  createdAt: string;
-}
+import MessageInput from "./MessageInput";
 
 const Chat: React.FC = () => {
-  const [messages, setMessages] = useState<Message[]>([]);
+  const token = useAppSelector((state) => state.account.user?.accessToken);
+  const dispatch = useAppDispatch();
+  const selectedChatRoomId = useAppSelector((state) => state.message.selectedChatRoomId);
 
-  // Sadece örnek kullanıcılar
-  const authUser: User = {
-    _id: "user1",
-    profilePic: "https://placekitten.com/100/100",
-  };
+  // Mesajları yükle
+  useEffect(() => {
+    if (selectedChatRoomId) {
+      dispatch(fetchMessages({ chatRoomId: selectedChatRoomId }));
+    }
+  }, [selectedChatRoomId, dispatch]);
 
-  const selectedUser: User = {
-    _id: "user2",
-    profilePic: "https://placekitten.com/101/101",
-  };
-  
-  const handleSend = async (text: string) => {
-      console.log("Sending message:", text);
-  };
+  // SignalR bağlantısını başlat
+  useEffect(() => {
+    if (token && selectedChatRoomId) {
+      startSignalRConnection(token, selectedChatRoomId);
+    }
+
+    return () => {
+      // Bağlantıyı durdurma işlemi
+      // stopSignalRConnection(); (isteğe bağlı)
+    };
+  }, [token, selectedChatRoomId]);
 
   return (
-    <div className="flex flex-col flex-1 h-full">
-      <ChatWindow
-        authUser={authUser}
-        selectedUser={selectedUser}
-        messages={messages}
-        onSend={handleSend}
-      />
+    <div className="flex flex-col h-full">
+      <ChatHeader />
+
+      <div className="flex-1 overflow-y-auto">
+        <ChatWindow />
+      </div>
+
+      <MessageInput />
     </div>
   );
 };

@@ -1,7 +1,9 @@
   
   export interface SendMessageDto {
-    userId: string;
-    chatRoomId: string;
-    content: string;
-    mediaUrl?: string;
+    MessageId: string;
+    UserId: string;
+    ChatRoomId: string;
+    Content: string;
+    MediaUrl: string;
+    SentAt: string;
   }

@@ -1,6 +1,5 @@
 export interface UserInfo {
-    id: string;
-    email: string;
-    userName: string;
-  }
-  
+  userId: string;
+  username: string;
+  profileImageUrl?: string;
+}

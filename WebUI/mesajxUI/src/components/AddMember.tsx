@@ -19,46 +19,41 @@ const AddMemberModal = ({ isOpen, onClose, chatRoomId }: AddMemberModalProps) =>
 
   if (!isOpen) return null;
 
-  const handleAddMember = async () => {
-    if (!chatRoomId) {
-      setError("Oda seçili değil!");
-      return;
-    }
 
-    if (!username.trim()) {
-      setError("Kullanıcı adı boş olamaz!");
-      return;
-    }
 
-    setLoading(true);
-    setError(null);
-
-    try {
-      // Kullanıcı adından UserId al
-      const userIdResult = await dispatch(getUserIdByUsername(username)).unwrap();
-      if (!userIdResult) {
-        throw new Error("Kullanıcı bulunamadı");
-      }
-
-      // Üye ekleme işlemi
-      await dispatch(
-        addMember({
-          chatRoomId,
-          userId: "userIdResult",
-          role: Role.Member, // Varsayılan Role: Member (1)
-        })
-      ).unwrap();
-
-      setUsername(""); // Formu temizle
-      onClose(); // Modalı kapat
-    } catch (err: any) {
-      setError(err.message || "Üye eklenemedi");
-      console.error("Üye ekleme hatası:", err);
-    } finally {
-      setLoading(false);
-    }
-  };
-
+const handleAddMember = async () => {
+  if (!chatRoomId) {
+    setError("Oda seçili değil!");
+    return;
+  }
+  if (!username.trim()) {
+    setError("Kullanıcı adı boş olamaz!");
+    return;
+  }
+  setLoading(true);
+  setError(null);
+try {
+  const userIdResult = await dispatch(getUserIdByUsername(username)).unwrap();
+  console.log("userIdResult:", userIdResult);
+  if (!userIdResult || !userIdResult.userId) {
+    throw new Error("Kullanıcı bulunamadı");
+  }
+  await dispatch(
+    addMember({
+      chatRoomId,
+      userId: userIdResult.userId, // Doğru userId’yi kullan
+      role,
+    })
+  ).unwrap();
+  setUsername("");
+  onClose();
+} catch (err: any) {
+  console.error("Hata detayları:", err.response?.data || err);
+  setError(err.response?.data?.Message || err.message || "Üye eklenemedi");
+} finally {
+  setLoading(false);
+}
+};
   return (
 <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50">
     <div className="bg-base-100 p-6 rounded-lg shadow-lg w-full max-w-md">

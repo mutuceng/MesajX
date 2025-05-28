@@ -18,16 +18,37 @@ namespace Mesajx.IdentityServer.Controller
         }
 
         [HttpPost]
-        public async Task<IActionResult> UserRegister(UserRegisterDto userRegisterDto)
+        public async Task<IActionResult> UserRegister([FromForm] UserRegisterDto userRegisterDto, [FromForm] IFormFile profileImage)
         {
             var user = new ApplicationUser
             {
                 UserName = userRegisterDto.Username,
                 Email = userRegisterDto.Email,
-                ProfileImageUrl = userRegisterDto.ProfileImageUrl,
                 BirthDate = DateTime.SpecifyKind(userRegisterDto.BirthDate, DateTimeKind.Utc),
                 PhoneNumber = userRegisterDto.PhoneNumber
             };
+
+            string profileImagePath = "";
+
+            if(profileImage != null)
+            {
+                var fileName = $"{Guid.NewGuid()}{Path.GetExtension(profileImage.FileName)}";
+                var filePath = Path.Combine(Directory.GetCurrentDirectory(), "wwwroot/uploads/profileImages", fileName);
+
+                using (var stream = new FileStream(filePath, FileMode.Create))
+                {
+                    await profileImage.CopyToAsync(stream);
+                }
+
+                profileImagePath = $"/uploads/profileImages/{fileName}";
+            }
+            else
+            {
+                profileImagePath = "/uploads/profileImages/default.jpg";
+            }
+
+            user.ProfileImageUrl = profileImagePath;
+
             var result = await _userManager.CreateAsync(user, userRegisterDto.Password);
             if (result.Succeeded)
             {
