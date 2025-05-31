@@ -1,6 +1,22 @@
 {
   "Files": [
     {
+      "Id": "C:\\Users\\Umutl\\Belgeler\\GitHub\\MesajX\\Backend\\IdentityServer\\Mesajx.IdentityServer\\wwwroot\\PfpUploads\\profileImages\\187239b0-a5d2-43b1-8ac8-13f3d030476b.jpg",
+      "PackagePath": "staticwebassets\\PfpUploads\\profileImages\\187239b0-a5d2-43b1-8ac8-13f3d030476b.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Umutl\\Belgeler\\GitHub\\MesajX\\Backend\\IdentityServer\\Mesajx.IdentityServer\\wwwroot\\PfpUploads\\profileImages\\6f9c53b8-ec76-451e-9a5d-79aa22da3cd4.jpg",
+      "PackagePath": "staticwebassets\\PfpUploads\\profileImages\\6f9c53b8-ec76-451e-9a5d-79aa22da3cd4.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Umutl\\Belgeler\\GitHub\\MesajX\\Backend\\IdentityServer\\Mesajx.IdentityServer\\wwwroot\\PfpUploads\\profileImages\\d709fc48-f814-417f-988f-bd3d1e92997f.jpg",
+      "PackagePath": "staticwebassets\\PfpUploads\\profileImages\\d709fc48-f814-417f-988f-bd3d1e92997f.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Umutl\\Belgeler\\GitHub\\MesajX\\Backend\\IdentityServer\\Mesajx.IdentityServer\\wwwroot\\PfpUploads\\profileImages\\default.jpg",
+      "PackagePath": "staticwebassets\\PfpUploads\\profileImages\\default.jpg"
+    },
+    {
       "Id": "C:\\Users\\Umutl\\Belgeler\\GitHub\\MesajX\\Backend\\IdentityServer\\Mesajx.IdentityServer\\wwwroot\\css\\site.css",
       "PackagePath": "staticwebassets\\css\\site.css"
     },
@@ -191,14 +207,6 @@
     {
       "Id": "C:\\Users\\Umutl\\Belgeler\\GitHub\\MesajX\\Backend\\IdentityServer\\Mesajx.IdentityServer\\wwwroot\\lib\\jquery\\dist\\jquery.slim.min.map",
       "PackagePath": "staticwebassets\\lib\\jquery\\dist\\jquery.slim.min.map"
-    },
-    {
-      "Id": "C:\\Users\\Umutl\\Belgeler\\GitHub\\MesajX\\Backend\\IdentityServer\\Mesajx.IdentityServer\\wwwroot\\uploads\\profileImages\\d709fc48-f814-417f-988f-bd3d1e92997f.jpg",
-      "PackagePath": "staticwebassets\\uploads\\profileImages\\d709fc48-f814-417f-988f-bd3d1e92997f.jpg"
-    },
-    {
-      "Id": "C:\\Users\\Umutl\\Belgeler\\GitHub\\MesajX\\Backend\\IdentityServer\\Mesajx.IdentityServer\\wwwroot\\uploads\\profileImages\\default.jpg",
-      "PackagePath": "staticwebassets\\uploads\\profileImages\\default.jpg"
     },
     {
       "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.Mesajx.IdentityServer.Microsoft.AspNetCore.StaticWebAssetEndpoints.props",

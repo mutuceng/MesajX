@@ -71,7 +71,8 @@ const queries =
         }).then((response: AxiosResponse) => response.data),
     put: (url: string, body: {}) => axios.put(url, body).then((response: AxiosResponse) => response.data),
     delete: (url: string, id: number) => axios.delete(`${url}/${id}`).then((response: AxiosResponse) => response.data),
-}
+    setDelete: (url: string, params?: { [key: string]: any }) =>
+            axios.delete(url, { params }).then((response: AxiosResponse) => response.data),}
 
 const Message = 
 {
@@ -109,10 +110,12 @@ const Account =
         }),
     getUserIdByUsername : (username: string) =>
         queries.getById("user/users/username", username),
-    getUserProfile: (userId: string) =>
-        queries.getById("user/users/GetUserInfo", userId),
-    getMultipleUserProfiles: (userIds: string[]): Promise<UserInfo[]> => 
-        queries.getWithParams("user/users/GetMultipleUserInfo", { userIds }),
+    getUserProfile: () =>
+        queries.getAll("user/users/GetUserInfo"),
+    getChatUsers: (userIds: string[]): Promise<UserInfo[]> => 
+        queries.post("user/users/getchatusers", { userIds }),
+    updateUserProfile: (userId: string, updateDto: {}) =>
+        queries.put(`user/users/updateprofile?userId=${userId}`, updateDto),
       
 }
 
@@ -128,7 +131,8 @@ const ChatRoom =
 const ChatRoomMember = 
 {
     addMember: (AddMemberDto: {}) => queries.post("chat/ChatRoomMembers/addMember", AddMemberDto),
-    removeMember: (id: number) => queries.delete("chat/RoomMembers/removeMember", id),
+    removeMember: (userId: string, chatRoomId: string) =>
+        queries.setDelete("chat/ChatRoomMembers/removeMember", { userId, chatRoomId }),
     getMembersByRoomId: (roomId: number) => queries.getAll(`chat/RoomMembers/${roomId}`),
 }
 

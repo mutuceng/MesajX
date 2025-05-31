@@ -15,6 +15,8 @@ import { logOut, setUser } from "./features/account/accountSlice";
 import requests from "./api/requests";
 import { User } from "./constants/types/IUser";
 import React from "react";
+import ProfilePage from "./pages/ProfilePage";
+import EditProfilePage from "./pages/EditProfilePage";
 
 const App = () => {
   const dispatch = useAppDispatch();
@@ -81,6 +83,8 @@ const App = () => {
         <Route path="/login" element={user ? <Navigate to="/" replace /> : <SignInPage />} />
         <Route path="/signup" element={user ? <Navigate to="/" replace /> : <SignUpPage />} />
         <Route path="/settings" element={user ? <SettingsPage /> : <Navigate to="/login" replace />} />
+        <Route path="/profile" element={user ? <ProfilePage /> : <Navigate to="/login" replace />} />
+        {/* <Route path="/profile/edit" element={user ? <EditProfilePage /> : <Navigate to="/login" replace />} /> */}
       </Routes>
       <Toaster />
     </div>

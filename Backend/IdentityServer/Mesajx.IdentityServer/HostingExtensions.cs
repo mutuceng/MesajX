@@ -12,6 +12,7 @@ using Mesajx.IdentityServer.Services.TokenService;
 using ITokenService = Mesajx.IdentityServer.Services.TokenService.ITokenService;
 using Mesajx.IdentityServer.Services.FriendshipService;
 using Mesajx.IdentityServer.Settings;
+using Mesajx.IdentityServer.Services.UserServices;
 
 
 namespace Mesajx.IdentityServer;
@@ -28,6 +29,7 @@ internal static class HostingExtensions
 
         builder.Services.AddScoped<ISignInService, SignInService>();
         builder.Services.AddScoped<IFriendshipService, FriendshipService>();
+        builder.Services.AddScoped<IUserService, UserService>();
 
 
 

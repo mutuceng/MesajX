@@ -33,6 +33,22 @@ export const addMember = createAsyncThunk<
   }
 );
 
+export const removeMember = createAsyncThunk<
+  { userId: string; chatRoomId: string },
+  { userId: string; chatRoomId: string },
+  { rejectValue: string }
+>(
+  "member/removeMember",
+  async ({ userId, chatRoomId }, { rejectWithValue }) => {
+    try {
+      await requests.ChatRoomMember.removeMember(userId, chatRoomId);
+      return { userId, chatRoomId };
+    } catch (error: any) {
+      return rejectWithValue(error.message || "Üye silinemedi");
+    }
+  }
+);
+
 const chatRoomMemberSlice = createSlice({
     name: "chatRoomMember",
     initialState: {

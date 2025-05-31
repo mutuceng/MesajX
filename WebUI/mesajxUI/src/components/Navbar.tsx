@@ -1,8 +1,16 @@
+import { useNavigate } from "react-router-dom";
 import { useAppDispatch, useAppSelector } from "../hooks/hooks";
+import { logOut } from "../features/account/accountSlice";
 
 function Navbar() {
   const { user } = useAppSelector((state) => state.account);
   const dispatch = useAppDispatch();
+  const navigate = useNavigate();
+
+  const handleLogout = () => {
+    dispatch(logOut());
+    navigate("/login"); // veya ana sayfaya yönlendirin: "/"
+  };
 
   return (
     <header
@@ -33,10 +41,7 @@ function Navbar() {
 
               <button
                 className="btn btn-sm gap-2"
-                onClick={() => {
-                  // Logout işlemini buraya yazabilirsin
-                  // dispatch(logout())
-                }}
+                onClick={handleLogout}
               >
                 <span className="hidden sm:inline">Logout</span>
               </button>

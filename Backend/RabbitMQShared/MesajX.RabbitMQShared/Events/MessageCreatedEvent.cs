@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace MesajX.RabbitMQShared.Events
 {
-    public interface MessageCreatedEvent
+    public class MessageCreatedEvent
     {
         public string MessageId { get; set; }
         public string UserId { get; set; }

@@ -2,7 +2,9 @@ import React, { useState, useEffect } from "react";
 import { useAppDispatch, useAppSelector } from "../hooks/hooks";
 import { fetchChatRooms } from "../features/chat/chatRoomSlice";
 import CreateChatRoom from "./CreateChatRoom";
-import { setSelectedChatRoomId } from "../features/chat/messageSlice";
+import { fetchMessages, resetMessages, setMessages, setSelectedChatRoomId } from "../features/chat/messageSlice";
+import requests from "../api/requests";
+import toast from "react-hot-toast";
 
 const API_BASE_URL = "http://localhost:5281";
 
@@ -38,9 +40,34 @@ const Sidebar = () => {
   }, [chatRooms]);
   
 
-  const handleRoomSelect = (chatRoom: any) => {
-    console.log("Butona tıklandı, seçilen chatRoomId:", chatRoom.chatRoomId); // Tıklama logu
+  const handleRoomSelect = async (chatRoom: any) => {
+    console.log("Butona tıklandı, seçilen chatRoomId:", chatRoom.chatRoomId);
+
+    // Önceki mesajları sıfırla
+    dispatch(resetMessages());
+
+    // Yeni chatRoomId'yi set et
     dispatch(setSelectedChatRoomId(chatRoom.chatRoomId));
+
+    // Seçili odayı yerel state'e kaydet
+    setSelectedChatRoom(chatRoom);
+
+    // Yeni odanın mesajlarını çek
+    try {
+      const result = await dispatch(fetchMessages({ chatRoomId: chatRoom.chatRoomId }));
+      if (fetchMessages.fulfilled.match(result)) {
+        const messages = result.payload;
+        console.log("Seçilen odanın mesajları:", messages);
+        if (messages.length === 0) {
+          toast("Bu odada henüz mesaj yok", { icon: "ℹ️" });
+        }
+      } else if (fetchMessages.rejected.match(result)) {
+        throw new Error(result.payload as string);
+      }
+    } catch (err: any) {
+      console.error("Mesajlar alınırken hata:", err);
+      toast.error(err.message || "Mesajlar yüklenemedi");
+    }
   };
 
   return (
@@ -111,3 +138,5 @@ const Sidebar = () => {
 };
 
 export default Sidebar;
+
+

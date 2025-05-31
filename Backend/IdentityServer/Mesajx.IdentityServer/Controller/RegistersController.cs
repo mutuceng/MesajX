@@ -33,18 +33,18 @@ namespace Mesajx.IdentityServer.Controller
             if(profileImage != null)
             {
                 var fileName = $"{Guid.NewGuid()}{Path.GetExtension(profileImage.FileName)}";
-                var filePath = Path.Combine(Directory.GetCurrentDirectory(), "wwwroot/uploads/profileImages", fileName);
+                var filePath = Path.Combine(Directory.GetCurrentDirectory(), "wwwroot/pfpuploads/profileImages", fileName);
 
                 using (var stream = new FileStream(filePath, FileMode.Create))
                 {
                     await profileImage.CopyToAsync(stream);
                 }
 
-                profileImagePath = $"/uploads/profileImages/{fileName}";
+                profileImagePath = $"/pfpuploads/profileImages/{fileName}";
             }
             else
             {
-                profileImagePath = "/uploads/profileImages/default.jpg";
+                profileImagePath = "/pfpuploads/profileImages/default.jpg";
             }
 
             user.ProfileImageUrl = profileImagePath;

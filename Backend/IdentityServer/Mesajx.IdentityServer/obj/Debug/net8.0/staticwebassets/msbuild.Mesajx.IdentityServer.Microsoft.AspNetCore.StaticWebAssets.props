@@ -864,12 +864,48 @@
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
       <OriginalItemSpec>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\lib\jquery\README.md'))</OriginalItemSpec>
     </StaticWebAsset>
-    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\uploads\profileImages\d709fc48-f814-417f-988f-bd3d1e92997f.jpg'))">
+    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\PfpUploads\profileImages\187239b0-a5d2-43b1-8ac8-13f3d030476b.jpg'))">
       <SourceType>Package</SourceType>
       <SourceId>Mesajx.IdentityServer</SourceId>
       <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
       <BasePath>_content/Mesajx.IdentityServer</BasePath>
-      <RelativePath>uploads/profileImages/d709fc48-f814-417f-988f-bd3d1e92997f.jpg</RelativePath>
+      <RelativePath>PfpUploads/profileImages/187239b0-a5d2-43b1-8ac8-13f3d030476b.jpg</RelativePath>
+      <AssetKind>All</AssetKind>
+      <AssetMode>All</AssetMode>
+      <AssetRole>Primary</AssetRole>
+      <RelatedAsset></RelatedAsset>
+      <AssetTraitName></AssetTraitName>
+      <AssetTraitValue></AssetTraitValue>
+      <Fingerprint>0zoxwwgdpy</Fingerprint>
+      <Integrity>VCPUVXs3Yw2Nd+ezScMtqnaUJHR7/2Z5rptK8gIL+C8=</Integrity>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+      <OriginalItemSpec>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\PfpUploads\profileImages\187239b0-a5d2-43b1-8ac8-13f3d030476b.jpg'))</OriginalItemSpec>
+    </StaticWebAsset>
+    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\PfpUploads\profileImages\6f9c53b8-ec76-451e-9a5d-79aa22da3cd4.jpg'))">
+      <SourceType>Package</SourceType>
+      <SourceId>Mesajx.IdentityServer</SourceId>
+      <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
+      <BasePath>_content/Mesajx.IdentityServer</BasePath>
+      <RelativePath>PfpUploads/profileImages/6f9c53b8-ec76-451e-9a5d-79aa22da3cd4.jpg</RelativePath>
+      <AssetKind>All</AssetKind>
+      <AssetMode>All</AssetMode>
+      <AssetRole>Primary</AssetRole>
+      <RelatedAsset></RelatedAsset>
+      <AssetTraitName></AssetTraitName>
+      <AssetTraitValue></AssetTraitValue>
+      <Fingerprint>l4xl1v05kq</Fingerprint>
+      <Integrity>9Vdmc2bynqFyp6Q9v0nTEJ+qHlDOf3p3RlN2KUzKxDA=</Integrity>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+      <OriginalItemSpec>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\PfpUploads\profileImages\6f9c53b8-ec76-451e-9a5d-79aa22da3cd4.jpg'))</OriginalItemSpec>
+    </StaticWebAsset>
+    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\PfpUploads\profileImages\d709fc48-f814-417f-988f-bd3d1e92997f.jpg'))">
+      <SourceType>Package</SourceType>
+      <SourceId>Mesajx.IdentityServer</SourceId>
+      <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
+      <BasePath>_content/Mesajx.IdentityServer</BasePath>
+      <RelativePath>PfpUploads/profileImages/d709fc48-f814-417f-988f-bd3d1e92997f.jpg</RelativePath>
       <AssetKind>All</AssetKind>
       <AssetMode>All</AssetMode>
       <AssetRole>Primary</AssetRole>
@@ -880,14 +916,14 @@
       <Integrity>pfFHCSpc4VBGeLPir2MAWKwNByGJesWzQ9uYermDfPE=</Integrity>
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
-      <OriginalItemSpec>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\uploads\profileImages\d709fc48-f814-417f-988f-bd3d1e92997f.jpg'))</OriginalItemSpec>
+      <OriginalItemSpec>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\PfpUploads\profileImages\d709fc48-f814-417f-988f-bd3d1e92997f.jpg'))</OriginalItemSpec>
     </StaticWebAsset>
-    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\uploads\profileImages\default.jpg'))">
+    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\PfpUploads\profileImages\default.jpg'))">
       <SourceType>Package</SourceType>
       <SourceId>Mesajx.IdentityServer</SourceId>
       <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
       <BasePath>_content/Mesajx.IdentityServer</BasePath>
-      <RelativePath>uploads/profileImages/default.jpg</RelativePath>
+      <RelativePath>PfpUploads/profileImages/default.jpg</RelativePath>
       <AssetKind>All</AssetKind>
       <AssetMode>All</AssetMode>
       <AssetRole>Primary</AssetRole>
@@ -898,7 +934,7 @@
       <Integrity>++YtgQ7xqlRpljdC/BUNrBZdPY92qtZ2L91BzaXs5xQ=</Integrity>
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
-      <OriginalItemSpec>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\uploads\profileImages\default.jpg'))</OriginalItemSpec>
+      <OriginalItemSpec>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\PfpUploads\profileImages\default.jpg'))</OriginalItemSpec>
     </StaticWebAsset>
   </ItemGroup>
 </Project>

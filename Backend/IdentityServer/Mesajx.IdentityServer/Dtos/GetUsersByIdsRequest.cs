@@ -2,6 +2,6 @@
 {
     public class GetUsersByIdsRequest
     {
-        public List<string> Ids { get; set; } = new();
+        public List<string> userIds { get; set; } = new();
     }
 }

@@ -54,6 +54,42 @@
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
       <OriginalItemSpec>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\uploads\610c4ca5-1b4b-48a1-971e-e7bff47e5ab1.jpg'))</OriginalItemSpec>
     </StaticWebAsset>
+    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\uploads\64fd0ebf-622d-4713-965d-f9c9ce5f373f.png'))">
+      <SourceType>Package</SourceType>
+      <SourceId>MesajX.ChatService</SourceId>
+      <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
+      <BasePath>_content/MesajX.ChatService</BasePath>
+      <RelativePath>uploads/64fd0ebf-622d-4713-965d-f9c9ce5f373f.png</RelativePath>
+      <AssetKind>All</AssetKind>
+      <AssetMode>All</AssetMode>
+      <AssetRole>Primary</AssetRole>
+      <RelatedAsset></RelatedAsset>
+      <AssetTraitName></AssetTraitName>
+      <AssetTraitValue></AssetTraitValue>
+      <Fingerprint>gas3wdd4n3</Fingerprint>
+      <Integrity>CAr/SKUpGjeUaGleX86Qgd5evCWXLNQRX/1jT5Pu72Q=</Integrity>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+      <OriginalItemSpec>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\uploads\64fd0ebf-622d-4713-965d-f9c9ce5f373f.png'))</OriginalItemSpec>
+    </StaticWebAsset>
+    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\uploads\6b94eca2-51ce-4502-a89b-9e25e491ecb1.jpeg'))">
+      <SourceType>Package</SourceType>
+      <SourceId>MesajX.ChatService</SourceId>
+      <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
+      <BasePath>_content/MesajX.ChatService</BasePath>
+      <RelativePath>uploads/6b94eca2-51ce-4502-a89b-9e25e491ecb1.jpeg</RelativePath>
+      <AssetKind>All</AssetKind>
+      <AssetMode>All</AssetMode>
+      <AssetRole>Primary</AssetRole>
+      <RelatedAsset></RelatedAsset>
+      <AssetTraitName></AssetTraitName>
+      <AssetTraitValue></AssetTraitValue>
+      <Fingerprint>gfvswar5ze</Fingerprint>
+      <Integrity>HAaMVtiuRjxb8CI5LXWrDo7Jv4abecgAlHTzNkY5o88=</Integrity>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+      <OriginalItemSpec>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\uploads\6b94eca2-51ce-4502-a89b-9e25e491ecb1.jpeg'))</OriginalItemSpec>
+    </StaticWebAsset>
     <StaticWebAsset Include="$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\uploads\9845e61a-c2d0-499c-b98e-3166c8456b25.jpg'))">
       <SourceType>Package</SourceType>
       <SourceId>MesajX.ChatService</SourceId>
@@ -107,6 +143,24 @@
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
       <OriginalItemSpec>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\uploads\c3737a68-bd8c-4222-a313-5e45be64600b.jpeg'))</OriginalItemSpec>
+    </StaticWebAsset>
+    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\uploads\dfc323bd-647a-4867-ab32-e97dfed6be7c.png'))">
+      <SourceType>Package</SourceType>
+      <SourceId>MesajX.ChatService</SourceId>
+      <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
+      <BasePath>_content/MesajX.ChatService</BasePath>
+      <RelativePath>uploads/dfc323bd-647a-4867-ab32-e97dfed6be7c.png</RelativePath>
+      <AssetKind>All</AssetKind>
+      <AssetMode>All</AssetMode>
+      <AssetRole>Primary</AssetRole>
+      <RelatedAsset></RelatedAsset>
+      <AssetTraitName></AssetTraitName>
+      <AssetTraitValue></AssetTraitValue>
+      <Fingerprint>xchgu682ce</Fingerprint>
+      <Integrity>H45Kghz5FuqcNbKCCRnbs7I9znjoeg+MAASIVYQDZTQ=</Integrity>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+      <OriginalItemSpec>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\uploads\dfc323bd-647a-4867-ab32-e97dfed6be7c.png'))</OriginalItemSpec>
     </StaticWebAsset>
   </ItemGroup>
 </Project>

@@ -70,6 +70,14 @@ const messageSlice = createSlice({
         state.messages.push(action.payload); // Yeni mesajı ekle
       }
     },
+    setMessages: (state, action: { payload: Message[] }) => {
+      state.messages = action.payload;
+    },
+    resetMessages: (state) => {
+      state.messages = [];
+      state.selectedChatRoomId = null;
+      state.error = null;
+    },
   },
   extraReducers: (builder) => {
     builder
@@ -78,18 +86,13 @@ const messageSlice = createSlice({
       })
       .addCase(fetchMessages.fulfilled, (state, action) => {
         state.status = "succeeded";
-        // Backend'den gelen mesajları eklerken mevcut mesajlarla kontrol et
-        const newMessages = action.payload.filter(
-          (message: Message) => !state.messages.some((msg) => msg.messageId === message.messageId)
-        );
-        state.messages = [...state.messages, ...newMessages];
+        state.messages = action.payload; // Mesajları doğrudan set et
       })
       .addCase(fetchMessages.rejected, (state, action) => {
         state.status = "failed";
         state.error = action.payload as string;
       })
       .addCase(sendMessage.fulfilled, (state, action) => {
-        // Yeni mesajı eklemeden önce kontrol et
         const messageExists = state.messages.some(
           (msg) => msg.messageId === action.payload.messageId
         );
@@ -100,5 +103,5 @@ const messageSlice = createSlice({
   },
 });
 
-export const { setSelectedChatRoomId, addMessage } = messageSlice.actions;
+export const { setSelectedChatRoomId, addMessage, resetMessages, setMessages } = messageSlice.actions;
 export default messageSlice.reducer;

@@ -13,6 +13,14 @@
       "PackagePath": "staticwebassets\\uploads\\610c4ca5-1b4b-48a1-971e-e7bff47e5ab1.jpg"
     },
     {
+      "Id": "C:\\Users\\Umutl\\Belgeler\\GitHub\\MesajX\\Backend\\Services\\ChatService\\MesajX.ChatService\\wwwroot\\uploads\\64fd0ebf-622d-4713-965d-f9c9ce5f373f.png",
+      "PackagePath": "staticwebassets\\uploads\\64fd0ebf-622d-4713-965d-f9c9ce5f373f.png"
+    },
+    {
+      "Id": "C:\\Users\\Umutl\\Belgeler\\GitHub\\MesajX\\Backend\\Services\\ChatService\\MesajX.ChatService\\wwwroot\\uploads\\6b94eca2-51ce-4502-a89b-9e25e491ecb1.jpeg",
+      "PackagePath": "staticwebassets\\uploads\\6b94eca2-51ce-4502-a89b-9e25e491ecb1.jpeg"
+    },
+    {
       "Id": "C:\\Users\\Umutl\\Belgeler\\GitHub\\MesajX\\Backend\\Services\\ChatService\\MesajX.ChatService\\wwwroot\\uploads\\9845e61a-c2d0-499c-b98e-3166c8456b25.jpg",
       "PackagePath": "staticwebassets\\uploads\\9845e61a-c2d0-499c-b98e-3166c8456b25.jpg"
     },
@@ -23,6 +31,10 @@
     {
       "Id": "C:\\Users\\Umutl\\Belgeler\\GitHub\\MesajX\\Backend\\Services\\ChatService\\MesajX.ChatService\\wwwroot\\uploads\\c3737a68-bd8c-4222-a313-5e45be64600b.jpeg",
       "PackagePath": "staticwebassets\\uploads\\c3737a68-bd8c-4222-a313-5e45be64600b.jpeg"
+    },
+    {
+      "Id": "C:\\Users\\Umutl\\Belgeler\\GitHub\\MesajX\\Backend\\Services\\ChatService\\MesajX.ChatService\\wwwroot\\uploads\\dfc323bd-647a-4867-ab32-e97dfed6be7c.png",
+      "PackagePath": "staticwebassets\\uploads\\dfc323bd-647a-4867-ab32-e97dfed6be7c.png"
     },
     {
       "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.MesajX.ChatService.Microsoft.AspNetCore.StaticWebAssetEndpoints.props",

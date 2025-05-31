@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("MesajX.ChatService.EntityLayer")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+60c900d211625d218d16fe36d88821298ecb0b90")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+d25b950f02b84bcb5ee85ba0393a013202883085")]
 [assembly: System.Reflection.AssemblyProductAttribute("MesajX.ChatService.EntityLayer")]
 [assembly: System.Reflection.AssemblyTitleAttribute("MesajX.ChatService.EntityLayer")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

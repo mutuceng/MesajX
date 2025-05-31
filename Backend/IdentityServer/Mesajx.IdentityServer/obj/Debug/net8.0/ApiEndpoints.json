@@ -120,12 +120,59 @@
   },
   {
     "ContainingType": "Mesajx.IdentityServer.Controller.UsersController",
+    "Method": "GetChatUsers",
+    "RelativePath": "api/user/Users/getchatusers",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "request",
+        "Type": "Mesajx.IdentityServer.Dtos.GetUsersByIdsRequest",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "System.Collections.Generic.List\u00601[[Mesajx.IdentityServer.Dtos.UserInfoDto, Mesajx.IdentityServer, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "Mesajx.IdentityServer.Controller.UsersController",
     "Method": "GetUserInfo",
     "RelativePath": "api/user/Users/GetUserInfo",
     "HttpMethod": "GET",
     "IsController": true,
     "Order": 0,
     "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Mesajx.IdentityServer.Controller.UsersController",
+    "Method": "UpdateUser",
+    "RelativePath": "api/user/Users/updateprofile",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "userId",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "updateDto",
+        "Type": "Mesajx.IdentityServer.Dtos.UpdateUserDto",
+        "IsRequired": true
+      }
+    ],
     "ReturnTypes": []
   },
   {

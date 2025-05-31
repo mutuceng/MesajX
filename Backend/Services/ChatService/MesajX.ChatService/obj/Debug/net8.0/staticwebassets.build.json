@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "dMiTln+n2Grgr7bt3lOlM4o8BWa0k6vwcC+l84+qf3I=",
+  "Hash": "oAMHFahSEUiCQZLcWr3n3d8G7H13ShuaKBEY3iQojWw=",
   "Source": "MesajX.ChatService",
   "BasePath": "_content/MesajX.ChatService",
   "Mode": "Default",
@@ -80,6 +80,48 @@
       "OriginalItemSpec": "wwwroot\\uploads\\610c4ca5-1b4b-48a1-971e-e7bff47e5ab1.jpg"
     },
     {
+      "Identity": "C:\\Users\\Umutl\\Belgeler\\GitHub\\MesajX\\Backend\\Services\\ChatService\\MesajX.ChatService\\wwwroot\\uploads\\64fd0ebf-622d-4713-965d-f9c9ce5f373f.png",
+      "SourceId": "MesajX.ChatService",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\Umutl\\Belgeler\\GitHub\\MesajX\\Backend\\Services\\ChatService\\MesajX.ChatService\\wwwroot\\",
+      "BasePath": "_content/MesajX.ChatService",
+      "RelativePath": "uploads/64fd0ebf-622d-4713-965d-f9c9ce5f373f#[.{fingerprint}]?.png",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "gas3wdd4n3",
+      "Integrity": "CAr/SKUpGjeUaGleX86Qgd5evCWXLNQRX/1jT5Pu72Q=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\uploads\\64fd0ebf-622d-4713-965d-f9c9ce5f373f.png"
+    },
+    {
+      "Identity": "C:\\Users\\Umutl\\Belgeler\\GitHub\\MesajX\\Backend\\Services\\ChatService\\MesajX.ChatService\\wwwroot\\uploads\\6b94eca2-51ce-4502-a89b-9e25e491ecb1.jpeg",
+      "SourceId": "MesajX.ChatService",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\Umutl\\Belgeler\\GitHub\\MesajX\\Backend\\Services\\ChatService\\MesajX.ChatService\\wwwroot\\",
+      "BasePath": "_content/MesajX.ChatService",
+      "RelativePath": "uploads/6b94eca2-51ce-4502-a89b-9e25e491ecb1#[.{fingerprint}]?.jpeg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "gfvswar5ze",
+      "Integrity": "HAaMVtiuRjxb8CI5LXWrDo7Jv4abecgAlHTzNkY5o88=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\uploads\\6b94eca2-51ce-4502-a89b-9e25e491ecb1.jpeg"
+    },
+    {
       "Identity": "C:\\Users\\Umutl\\Belgeler\\GitHub\\MesajX\\Backend\\Services\\ChatService\\MesajX.ChatService\\wwwroot\\uploads\\9845e61a-c2d0-499c-b98e-3166c8456b25.jpg",
       "SourceId": "MesajX.ChatService",
       "SourceType": "Discovered",
@@ -141,6 +183,27 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\uploads\\c3737a68-bd8c-4222-a313-5e45be64600b.jpeg"
+    },
+    {
+      "Identity": "C:\\Users\\Umutl\\Belgeler\\GitHub\\MesajX\\Backend\\Services\\ChatService\\MesajX.ChatService\\wwwroot\\uploads\\dfc323bd-647a-4867-ab32-e97dfed6be7c.png",
+      "SourceId": "MesajX.ChatService",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\Umutl\\Belgeler\\GitHub\\MesajX\\Backend\\Services\\ChatService\\MesajX.ChatService\\wwwroot\\",
+      "BasePath": "_content/MesajX.ChatService",
+      "RelativePath": "uploads/dfc323bd-647a-4867-ab32-e97dfed6be7c#[.{fingerprint}]?.png",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "xchgu682ce",
+      "Integrity": "H45Kghz5FuqcNbKCCRnbs7I9znjoeg+MAASIVYQDZTQ=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\uploads\\dfc323bd-647a-4867-ab32-e97dfed6be7c.png"
     }
   ],
   "Endpoints": [
@@ -391,6 +454,170 @@
       ]
     },
     {
+      "Route": "uploads/64fd0ebf-622d-4713-965d-f9c9ce5f373f.gas3wdd4n3.png",
+      "AssetFile": "C:\\Users\\Umutl\\Belgeler\\GitHub\\MesajX\\Backend\\Services\\ChatService\\MesajX.ChatService\\wwwroot\\uploads\\64fd0ebf-622d-4713-965d-f9c9ce5f373f.png",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "448797"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/png"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"CAr/SKUpGjeUaGleX86Qgd5evCWXLNQRX/1jT5Pu72Q=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Sat, 31 May 2025 07:29:37 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "gas3wdd4n3"
+        },
+        {
+          "Name": "label",
+          "Value": "uploads/64fd0ebf-622d-4713-965d-f9c9ce5f373f.png"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-CAr/SKUpGjeUaGleX86Qgd5evCWXLNQRX/1jT5Pu72Q="
+        }
+      ]
+    },
+    {
+      "Route": "uploads/64fd0ebf-622d-4713-965d-f9c9ce5f373f.png",
+      "AssetFile": "C:\\Users\\Umutl\\Belgeler\\GitHub\\MesajX\\Backend\\Services\\ChatService\\MesajX.ChatService\\wwwroot\\uploads\\64fd0ebf-622d-4713-965d-f9c9ce5f373f.png",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "448797"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/png"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"CAr/SKUpGjeUaGleX86Qgd5evCWXLNQRX/1jT5Pu72Q=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Sat, 31 May 2025 07:29:37 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=3600, must-revalidate"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-CAr/SKUpGjeUaGleX86Qgd5evCWXLNQRX/1jT5Pu72Q="
+        }
+      ]
+    },
+    {
+      "Route": "uploads/6b94eca2-51ce-4502-a89b-9e25e491ecb1.gfvswar5ze.jpeg",
+      "AssetFile": "C:\\Users\\Umutl\\Belgeler\\GitHub\\MesajX\\Backend\\Services\\ChatService\\MesajX.ChatService\\wwwroot\\uploads\\6b94eca2-51ce-4502-a89b-9e25e491ecb1.jpeg",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "37922"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/jpeg"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"HAaMVtiuRjxb8CI5LXWrDo7Jv4abecgAlHTzNkY5o88=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Fri, 30 May 2025 15:29:16 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "gfvswar5ze"
+        },
+        {
+          "Name": "label",
+          "Value": "uploads/6b94eca2-51ce-4502-a89b-9e25e491ecb1.jpeg"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-HAaMVtiuRjxb8CI5LXWrDo7Jv4abecgAlHTzNkY5o88="
+        }
+      ]
+    },
+    {
+      "Route": "uploads/6b94eca2-51ce-4502-a89b-9e25e491ecb1.jpeg",
+      "AssetFile": "C:\\Users\\Umutl\\Belgeler\\GitHub\\MesajX\\Backend\\Services\\ChatService\\MesajX.ChatService\\wwwroot\\uploads\\6b94eca2-51ce-4502-a89b-9e25e491ecb1.jpeg",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "37922"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/jpeg"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"HAaMVtiuRjxb8CI5LXWrDo7Jv4abecgAlHTzNkY5o88=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Fri, 30 May 2025 15:29:16 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=3600, must-revalidate"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-HAaMVtiuRjxb8CI5LXWrDo7Jv4abecgAlHTzNkY5o88="
+        }
+      ]
+    },
+    {
       "Route": "uploads/9845e61a-c2d0-499c-b98e-3166c8456b25.jpg",
       "AssetFile": "C:\\Users\\Umutl\\Belgeler\\GitHub\\MesajX\\Backend\\Services\\ChatService\\MesajX.ChatService\\wwwroot\\uploads\\9845e61a-c2d0-499c-b98e-3166c8456b25.jpg",
       "Selectors": [],
@@ -633,6 +860,88 @@
         {
           "Name": "integrity",
           "Value": "sha256-bIZSNKPbfGYBbO9n4mcXwqwsCAQZWPivmSpsUweJxuo="
+        }
+      ]
+    },
+    {
+      "Route": "uploads/dfc323bd-647a-4867-ab32-e97dfed6be7c.png",
+      "AssetFile": "C:\\Users\\Umutl\\Belgeler\\GitHub\\MesajX\\Backend\\Services\\ChatService\\MesajX.ChatService\\wwwroot\\uploads\\dfc323bd-647a-4867-ab32-e97dfed6be7c.png",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "3680890"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/png"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"H45Kghz5FuqcNbKCCRnbs7I9znjoeg+MAASIVYQDZTQ=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Sat, 31 May 2025 06:56:10 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=3600, must-revalidate"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-H45Kghz5FuqcNbKCCRnbs7I9znjoeg+MAASIVYQDZTQ="
+        }
+      ]
+    },
+    {
+      "Route": "uploads/dfc323bd-647a-4867-ab32-e97dfed6be7c.xchgu682ce.png",
+      "AssetFile": "C:\\Users\\Umutl\\Belgeler\\GitHub\\MesajX\\Backend\\Services\\ChatService\\MesajX.ChatService\\wwwroot\\uploads\\dfc323bd-647a-4867-ab32-e97dfed6be7c.png",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "3680890"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/png"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"H45Kghz5FuqcNbKCCRnbs7I9znjoeg+MAASIVYQDZTQ=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Sat, 31 May 2025 06:56:10 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "xchgu682ce"
+        },
+        {
+          "Name": "label",
+          "Value": "uploads/dfc323bd-647a-4867-ab32-e97dfed6be7c.png"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-H45Kghz5FuqcNbKCCRnbs7I9znjoeg+MAASIVYQDZTQ="
         }
       ]
     }

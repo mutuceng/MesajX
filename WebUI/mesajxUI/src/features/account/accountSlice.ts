@@ -5,13 +5,15 @@ import requests from "../../api/requests";
 import { UserInfo } from "../../constants/types/IUserInfo";
 
 interface AccountState {
-  userProfiles: Record<string, UserInfo>;
+  userProfile: UserInfo;
   user: User | null;
+  chatUsers: UserInfo[];
 }
 
 const initialState: AccountState = {
   user: null,
-  userProfiles: {},
+  userProfile: {} as UserInfo,
+  chatUsers: [] as UserInfo[],
 };
 
 export const registerUser = createAsyncThunk<any, FormData, { rejectValue: { error: any } }>(
@@ -57,13 +59,13 @@ export const getUserIdByUsername = createAsyncThunk<
 
 export const fetchUserProfile = createAsyncThunk<
   UserInfo,
-  string,
+  void,
   { rejectValue: string }
 >(
   "account/fetchUserProfile",
-  async (userId, { rejectWithValue }) => {
+  async (_, { rejectWithValue }) => {
     try {
-      const response = await requests.Account.getUserProfile(userId);
+      const response = await requests.Account.getUserProfile();
       return response;
     } catch (error: any) {
       return rejectWithValue(error.message || "Failed to fetch user profile");
@@ -71,18 +73,32 @@ export const fetchUserProfile = createAsyncThunk<
   }
 );
 
-export const fetchMultipleUserProfiles = createAsyncThunk<
+
+export const fetchChatUsers = createAsyncThunk<
   UserInfo[],
   string[],
   { rejectValue: string }
 >(
-  "account/fetchMultipleUserProfiles",
+  "account/fetchChatUsers",
   async (userIds, { rejectWithValue }) => {
     try {
-      const response = await requests.Account.getMultipleUserProfiles(userIds);
+      const response = await requests.Account.getChatUsers(userIds);
       return response;
     } catch (error: any) {
-      return rejectWithValue(error.message || "Failed to fetch user profiles");
+      return rejectWithValue(error.message || "Failed to fetch users");
+    }
+  }
+);
+
+
+export const updateUserProfile = createAsyncThunk(
+  "account/updateUserProfile",
+  async ({ userId, updateDto }: { userId: string; updateDto: {} }, thunkAPI) => {
+    try {
+      const response = await requests.Account.updateUserProfile(userId, updateDto);
+      return response;
+    } catch (error) {
+      return thunkAPI.rejectWithValue("Profil güncellenemedi.");
     }
   }
 );
@@ -101,11 +117,27 @@ export const accountSlice = createSlice({
       state.user = action.payload;
     },
   },
+  
   extraReducers: (builder) => {
-    builder.addCase(loginUser.fulfilled, (state, action) => {
-      state.user = action.payload;
-    });
+    builder
+      .addCase(loginUser.fulfilled, (state, action) => {
+        state.user = action.payload;
+      })
+      .addCase(fetchChatUsers.fulfilled, (state, action) => {
+        state.chatUsers = action.payload;
+      })
+      .addCase(fetchChatUsers.rejected, (state, action) => {
+        console.error("Failed to fetch chat users:", action.payload);
+      })
+      .addCase(updateUserProfile.fulfilled, (state, action) => {
+        state.userProfile = action.payload;
+      });
+      
+    builder.addCase(fetchUserProfile.fulfilled, (state, action) => {
+        state.userProfile = action.payload;
+      });
   },
+  
 });
 
 
